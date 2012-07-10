@@ -8,3 +8,7 @@ http://www.southridgecc.org
 Current Production Version: 1.3
 
 Google Play:  https://play.google.com/store/apps/details?id=com.camomedia.southridge
+
+Amazon: http://www.amazon.com/gp/product/B008J8UHJO
+
+Apple: (coming soon, waiting for approval)
