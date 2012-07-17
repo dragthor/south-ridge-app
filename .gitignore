@@ -2,6 +2,6 @@
 .DS_Store
 .log
 .template/
-README.md~
+*~
 development/
 release/
