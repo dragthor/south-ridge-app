@@ -22,3 +22,5 @@ Icons by Glyphish - http://glyphish.com
 Map by Google Maps - http://maps.google.com
 
 MIT License - http://en.wikipedia.org/wiki/MIT_License
+
+Wiki - http://github.com/dragthor/south-ridge-app/wiki
