@@ -46,7 +46,7 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
     $("html").css("height", "auto");
     $(this.el).empty().show().css( { "background-color": "#fff", "height": "100%" } );
 
-    var version = "1.3";
+    var version = "1.4";
     
     $(this.el).append('<img class="logo" src="' + this.logo + '" />');
 

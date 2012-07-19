@@ -3,7 +3,7 @@
 	"platform_version": "v1.3",
 	"name": "South Ridge",
 	"author": "kris.krause@gmail.com",
-	"version": "1.3",
+	"version": "1.4",
 	"description": "South Ridge Community Church",
 	"modules": {
 		"package_names": {
@@ -24,7 +24,7 @@
 			"level": "INFO"
 		},
 		"request": {
-			"permissions": ["*://maps.googleapis.com/*", "*://*.google.com/*", "*://pipes.yahoo.com/*", "*://graph.facebook.com/*", "*://*.vimeo.com/*", "*://*.rackcdn.com/*"]
+			"permissions": ["*://graph.facebook.com/*", "*://*.vimeo.com/*", "*://*.rackcdn.com/*"]
 		},
 		"tabs": true,
 		"tools": true,

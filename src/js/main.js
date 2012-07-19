@@ -40,7 +40,7 @@ var SouthRidge = {
         'photos/:id/:name': 'getPhotos',
         'refresh': 'refreshCache',
         'about': 'getAbout',
-        'map': 'getMap',
+        'chat': 'getChat',
         'noconnection': 'getNoConnection',
         '*actions' : 'getAlbums'
       },
@@ -157,13 +157,37 @@ var SouthRidge = {
           }
         });
       },
+      getChat: function() {
+        var chats = SouthRidge.Cache.Chats;
+        var view = null;
+
+        if (chats == undefined) {
+          SouthRidge.Utils.Loading();
+
+          chats = new SouthRidge.Models.Chats([], {
+            success: function() {
+              SouthRidge.Cache.Chats = chats;
+
+              if (chats.length === 0) {
+                SouthRidge.Cache.Chats = undefined; 
+                view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve chat feed." } )
+              } else {
+                view = new SouthRidge.Views.ChatView( { collection: chats } );
+              }
+            },
+            error: function(err) { 
+              SouthRidge.Cache.Chats = undefined; 
+              view = new SouthRidge.Views.ErrorView( { message: err.message } );
+            }
+          });
+        } else {
+          view = new SouthRidge.Views.ChatView( { collection: chats } );
+        }
+      },
       getAbout: function() {
         forge.tools.getURL('img/logo.png', function(path) {
           var view = new SouthRidge.Views.AboutView( { logo: path } );
         });
-      },
-      getMap: function() {
-        var view = new SouthRidge.Views.MapView();
       },
       refreshCache: function() {
         SouthRidge.Cache = {};
@@ -220,23 +244,23 @@ var SouthRidge = {
       });
     });
 
-    var aboutButton = forge.tabbar.addButton({
-      text: "About",
-      icon: "img/112-group.png",
+    var chatButton = forge.tabbar.addButton({
+      text: "News",
+      icon: "img/08-chat.png",
       index: 3
     }, function (button) {
-      button.onPressed.addListener(function () { 
-        SouthRidge.Router.navigate('about', { trigger: true });
+      button.onPressed.addListener(function () {
+        SouthRidge.Router.navigate('chat', { trigger: true });
       });
     });
 
-    var mapButton = forge.tabbar.addButton({
-      text: "Map",
-      icon: "img/71-compass.png",
+    var aboutButton = forge.tabbar.addButton({
+      text: "About",
+      icon: "img/112-group.png",
       index: 4
     }, function (button) {
-      button.onPressed.addListener(function () {
-        SouthRidge.Router.navigate('map', { trigger: true });
+      button.onPressed.addListener(function () { 
+        SouthRidge.Router.navigate('about', { trigger: true });
       });
     });
 

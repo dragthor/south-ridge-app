@@ -100,3 +100,23 @@ SouthRidge.Models.Videos = Backbone.Collection.extend({
       });
     }
 });
+
+SouthRidge.Models.Chat = Backbone.Model.extend();
+
+SouthRidge.Models.Chats = Backbone.Collection.extend({
+    model: SouthRidge.Models.Chat,
+    initialize: function(models, options) {
+      var that = this;
+      var success = options.success;
+      var error = options.error;
+
+      forge.request.get('http://c15134706.r6.cf2.rackcdn.com/eNews.json', 
+        function(content) {
+          that.add(content);
+          success();
+        }, 
+        function(err) {
+          error(err);
+      });
+    }
+});
