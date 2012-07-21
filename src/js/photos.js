@@ -86,6 +86,8 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
     this.render();
   },
   render: function(){
+    SouthRidge.Utils.SetTopBar('Album Photos');
+
     forge.topbar.addButton({ text: "Back", position: "left", tint: [59, 118, 38, 255] }, function () { 
       SouthRidge.Router.navigate('albums', { trigger: true });
     });
