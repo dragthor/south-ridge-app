@@ -35,30 +35,22 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
     SouthRidge.Utils.ScrollTop();
     
     forge.topbar.addButton({ icon: "img/01-refresh.png", position: "right", tint: [59, 118, 38, 255] }, function () { 
-      SouthRidge.Cache.Albums = undefined; 
-      SouthRidge.Cache.Podcasts = undefined;
-      SouthRidge.Cache.Videos = undefined;
-      SouthRidge.Cache.Photos = {}; 
+      SouthRidge.Utils.ResetCache();
     });
 
     SouthRidge.Utils.DoneLoading();
     
-    $("html").css("height", "auto");
-    $(this.el).empty().show().css( { "background-color": "#fff", "height": "100%" } );
-
-    var version = "1.4";
+    $(this.el).empty().show();
     
     $(this.el).append('<img class="logo" src="' + this.logo + '" />');
 
     $(this.el).append("<p>South Ridge is a non-denominational church located in Clinton, NJ. The mission of South Ridge is to embrace God's grace and extend His love.</p>");
-    
 
     $(this.el).append('<p>South Ridge Community Church<br/>7 Pittstown Road<br/>Clinton, NJ 08809<br/><a href="tel:9087355252">(908) 735-5252</a></p>');
     $(this.el).append('<p><a href="mailto:info@southridgecc.org">info@southridgecc.org</a></p>');
     $(this.el).append('<p><a target="_new" href="http://www.southridgecc.org">www.southridgecc.org</a></p>');
 
-
-    $(this.el).append('<p>Version ' + version + '</p>');
+    $(this.el).append('<p>Version ' + SouthRidge.Utils.Version + '</p>');
     $(this.el).append('<p>Photos managed by the public <a target="_new" href="http://m.facebook.com/southridgecommunitychurch">South Ridge Facebook</a> account.');
     $(this.el).append('<p>Podcast managed by the public <a target="_new" href="http://www.southridgecc.org/resources/messages.php">South Ridge</a> feed.');
     $(this.el).append('<p>Videos managed by the public Vimeo <a target="_new" href="http://vimeo.com/benstapley">South Ridge Channel</a> account.');

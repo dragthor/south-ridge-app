@@ -18,6 +18,12 @@
 	            "android": "img/640x960.png",
 	            "android-landscape": "img/1024x748.png"
 	        },
+	    "orientations": { 
+            "default": "any",
+            "iphone": "portrait",
+            "ipad": "portrait",
+            "android": "portrait"
+	    },
 		"event": true,
 		"is": true,
 		"logging": {

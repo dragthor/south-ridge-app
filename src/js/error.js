@@ -36,8 +36,7 @@ SouthRidge.Views.ErrorView = Backbone.View.extend({
     SouthRidge.Utils.DeactivateTabs();
     SouthRidge.Utils.DoneLoading();
 
-    $("html").css("height", "auto");
-    $(this.el).empty().show().css( { "background-color": "#fff", "height": "100%" } );
+    $(this.el).empty().show();
 
     var elemt = $('<div class="error"><h1>Oops! Error</h1><p>Unfortunately an error has occurred.  Sometimes this indicates a poor network connection.  Please try again later. If the error persists, email the developer listed under the <b>About</b> icon.</p><p>Error Details:</p><p>' + this.message + '</p></div>');
 

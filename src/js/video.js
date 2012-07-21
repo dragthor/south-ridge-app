@@ -36,8 +36,7 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('South Ridge Video');
     SouthRidge.Utils.ScrollTop();
   
-    $("html").css("height", "auto");
-    $(this.el).empty().show().css( { "background-color": "#fff", "height": "100%" } );
+    $(this.el).empty().show();
 
     var elemt = $('<ul id="mainList" class="list"></ul>');
 

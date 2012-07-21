@@ -21,6 +21,8 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+SouthRidge.Utils.Version = "1.4";
+
 SouthRidge.Utils.CheckConnection = function() {
 	if(forge.is.connection.connected()) {
 		return true;
@@ -58,4 +60,12 @@ SouthRidge.Utils.Loading = function() {
 
 SouthRidge.Utils.DoneLoading = function() {
 	$("#loading").hide();
+};
+
+SouthRidge.Utils.ResetCache = function () {
+	SouthRidge.Cache.Albums = undefined; 
+	SouthRidge.Cache.Podcasts = undefined;
+	SouthRidge.Cache.Videos = undefined;
+	SouthRidge.Cache.Chats = undefined;
+	SouthRidge.Cache.Photos = {}; 
 };

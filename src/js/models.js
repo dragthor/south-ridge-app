@@ -113,6 +113,8 @@ SouthRidge.Models.Chats = Backbone.Collection.extend({
       forge.request.get('http://c15134706.r6.cf2.rackcdn.com/eNews.json', 
         function(content) {
           that.add(content);
+
+          SouthRidge.Utils.Log(content);
           success();
         }, 
         function(err) {

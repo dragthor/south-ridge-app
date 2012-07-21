@@ -36,8 +36,7 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('South Ridge Photos');
     SouthRidge.Utils.ScrollTop();
 
-    $("html").css("height", "auto");
-    $(this.el).empty().show().css( { "background-color": "#fff", "height": "100%" } );
+    $(this.el).empty().show();
 
     var elemt = $('<ul id="mainList" class="list"></ul>');
 
@@ -94,8 +93,7 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
 
     SouthRidge.Utils.DoneLoading();
     
-    $("html").css("height", "auto");
-    $(this.el).empty().show().css( { "background-color": "#fff", "height": "100%" } );
+    $(this.el).empty().show();
 
     $(this.el).append("<h1>" + decodeURIComponent(this.albumName) + "</h1>");
 

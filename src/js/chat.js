@@ -34,8 +34,7 @@ SouthRidge.Views.ChatView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('South Ridge News');    
     SouthRidge.Utils.ScrollTop();
 
-    $("html").css("height", "auto");
-    $(this.el).empty().show().css( { "background-color": "#fff", "height": "100%" } );
+    $(this.el).empty().show();
 
     var chat = this.collection.models[0]; // Only one at a time right now.
 
