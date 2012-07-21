@@ -46,9 +46,8 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
       var m = this.collection.models[i];
       if (m.get("name") != undefined && m.get("name") !== 'Untitled Album') {
 
-        // Really like how the browser caches these images.  Thus, not using forge.request.
-        // And should really move this out of the view.
-        $.getJSON('http://graph.facebook.com/' + m.get("cover_photo") + '?callback=?', function(msg) {
+        // We should really move this out of the view.
+        forge.request.get('http://graph.facebook.com/' + m.get("cover_photo"), function(msg) {
           $("#" + msg.id).attr("style", "background-image: url(" + msg.picture + ")");
         });
 
