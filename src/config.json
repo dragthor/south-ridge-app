@@ -24,6 +24,7 @@
             "ipad": "portrait",
             "android": "portrait"
 	    },
+	    "file": true,
 		"event": true,
 		"is": true,
 		"logging": {
