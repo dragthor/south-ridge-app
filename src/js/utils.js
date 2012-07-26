@@ -21,7 +21,9 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-SouthRidge.Utils.Version = "1.4";
+SouthRidge.Utils.Version = "1.5";
+SouthRidge.Utils.ParseAppId = "RVQvHPE2S63I1FpyNu4GSpSN3qSkmai1XB696kAC";
+SouthRidge.Utils.ParseRestKey = "uUL10oLmwnI6c9LbojMRTOJn65gIeP6jEitMjWDq";
 
 SouthRidge.Utils.CheckConnection = function() {
 	if(forge.is.connection.connected()) {
@@ -68,4 +70,50 @@ SouthRidge.Utils.ResetCache = function () {
 	SouthRidge.Cache.Videos = undefined;
 	SouthRidge.Cache.Chats = undefined;
 	SouthRidge.Cache.Photos = {}; 
+};
+
+SouthRidge.Utils.UploadFile = function (file) {
+    forge.request.ajax({
+        url: 'https://api.parse.com/1/files/' + (new Date()).getTime() + '.jpg',
+        headers: {
+            'X-Parse-Application-Id': SouthRidge.Utils.ParseAppId,
+            'X-Parse-REST-API-Key': SouthRidge.Utils.ParseRestKey
+        },
+        type: 'POST',
+        files: [file],
+        fileUploadMethod: 'raw',
+        dataType: 'json',
+        success: function (data) {
+            SouthRidge.Utils.UploadMetaData(data);
+        },
+        error: function () {
+        	alert("Problem uploading photo to South Ridge.");
+        }
+    });
+};
+
+SouthRidge.Utils.UploadMetaData = function(data) {
+    forge.request.ajax({
+        url: 'https://api.parse.com/1/classes/Photo',
+        headers: {
+            'X-Parse-Application-Id': SouthRidge.Utils.ParseAppId,
+            'X-Parse-REST-API-Key': SouthRidge.Utils.ParseRestKey
+        },
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+            file: {
+                '__type': 'File',
+                name: data.name
+            },
+            stream: 'south-ridge-upload'
+        }),
+        success: function (file) {
+            alert("Photo successfully uploaded to South Ridge for review.");
+        },
+        error: function () {
+            alert("Problem uploading photo metadata to South Ridge.");
+        }
+    });
 };

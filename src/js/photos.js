@@ -36,9 +36,9 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('South Ridge Photos');
     SouthRidge.Utils.ScrollTop();
 
-    forge.topbar.addButton({ icon: "img/167-upload-photo.png", position: "right", tint: [59, 118, 38, 255] }, function () { 
-      forge.file.getImage( { width: 500, height: 500 }, function() {
-
+    forge.topbar.addButton({ icon: "img/167-upload-photo.png", position: "right", tint: [86, 148, 198, 255] }, function () { 
+      forge.file.getImage( { width: 500, height: 500 }, function(file) {
+          SouthRidge.Utils.UploadFile(file);
       });
     });
 
