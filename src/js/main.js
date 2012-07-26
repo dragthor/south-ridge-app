@@ -24,12 +24,14 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 var SouthRidge = {
   Models: {},
   Views: {},
-  Utils: {},
+  Utils: {
+	Uploader: {},
+  },
   Cache: {
     Photos: {}
   },
   Router: null,
-
+  
   // Called once.
   init: function() {
     var AppRouter = Backbone.Router.extend({
