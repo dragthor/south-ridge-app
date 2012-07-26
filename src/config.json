@@ -7,7 +7,6 @@
             "android": "com.camomedia.southridge", 
             "ios": "com.camomedia.ios.southridge"
         }, 
-        "geolocation": true, 
         "launchimage": {
             "ipad": "img/768x1004.png", 
             "android-landscape": "img/1024x748.png", 
