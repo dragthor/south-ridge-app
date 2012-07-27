@@ -42,8 +42,12 @@ SouthRidge.Views.ChatView = Backbone.View.extend({
     var author = chat.attributes["Author"];
     var message = chat.attributes["Message"];
 
-    $(this.el).append('<p>' + date + ' - ' + author + '</p>');
-    $(this.el).append('<p>' + message + '</p>');
+    if (date != undefined && author != undefined && message != undefined) {
+      $(this.el).append('<p>' + date + ' - ' + author + '</p>');
+      $(this.el).append('<p>' + message + '</p>');
+    } else {
+      $(this.el).append('<p>No news update available at this time.  Please check again later.</p>');
+    }
 
     SouthRidge.Utils.DoneLoading();
   }

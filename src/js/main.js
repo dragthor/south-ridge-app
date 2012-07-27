@@ -25,7 +25,7 @@ var SouthRidge = {
   Models: {},
   Views: {},
   Utils: {
-	Uploader: {},
+	  Uploader: {}
   },
   Cache: {
     Photos: {}
