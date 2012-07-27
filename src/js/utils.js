@@ -69,6 +69,17 @@ SouthRidge.Utils.DoneLoading = function() {
 	$("#loading").hide();
 };
 
+SouthRidge.Utils.KindleFire = function() {
+	// Using this to disable camera option for photo upload.
+	if (forge.is.android() === true) {
+		var kindleFire = /kindle/i.test(navigator.userAgent);
+		var kindleSilkMode = /silk/i.test(navigator.userAgent);
+		
+		return kindleFire || kindleSilkMode;
+	}
+	return false;
+};
+
 SouthRidge.Utils.ResetCache = function () {
 	SouthRidge.Cache.Albums = undefined; 
 	SouthRidge.Cache.Podcasts = undefined;
