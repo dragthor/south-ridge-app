@@ -114,7 +114,6 @@ SouthRidge.Models.Chats = Backbone.Collection.extend({
         function(content) {
           that.add(content);
 
-          SouthRidge.Utils.Log(content);
           success();
         }, 
         function(err) {
