@@ -36,7 +36,7 @@ SouthRidge.Utils.Uploader.ImageFile = function (file) {
             SouthRidge.Utils.Uploader.ImageMetaData(data);
         },
         error: function () {
-        	alert("Problem uploading photo to South Ridge.  Or location permission required.");
+        	SouthRidge.Utils.Alert("Problem uploading photo to South Ridge.  Or location permission required.");
         }
     });
 };
@@ -59,10 +59,10 @@ SouthRidge.Utils.Uploader.ImageMetaData = function(data) {
             stream: 'south-ridge-upload'
         }),
         success: function (file) {
-            alert("Photo successfully uploaded to South Ridge for review.");
+            SouthRidge.Utils.Alert("Photo successfully uploaded to South Ridge for review.");
         },
         error: function () {
-            alert("Problem uploading photo metadata to South Ridge.");
+            SouthRidge.Utils.Alert("Problem uploading photo metadata to South Ridge.");
         }
     });
 };

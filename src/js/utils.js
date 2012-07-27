@@ -40,6 +40,11 @@ SouthRidge.Utils.Log = function(msg) {
 	}
 };
 
+SouthRidge.Utils.Alert = function(msg) {
+	// TODO: Change this to a pretty modal.
+	alert(msg);
+};
+
 SouthRidge.Utils.SetTopBar = function(title) {
 	forge.topbar.setTitle(title);
     forge.topbar.removeButtons();

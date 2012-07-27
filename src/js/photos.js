@@ -36,10 +36,14 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('South Ridge Photos');
     SouthRidge.Utils.ScrollTop();
 
-    forge.topbar.addButton({ icon: "img/167-upload-photo.png", position: "right", tint: [86, 148, 198, 255] }, function () { 
-      forge.file.getImage( { width: 500, height: 500 }, function(file) {
-          SouthRidge.Utils.Uploader.ImageFile(file);
-      });
+    forge.topbar.addButton({ icon: "img/167-upload-photo.png", position: "right", tint: [86, 148, 198, 255] }, function () {
+	  try {
+		forge.file.getImage( { width: 500, height: 500 }, function(file) {
+			SouthRidge.Utils.Uploader.ImageFile(file);
+		});
+	  } catch (err) {
+		SouthRidge.Utils.Alert("Unable to access camera or photo gallery at this time.");
+	  }
     });
 
     $(this.el).empty().show();
