@@ -57,6 +57,5 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
 
     $(this.el).append('<p>Source code freely available on <a target="_new" href="https://github.com/dragthor/south-ridge-app">Github</a> (MIT License).</p>');
     $(this.el).append('<p>Bugs? Comments? Questions? Ideas? Developer email <a href="mailto:kris.krause@gmail.com">kris.krause@gmail.com</a>.</p>');
-    $(this.el).append('<p>Icons by <a target="_new" href="http://glyphish.com">Glyphish</a>.</p>');
   }
 });

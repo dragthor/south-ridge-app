@@ -42,7 +42,8 @@
                 "*://graph.facebook.com/*", 
                 "*://*.vimeo.com/*", 
                 "*://*.rackcdn.com/*", 
-                "*://*.parse.com/*"
+                "*://*.parse.com/*",
+				"*://*.github.com/*"
             ]
         }, 
         "event": true, 

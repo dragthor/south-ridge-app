@@ -12,15 +12,13 @@ Google Play:  https://play.google.com/store/apps/details?id=com.camomedia.southr
 
 Amazon: http://www.amazon.com/gp/product/B008J8UHJO
 
-Apple: (coming soon, waiting for approval)
+Apple: (hopefully coming soon, waiting for approval)
 
+
+Wiki - http://github.com/dragthor/south-ridge-app/wiki
 
 Built with trigger.io - http://trigger.io
 
-Icons by Glyphish - http://glyphish.com
-
-Map by Google Maps - http://maps.google.com
+Icons by Glyphish (non-free icons require that you purchase a license) - http://glyphish.com
 
 MIT License - http://en.wikipedia.org/wiki/MIT_License
-
-Wiki - http://github.com/dragthor/south-ridge-app/wiki

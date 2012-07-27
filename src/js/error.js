@@ -38,7 +38,7 @@ SouthRidge.Views.ErrorView = Backbone.View.extend({
 
     $(this.el).empty().show();
 
-    var elemt = $('<div class="error"><h1>Oops! Error</h1><p>Unfortunately an error has occurred.  Sometimes this indicates a poor network connection.  Please try again later. If the error persists, email the developer listed under the <b>About</b> icon.</p><p>Error Details:</p><p>' + this.message + '</p></div>');
+    var elemt = $('<div class="error"><h1>Oops! Error</h1><p>Unfortunately an error has occurred.  Sometimes this indicates a poor network connection.  Please try again later. If the error persists, email the developer listed under <a href="#about">About</a>.</p><p>Error Details:</p><p>' + this.message + '</p></div>');
 
     $(this.el).append(elemt);
   }
