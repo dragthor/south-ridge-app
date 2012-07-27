@@ -22,6 +22,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 SouthRidge.Utils.Uploader.ImageFile = function (file) {
+	if (!SouthRidge.Utils.CheckConnection()) return;
+
     forge.request.ajax({
         url: 'https://api.parse.com/1/files/' + (new Date()).getTime() + '.jpg',
         headers: {

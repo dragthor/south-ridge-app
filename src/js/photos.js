@@ -38,7 +38,13 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
 
     forge.topbar.addButton({ icon: "img/167-upload-photo.png", position: "right", tint: [86, 148, 198, 255] }, function () {
 	  try {
-		forge.file.getImage( { width: 500, height: 500 }, function(file) {
+		var params = { width: 500, height: 500 };
+		
+		if (SouthRidge.Utils.KindleFire()) {
+			params.source = "gallery";
+		}
+		
+		forge.file.getImage(params, function(file) {
 			SouthRidge.Utils.Uploader.ImageFile(file);
 		});
 	  } catch (err) {
