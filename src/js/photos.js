@@ -37,19 +37,19 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
     SouthRidge.Utils.ScrollTop();
 
     forge.topbar.addButton({ icon: "img/167-upload-photo@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () {
-	  try {
-		var params = { width: 500, height: 500 };
-		
-		if (SouthRidge.Utils.KindleFire()) {
-			params.source = "gallery";
-		}
-		
-		forge.file.getImage(params, function(file) {
-			SouthRidge.Utils.Uploader.ImageFile(file);
-		});
-	  } catch (err) {
-		SouthRidge.Utils.Alert("Unable to access camera or photo gallery at this time.");
-	  }
+  	  try {
+    		var params = { width: 500, height: 500 };
+    		
+    		if (SouthRidge.Utils.KindleFire()) {
+    			params.source = "gallery";
+    		}
+    		
+    		forge.file.getImage(params, function(file) {
+    			SouthRidge.Utils.Uploader.ImageFile(file);
+    		});
+  	  } catch (err) {
+  		  SouthRidge.Utils.Alert("Unable to access camera or photo gallery at this time.");
+  	  }
     });
 
     $(this.el).empty().show();
@@ -61,18 +61,24 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
     for (var i = 0; i < this.collection.models.length; i++) {
       var m = this.collection.models[i];
       if (m.get("name") != undefined && m.get("name") !== 'Untitled Album') {
-
-        // We should really move this out of the view.
-        forge.request.get('http://graph.facebook.com/' + m.get("cover_photo"), function(msg) {
-          $("#" + msg.id).attr("style", "background-image: url(" + msg.picture + ")");
-        });
-
         var desc = m.get("description");
-        
+        var cover = m.get("cover_photo");
+
         if (desc == undefined) desc = "";
 
-        $(elemt).append('<li id="' + m.get("id") + '"><div><div class="podcast" id="' + m.get("cover_photo") + '" ><img class="podcastItem" src="' + this.icon + '" /></div><div class="podInfo">' + m.get("name") + '<div class="desc">' + desc + '</div></div></div></li>');
-        
+        $(elemt).append('<li id="' + m.get("id") + '"><div><div class="podcast" id="' + cover + '" ><img class="podcastItem" src="' + this.icon + '" /></div><div class="podInfo">' + m.get("name") + '<div class="desc">' + desc + '</div></div></div></li>');
+
+        if (SouthRidge.Cache.CoverPhotos[cover] == undefined) {
+          // We should really move this out of the view.
+          forge.request.get('http://graph.facebook.com/' + cover, function(msg) {
+            SouthRidge.Cache.CoverPhotos[msg.id] = msg.picture;
+
+            $("#" + msg.id).attr("style", "background-image: url(" + SouthRidge.Cache.CoverPhotos[msg.id] + ")");
+          });
+        } else {
+          $("#" + cover).attr("style", "background-image: url(" + SouthRidge.Cache.CoverPhotos[cover] + ")");
+        }
+
         var p = $("#" + m.get("cover_photo")).data("albumName", m.get("name")).data("albumId", m.get("id"));
 
         p.on("tap", function(e){

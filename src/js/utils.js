@@ -85,5 +85,6 @@ SouthRidge.Utils.ResetCache = function () {
 	SouthRidge.Cache.Podcasts = undefined;
 	SouthRidge.Cache.Videos = undefined;
 	SouthRidge.Cache.Chats = undefined;
-	SouthRidge.Cache.Photos = {}; 
+	SouthRidge.Cache.Photos = {};
+	SouthRidge.Cache.CoverPhotos = {};
 };

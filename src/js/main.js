@@ -28,7 +28,8 @@ var SouthRidge = {
 	  Uploader: {}
   },
   Cache: {
-    Photos: {}
+    Photos: {},
+    CoverPhotos: {}
   },
   Router: null,
   
