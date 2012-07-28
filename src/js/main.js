@@ -50,7 +50,7 @@ var SouthRidge = {
         var albums = SouthRidge.Cache.Albums;
         var view = null;
 
-        forge.tools.getURL('img/magnify18x18.png', function(path) {
+        forge.tools.getURL('img/magnify18x18-white.png', function(path) {
           if (albums == undefined) {
             SouthRidge.Utils.Loading();
 

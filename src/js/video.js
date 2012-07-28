@@ -33,7 +33,7 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    SouthRidge.Utils.SetTopBar('South Ridge Video');
+    SouthRidge.Utils.SetTopBar('Video');
     SouthRidge.Utils.ScrollTop();
   
     $(this.el).empty().show();

@@ -70,7 +70,7 @@ SouthRidge.Models.Podcasts = Backbone.Collection.extend({
     var success = options.success;
     var error = options.error;
 
-    forge.request.get('http://c15134706.r6.cf2.rackcdn.com/SouthRidgePodcast.json', 
+    forge.request.get('http://dragthor.github.com/southridge/SouthRidgePodcast.json', 
       function(content) {
         that.add(content);
         success();
@@ -110,7 +110,7 @@ SouthRidge.Models.Chats = Backbone.Collection.extend({
       var success = options.success;
       var error = options.error;
 
-      forge.request.get('http://c15134706.r6.cf2.rackcdn.com/eNews.json', 
+      forge.request.get('http://dragthor.github.com/southridge/eNews.json', 
         function(content) {
           that.add(content);
 

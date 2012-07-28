@@ -31,10 +31,10 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    SouthRidge.Utils.SetTopBar('About South Ridge');
+    SouthRidge.Utils.SetTopBar('About Us');
     SouthRidge.Utils.ScrollTop();
     
-    forge.topbar.addButton({ icon: "img/01-refresh.png", position: "right", tint: [59, 118, 38, 255] }, function () { 
+    forge.topbar.addButton({ icon: "img/01-refresh@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () { 
       SouthRidge.Utils.ResetCache();
     });
 

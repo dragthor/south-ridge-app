@@ -31,7 +31,7 @@ SouthRidge.Views.ChatView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    SouthRidge.Utils.SetTopBar('South Ridge News');    
+    SouthRidge.Utils.SetTopBar('South Ridge eNews');    
     SouthRidge.Utils.ScrollTop();
 
     $(this.el).empty().show();

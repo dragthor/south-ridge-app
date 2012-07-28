@@ -33,7 +33,7 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    SouthRidge.Utils.SetTopBar('South Ridge Podcast');    
+    SouthRidge.Utils.SetTopBar('Podcast');    
     SouthRidge.Utils.ScrollTop();
 
     $(this.el).empty().show();

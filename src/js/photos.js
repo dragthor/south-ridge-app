@@ -33,10 +33,10 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    SouthRidge.Utils.SetTopBar('South Ridge Photos');
+    SouthRidge.Utils.SetTopBar('Photos');
     SouthRidge.Utils.ScrollTop();
 
-    forge.topbar.addButton({ icon: "img/167-upload-photo.png", position: "right", tint: [86, 148, 198, 255] }, function () {
+    forge.topbar.addButton({ icon: "img/167-upload-photo@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () {
 	  try {
 		var params = { width: 500, height: 500 };
 		
@@ -102,7 +102,7 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    SouthRidge.Utils.SetTopBar('Album Photos');
+    SouthRidge.Utils.SetTopBar('');
 
     forge.topbar.addButton({ text: "Back", position: "left", tint: [59, 118, 38, 255] }, function () { 
       SouthRidge.Router.navigate('albums', { trigger: true });
