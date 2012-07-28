@@ -41,7 +41,6 @@
             "permissions": [
                 "*://graph.facebook.com/*", 
                 "*://*.vimeo.com/*", 
-                "*://*.rackcdn.com/*", 
                 "*://*.parse.com/*",
 				"*://*.github.com/*"
             ]
