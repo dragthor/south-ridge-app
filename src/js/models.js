@@ -49,7 +49,7 @@ SouthRidge.Models.Photos = Backbone.Collection.extend({
       var that = this;
       var success = options.success;
       var error = options.error;
-
+ 
       forge.request.get('http://graph.facebook.com/' + options.albumId + '/photos', 
         function(content) {
           that.add(content.data);
