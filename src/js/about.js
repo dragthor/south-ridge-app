@@ -51,11 +51,8 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
     $(this.el).append('<p><a target="_new" href="http://www.southridgecc.org">www.southridgecc.org</a></p>');
 
     $(this.el).append('<p>Version ' + SouthRidge.Utils.Version + '</p>');
-    $(this.el).append('<p>Photos managed by the public <a target="_new" href="http://m.facebook.com/southridgecommunitychurch">South Ridge Facebook</a> account.');
-    $(this.el).append('<p>Podcast managed by the public <a target="_new" href="http://www.southridgecc.org/resources/messages.php">South Ridge</a> feed.');
-    $(this.el).append('<p>Videos managed by the public Vimeo <a target="_new" href="http://vimeo.com/benstapley">South Ridge Channel</a> account.');
 
     $(this.el).append('<p>Source code freely available on <a target="_new" href="https://github.com/dragthor/south-ridge-app">Github</a> (MIT License).</p>');
-    $(this.el).append('<p>Bugs? Comments? Questions? Ideas? Developer email <a href="mailto:kris.krause@gmail.com">kris.krause@gmail.com</a>.</p>');
+    $(this.el).append('<p>Issues? Questions? Ideas? Visit the <a href="https://github.com/dragthor/south-ridge-app/wiki">wiki</a>.</p>');
   }
 });
