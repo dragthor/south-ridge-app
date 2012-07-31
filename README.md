@@ -6,7 +6,7 @@ South Ridge Community Church (Clinton, NJ) mobile iOS and Android application.  
 http://www.southridgecc.org
 
 
-Current Production Version: 1.4
+Current Production Version: 1.5
 
 Google Play:  https://play.google.com/store/apps/details?id=com.camomedia.southridge
 
