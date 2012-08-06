@@ -61,7 +61,7 @@ var SouthRidge = {
 
                 if (albums.length === 0) {
                   SouthRidge.Cache.Albums = undefined; 
-                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve feed." } )
+                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve album feed." } )
                 } else {
                   view = new SouthRidge.Views.AlbumView( { collection: albums, icon: path } );
                 }
@@ -88,7 +88,7 @@ var SouthRidge = {
 
               if (photos.length === 0) {
                 SouthRidge.Cache.Photos[id] = undefined;
-                view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve feed." } );
+                view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve photo feed." } );
               } else {
                 view = new SouthRidge.Views.PhotosView( { collection: photos, albumName: name } );
               }
@@ -116,7 +116,7 @@ var SouthRidge = {
 
                 if (videos.length === 0) {
                   SouthRidge.Cache.Videos = undefined; 
-                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve feed." } )
+                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve video feed." } )
                 } else {
                   view = new SouthRidge.Views.VideoView( { collection: videos, icon: path } );
                 }
@@ -145,7 +145,7 @@ var SouthRidge = {
 
                 if(podcasts.length === 0) {
                   SouthRidge.Cache.Podcasts = undefined; 
-                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve feed." } )
+                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve podcast feed." } )
                 } else {
                   view = new SouthRidge.Views.PodcastView( { collection: podcasts, icon: path } );
                 }
