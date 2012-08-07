@@ -32,7 +32,7 @@ var SouthRidge = {
     CoverPhotos: {}
   },
   Router: null,
-  
+
   // Called once.
   init: function() {
     var AppRouter = Backbone.Router.extend({
@@ -54,22 +54,22 @@ var SouthRidge = {
           if (albums == undefined) {
             SouthRidge.Utils.Loading();
 
-            albums = new SouthRidge.Models.Albums([], { 
-              success: function() {  
+            albums = new SouthRidge.Models.Albums([], {
+              success: function() {
                 SouthRidge.Cache.Albums = albums;
 
                 if (albums.length === 0) {
-                  SouthRidge.Cache.Albums = undefined; 
-                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve feed." } )
+                  SouthRidge.Cache.Albums = undefined;
+                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve album feed." } )
                 } else {
                   view = new SouthRidge.Views.AlbumView( { collection: albums, icon: path } );
                 }
-              }, 
-              error: function(err) { 
-                SouthRidge.Cache.Albums = undefined; 
+              },
+              error: function(err) {
+                SouthRidge.Cache.Albums = undefined;
                 view = new SouthRidge.Views.ErrorView( { message: err.message } );
-              } 
-            });  
+              }
+            });
           } else {
             view = new SouthRidge.Views.AlbumView( { collection: albums, icon: path } );
           }
@@ -80,26 +80,26 @@ var SouthRidge = {
         var view = null;
 
         if (photos == undefined) {
-          photos = new SouthRidge.Models.Photos([], { 
+          photos = new SouthRidge.Models.Photos([], {
             albumId: id,
             success: function() {
               SouthRidge.Cache.Photos[id] = photos;
 
               if (photos.length === 0) {
                 SouthRidge.Cache.Photos[id] = undefined;
-                view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve feed." } );
+                view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve photo feed." } );
               } else {
                 view = new SouthRidge.Views.PhotosView( { collection: photos, albumName: name } );
               }
             },
-            error: function(err) { 
-              SouthRidge.Cache.Photos[id] = undefined; 
+            error: function(err) {
+              SouthRidge.Cache.Photos[id] = undefined;
               view = new SouthRidge.Views.ErrorView( { message: err.message } );
             }
           });
         } else {
           view = new SouthRidge.Views.PhotosView( { collection: photos, albumName: name } );
-        } 
+        }
       },
       getVideos: function() {
         var videos = SouthRidge.Cache.Videos;
@@ -114,14 +114,14 @@ var SouthRidge = {
                 SouthRidge.Cache.Videos = videos;
 
                 if (videos.length === 0) {
-                  SouthRidge.Cache.Videos = undefined; 
-                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve feed." } )
+                  SouthRidge.Cache.Videos = undefined;
+                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve video feed." } )
                 } else {
                   view = new SouthRidge.Views.VideoView( { collection: videos, icon: path } );
                 }
               },
-              error: function(err) { 
-                SouthRidge.Cache.Videos = undefined; 
+              error: function(err) {
+                SouthRidge.Cache.Videos = undefined;
                 view = new SouthRidge.Views.ErrorView( { message: err.message } );
               }
             });
@@ -139,18 +139,18 @@ var SouthRidge = {
             SouthRidge.Utils.Loading();
 
             podcasts = new SouthRidge.Models.Podcasts([], {
-              success: function() { 
+              success: function() {
                 SouthRidge.Cache.Podcasts = podcasts;
 
                 if(podcasts.length === 0) {
-                  SouthRidge.Cache.Podcasts = undefined; 
-                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve feed." } )
+                  SouthRidge.Cache.Podcasts = undefined;
+                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve podcast feed." } )
                 } else {
                   view = new SouthRidge.Views.PodcastView( { collection: podcasts, icon: path } );
                 }
               },
-              error: function(err) { 
-                SouthRidge.Cache.Podcasts = undefined; 
+              error: function(err) {
+                SouthRidge.Cache.Podcasts = undefined;
                 view = new SouthRidge.Views.ErrorView( { message: err.message } );
               }
             });
@@ -171,14 +171,14 @@ var SouthRidge = {
               SouthRidge.Cache.Chats = chats;
 
               if (chats.length === 0) {
-                SouthRidge.Cache.Chats = undefined; 
+                SouthRidge.Cache.Chats = undefined;
                 view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve chat feed." } )
               } else {
                 view = new SouthRidge.Views.ChatView( { collection: chats } );
               }
             },
-            error: function(err) { 
-              SouthRidge.Cache.Chats = undefined; 
+            error: function(err) {
+              SouthRidge.Cache.Chats = undefined;
               view = new SouthRidge.Views.ErrorView( { message: err.message } );
             }
           });
@@ -201,8 +201,8 @@ var SouthRidge = {
     forge.topbar.setTint([59, 118, 38, 255]);
     forge.tabbar.setActiveTint([59, 118, 38, 255]);
 
-    forge.event.connectionStateChange.addListener(function() { 
-      // Success we have an active connection. 
+    forge.event.connectionStateChange.addListener(function() {
+      // Success we have an active connection.
     }, function(err) {
       // Error no internet.
       SouthRidge.Utils.Log(err);
@@ -257,7 +257,7 @@ var SouthRidge = {
       icon: "img/112-group.png",
       index: 4
     }, function (button) {
-      button.onPressed.addListener(function () { 
+      button.onPressed.addListener(function () {
         SouthRidge.Router.navigate('about', { trigger: true });
       });
     });
