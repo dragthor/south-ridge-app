@@ -41,7 +41,6 @@ var SouthRidge = {
         'albums': 'getAlbums',
         'podcasts': 'getPodcasts',
         'photos/:id/:name': 'getPhotos',
-        'refresh': 'refreshCache',
         'about': 'getAbout',
         'chat': 'getChat',
         'noconnection': 'getNoConnection',
@@ -191,10 +190,6 @@ var SouthRidge = {
         forge.tools.getURL('img/logo.png', function(path) {
           var view = new SouthRidge.Views.AboutView( { logo: path } );
         });
-      },
-      refreshCache: function() {
-        SouthRidge.Cache = {};
-        SouthRidge.Cache.Photos = {};
       },
       getNoConnection: function() {
         var view = new SouthRidge.Views.NotConnectedView();
