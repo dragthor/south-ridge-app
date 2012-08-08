@@ -12,7 +12,7 @@ Google Play:  https://play.google.com/store/apps/details?id=com.camomedia.southr
 
 Amazon: http://www.amazon.com/gp/product/B008J8UHJO
 
-Apple: (hopefully coming soon, waiting for approval)
+Apple: http://itunes.apple.com/us/app/south-ridge/id543753435
 
 
 Wiki - http://github.com/dragthor/south-ridge-app/wiki
