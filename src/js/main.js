@@ -32,6 +32,7 @@ var SouthRidge = {
     CoverPhotos: {}
   },
   Router: null,
+  ViewManager: {},
 
   // Called once.
   init: function() {
@@ -47,152 +48,25 @@ var SouthRidge = {
         '*actions' : 'getAlbums'
       },
       getAlbums: function() {
-        var albums = SouthRidge.Cache.Albums;
-        var view = null;
-
-        forge.tools.getURL('img/magnify18x18-white.png', function(path) {
-          if (albums == undefined) {
-            SouthRidge.Utils.Loading();
-
-            albums = new SouthRidge.Models.Albums([], {
-              success: function() {
-                SouthRidge.Cache.Albums = albums;
-
-                if (albums.length === 0) {
-                  SouthRidge.Cache.Albums = undefined;
-                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve album feed." } )
-                } else {
-                  view = new SouthRidge.Views.AlbumView( { collection: albums, icon: path } );
-                }
-              },
-              error: function(err) {
-                SouthRidge.Cache.Albums = undefined;
-                view = new SouthRidge.Views.ErrorView( { message: err.message } );
-              }
-            });
-          } else {
-            view = new SouthRidge.Views.AlbumView( { collection: albums, icon: path } );
-          }
-        });
+        SouthRidge.ViewManager.Albums();
       },
       getPhotos: function(id, name) {
-        var photos = SouthRidge.Cache.Photos[id];
-        var view = null;
-
-        if (photos == undefined) {
-          photos = new SouthRidge.Models.Photos([], {
-            albumId: id,
-            success: function() {
-              SouthRidge.Cache.Photos[id] = photos;
-
-              if (photos.length === 0) {
-                SouthRidge.Cache.Photos[id] = undefined;
-                view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve photo feed." } );
-              } else {
-                view = new SouthRidge.Views.PhotosView( { collection: photos, albumName: name } );
-              }
-            },
-            error: function(err) {
-              SouthRidge.Cache.Photos[id] = undefined;
-              view = new SouthRidge.Views.ErrorView( { message: err.message } );
-            }
-          });
-        } else {
-          view = new SouthRidge.Views.PhotosView( { collection: photos, albumName: name } );
-        }
+        SouthRidge.ViewManager.Photos(id, name);
       },
       getVideos: function() {
-        var videos = SouthRidge.Cache.Videos;
-        var view = null;
-
-        forge.tools.getURL('img/play18x18.png', function(path) {
-          if (videos == undefined) {
-            SouthRidge.Utils.Loading();
-
-            videos = new SouthRidge.Models.Videos([], {
-              success: function() {
-                SouthRidge.Cache.Videos = videos;
-
-                if (videos.length === 0) {
-                  SouthRidge.Cache.Videos = undefined;
-                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve video feed." } )
-                } else {
-                  view = new SouthRidge.Views.VideoView( { collection: videos, icon: path } );
-                }
-              },
-              error: function(err) {
-                SouthRidge.Cache.Videos = undefined;
-                view = new SouthRidge.Views.ErrorView( { message: err.message } );
-              }
-            });
-          } else {
-            view = new SouthRidge.Views.VideoView( { collection: videos, icon: path } );
-          }
-        });
+        SouthRidge.ViewManager.Videos();
       },
       getPodcasts: function() {
-        var podcasts = SouthRidge.Cache.Podcasts;
-        var view = null;
-
-        forge.tools.getURL('img/play18x18.png', function(path) {
-          if (podcasts == undefined) {
-            SouthRidge.Utils.Loading();
-
-            podcasts = new SouthRidge.Models.Podcasts([], {
-              success: function() {
-                SouthRidge.Cache.Podcasts = podcasts;
-
-                if(podcasts.length === 0) {
-                  SouthRidge.Cache.Podcasts = undefined;
-                  view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve podcast feed." } )
-                } else {
-                  view = new SouthRidge.Views.PodcastView( { collection: podcasts, icon: path } );
-                }
-              },
-              error: function(err) {
-                SouthRidge.Cache.Podcasts = undefined;
-                view = new SouthRidge.Views.ErrorView( { message: err.message } );
-              }
-            });
-          } else {
-            view = new SouthRidge.Views.PodcastView( { collection: podcasts, icon: path } );
-          }
-        });
+        SouthRidge.ViewManager.Podcasts();
       },
       getChat: function() {
-        var chats = SouthRidge.Cache.Chats;
-        var view = null;
-
-        if (chats == undefined) {
-          SouthRidge.Utils.Loading();
-
-          chats = new SouthRidge.Models.Chats([], {
-            success: function() {
-              SouthRidge.Cache.Chats = chats;
-
-              if (chats.length === 0) {
-                SouthRidge.Cache.Chats = undefined;
-                view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve chat feed." } )
-              } else {
-                view = new SouthRidge.Views.ChatView( { collection: chats } );
-              }
-            },
-            error: function(err) {
-              SouthRidge.Cache.Chats = undefined;
-              view = new SouthRidge.Views.ErrorView( { message: err.message } );
-            }
-          });
-        } else {
-          view = new SouthRidge.Views.ChatView( { collection: chats } );
-        }
+        SouthRidge.ViewManager.Chat();
       },
       getAbout: function() {
-        forge.tools.getURL('img/logo.png', function(path) {
-          var view = new SouthRidge.Views.AboutView( { logo: path } );
-        });
+        SouthRidge.ViewManager.About();
       },
       getNoConnection: function() {
-        var view = new SouthRidge.Views.NotConnectedView();
+        SouthRidge.ViewManager.NoConnection();
       }
     });
 
