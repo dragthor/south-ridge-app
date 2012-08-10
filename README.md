@@ -17,8 +17,8 @@ Apple: http://itunes.apple.com/us/app/south-ridge/id543753435
 
 Wiki - http://github.com/dragthor/south-ridge-app/wiki
 
-Built with trigger.io - http://trigger.io
+MIT License - http://en.wikipedia.org/wiki/MIT_License
 
 Icons by Glyphish (non-free icons require that you purchase a license) - http://glyphish.com
 
-MIT License - http://en.wikipedia.org/wiki/MIT_License
+Built with trigger.io - http://trigger.io
