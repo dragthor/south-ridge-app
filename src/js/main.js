@@ -117,7 +117,7 @@ var SouthRidge = {
     });
 
     var chatButton = forge.tabbar.addButton({
-      text: "News",
+      text: "eNews",
       icon: "img/08-chat.png",
       index: 3
     }, function (button) {

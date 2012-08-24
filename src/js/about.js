@@ -44,7 +44,7 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
     
     $(this.el).append('<img class="logo" src="' + this.logo + '" />');
 
-    $(this.el).append("<p>South Ridge is a non-denominational church located in Clinton, NJ. The mission of South Ridge is to embrace God's grace and extend His love.</p>");
+    $(this.el).append("<p>The mission of South Ridge is to embrace God's grace and extend His love.</p>");
 
     $(this.el).append('<p>South Ridge Community Church<br/>7 Pittstown Road<br/>Clinton, NJ 08809<br/><a href="tel:9087355252">(908) 735-5252</a></p>');
     $(this.el).append('<p><a href="mailto:info@southridgecc.org">info@southridgecc.org</a></p>');
