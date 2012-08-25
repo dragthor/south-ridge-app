@@ -37,22 +37,13 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
     forge.topbar.addButton({ icon: "img/01-refresh@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () { 
       SouthRidge.Utils.ResetCache();
     });
+    
+    var params = { logo: this.logo, version: SouthRidge.Utils.Version };
+
+    var template = _.template($("#about").html(), params);
 
     SouthRidge.Utils.DoneLoading();
     
-    $(this.el).empty().show();
-    
-    $(this.el).append('<img class="logo" src="' + this.logo + '" />');
-
-    $(this.el).append("<p>The mission of South Ridge is to embrace God's grace and extend His love.</p>");
-
-    $(this.el).append('<p>South Ridge Community Church<br/>7 Pittstown Road<br/>Clinton, NJ 08809<br/><a href="tel:9087355252">(908) 735-5252</a></p>');
-    $(this.el).append('<p><a href="mailto:info@southridgecc.org">info@southridgecc.org</a></p>');
-    $(this.el).append('<p><a target="_new" href="http://www.southridgecc.org">www.southridgecc.org</a></p>');
-
-    $(this.el).append('<p>Version ' + SouthRidge.Utils.Version + '</p>');
-
-    $(this.el).append('<p>Source code freely available on <a target="_new" href="https://github.com/dragthor/south-ridge-app">Github</a> (MIT License).</p>');
-    $(this.el).append('<p>Issues? Questions? Ideas? Visit the <a href="https://github.com/dragthor/south-ridge-app/wiki">wiki</a>.</p>');
+    $(this.el).unbind().html(template).show();
   }
 });

@@ -36,6 +36,12 @@ var SouthRidge = {
 
   // Called once.
   init: function() {
+
+    // {{ name }}
+    _.templateSettings = {
+        interpolate: /\{\{(.+?)\}\}/g
+    };
+
     var AppRouter = Backbone.Router.extend({
       routes: {
         'videos': 'getVideos',
