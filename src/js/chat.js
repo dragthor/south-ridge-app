@@ -34,8 +34,6 @@ SouthRidge.Views.ChatView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('South Ridge eNews');    
     SouthRidge.Utils.ScrollTop();
 
-    $(this.el).empty().show();
-
     var chat = this.collection.models[0]; // Only one at a time right now.
 
     var date = chat.attributes["Date"];
@@ -43,12 +41,18 @@ SouthRidge.Views.ChatView = Backbone.View.extend({
     var message = chat.attributes["Message"];
 
     if (date != undefined && author != undefined && message != undefined) {
-      $(this.el).append('<p>' + date + ' - ' + author + '</p>');
-      $(this.el).append('<p>' + message + '</p>');
+      author = date + ' - ' + author;
     } else {
-      $(this.el).append('<p>No news update available at this time.  Please check again later.</p>');
+      author = "No news update available at this time.";
+      message = "Please check again later.";
     }
 
+    var params = { author: author, message: message };
+
+    var template = _.template($("#chat").html(), params);
+
     SouthRidge.Utils.DoneLoading();
+
+    $(this.el).unbind().html(template).show();
   }
 });
