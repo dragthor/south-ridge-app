@@ -114,7 +114,7 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
       SouthRidge.Router.navigate('albums', { trigger: true });
     });
 
-    SouthRidge.Utils.DoneLoading();
+    
     
     $(this.el).empty().show();
 
@@ -138,5 +138,7 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
         });
       });
     }
+
+    SouthRidge.Utils.DoneLoading();
   }
 });

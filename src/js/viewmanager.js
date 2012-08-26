@@ -56,6 +56,8 @@ SouthRidge.ViewManager.Photos = function (id, name) {
     var view = null;
 
     if (photos == undefined) {
+      SouthRidge.Utils.Loading();
+      
       photos = new SouthRidge.Models.Photos([], {
         albumId: id,
         success: function() {
