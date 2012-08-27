@@ -80,6 +80,15 @@ SouthRidge.Utils.KindleFire = function() {
 	return false;
 };
 
+SouthRidge.Utils.iPad = function() {
+	if (forge.is.ios() === true) {
+		var ipad = /iPad/i.test(navigator.userAgent);
+		
+		return ipad;
+	}
+	return false;
+};
+
 SouthRidge.Utils.ResetCache = function () {
 	SouthRidge.Cache.Albums = undefined; 
 	SouthRidge.Cache.Podcasts = undefined;
