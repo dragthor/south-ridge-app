@@ -72,7 +72,7 @@ SouthRidge.Utils.DoneLoading = function() {
 SouthRidge.Utils.KindleFire = function() {
 	// Using this to disable camera option for photo upload.
 	if (forge.is.android() === true) {
-		var kindleFire = /kindle/i.test(navigator.userAgent);
+		var kindleFire = /kindle fire/i.test(navigator.userAgent);
 		var kindleSilkMode = /silk/i.test(navigator.userAgent);
 		
 		return kindleFire || kindleSilkMode;
@@ -82,11 +82,26 @@ SouthRidge.Utils.KindleFire = function() {
 
 SouthRidge.Utils.iPad = function() {
 	if (forge.is.ios() === true) {
-		var ipad = /iPad/i.test(navigator.userAgent);
+		var ipad = /ipad/i.test(navigator.userAgent);
 		
 		return ipad;
 	}
 	return false;
+};
+
+SouthRidge.Utils.Nexus7 = function() {
+	if (forge.is.android() === true) {
+		var nexus7 = /nexus 7/i.test(navigator.userAgent);
+		
+		return nexus7;
+	}
+	return false;
+};
+
+SouthRidge.Utils.Tablet = function() {
+	var tablet = SouthRidge.Utils.Nexus7() || SouthRidge.Utils.KindleFire() || SouthRidge.Utils.iPad();
+	
+	return tablet;
 };
 
 SouthRidge.Utils.ResetCache = function () {
