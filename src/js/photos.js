@@ -52,47 +52,56 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
   	  }
     });
 
-    $(this.el).empty().show();
-
-    var elemt = $('<ul id="mainList" class="list"></ul>');
-
-    $(this.el).append(elemt);
+    var params = { albums: this.collection.models };
 
     for (var i = 0; i < this.collection.models.length; i++) {
       var m = this.collection.models[i];
-      if (m.get("name") != undefined && m.get("name") !== 'Untitled Album') {
-        var desc = m.get("description");
-        var cover = m.get("cover_photo");
+      
+      if (m.get("name") == undefined) m.set("name", "Untitled Album");
+      if (m.get("description") == undefined) m.set("description", "");
 
-        if (desc == undefined) desc = "";
+      m.set("icon", this.icon);
+    }
 
-        $(elemt).append('<li id="' + m.get("id") + '"><div><div class="podcast" id="' + cover + '" ><img class="podcastItem" src="' + this.icon + '" /></div><div class="podInfo">' + m.get("name") + '<div class="desc">' + desc + '</div></div></div></li>');
+    var template = _.template($("#albums").html(), params);
 
-        if (SouthRidge.Cache.CoverPhotos[cover] == undefined) {
+    $(this.el).unbind().html(template).show();
+
+    SouthRidge.Utils.DoneLoading();
+
+    // Set album art after the view loads.
+    for (var i = 0; i < this.collection.models.length; i++) {
+        var m = this.collection.models[i];
+
+        if (SouthRidge.Cache.CoverPhotos[m.get("cover_photo")] == undefined) {
           // We should really move this out of the view.
-          forge.request.get('http://graph.facebook.com/' + cover, function(msg) {
+          forge.request.get('http://graph.facebook.com/' + m.get("cover_photo"), function(msg) {
             SouthRidge.Cache.CoverPhotos[msg.id] = msg.picture;
 
             $("#" + msg.id).attr("style", "background-image: url(" + SouthRidge.Cache.CoverPhotos[msg.id] + ")");
           });
         } else {
-          $("#" + cover).attr("style", "background-image: url(" + SouthRidge.Cache.CoverPhotos[cover] + ")");
+            var cover = m.get("cover_photo");
+
+            SouthRidge.Utils.Log(cover);
+
+            $("#" + cover).attr("style", "background-image: url(" + SouthRidge.Cache.CoverPhotos[cover] + ")");
         }
-
-        var p = $("#" + m.get("cover_photo")).data("albumName", m.get("name")).data("albumId", m.get("id"));
-
-        p.on("tap", function(e){
-          e.preventDefault();
-
-          var name = $(this).data("albumName");
-          var id = $(this).data("albumId");
-
-          SouthRidge.Router.navigate('photos/' + id + '/' + name, { trigger: true }); 
-        });
       }
-    }
+  },
 
-    SouthRidge.Utils.DoneLoading();
+  events: {
+    "tap div.podcast": "handleTap"
+  },
+
+  handleTap: function(e) {
+    e.preventDefault();
+
+    var album = this.collection.where({ cover_photo: $(e.target).attr("id") });
+
+    if (album.length === 1) {
+      SouthRidge.Router.navigate('photos/' + album[0].get("id") + '/' + album[0].get("name"), { trigger: true }); 
+    }
   }
 });
 

@@ -50,12 +50,22 @@
     		<p>{{= message }}</p>
     	</script>
 
+    	<script type="text/template" id ="albums">
+    		<ul id="mainList" class="list">
+    			{{ _(albums).each(function(album) { }}
+    				{{ if (album.get("name") != "Untitled Album") { }}
+					<li id="{{= album.get("id") }}"><div><div class="podcast" id="{{= album.get("cover_photo") }}" ><img class="podcastItem" src="{{= album.get("icon") }}" /></div><div class="podInfo">{{= album.get("name") }}<div class="desc">{{= album.get("description") }}</div></div></div></li>
+					{{ } }}
+    			{{ }); }}
+    		</ul>
+    	</script>
+
+
     	<script type="text/template" id ="photos">
     		<h1>{{= albumName }}</h1>
 
 			{{ _(photos).each(function(photo) { }}
 				<div id="{{= photo.get("id") }}" class="photo" style="background-image: url({{= photo.get("picture") }})"></div>
-				{{ $("#" + photo.get("id")).data("photoUrl", photo.get("source")); }}
         	{{ }); }}
     	</script>
 
