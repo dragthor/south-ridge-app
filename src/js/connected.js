@@ -33,11 +33,11 @@ SouthRidge.Views.NotConnectedView = Backbone.View.extend({
     SouthRidge.Utils.ScrollTop();
     SouthRidge.Utils.DeactivateTabs();
     SouthRidge.Utils.DoneLoading();
+
+    var template = _.template($("#disconnected").html());
+
+    SouthRidge.Utils.DoneLoading();
     
-    $(this.el).empty().show();
-
-    var elemt = $('<div class="error"><h1>Oops! Disconnected</h1><p>We were unable to detect a network connection.</p><p>You must be connected to the internet in order to use the South Ridge app.</p></div>');
-
-    $(this.el).append(elemt);
+    $(this.el).unbind().html(template).show();
   }
 });

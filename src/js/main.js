@@ -39,7 +39,8 @@ var SouthRidge = {
 
     // {{ name }}
     _.templateSettings = {
-        interpolate: /\{\{(.+?)\}\}/g
+        interpolate: /\{\{\=(.+?)\}\}/g,
+        evaluate: /\{\{(.+?)\}\}/g
     };
 
     var AppRouter = Backbone.Router.extend({
@@ -51,6 +52,7 @@ var SouthRidge = {
         'about': 'getAbout',
         'chat': 'getChat',
         'noconnection': 'getNoConnection',
+        'error': 'getError',
         '*actions' : 'getAlbums'
       },
       getAlbums: function() {
@@ -73,6 +75,9 @@ var SouthRidge = {
       },
       getNoConnection: function() {
         SouthRidge.ViewManager.NoConnection();
+      },
+      getError: function() {
+        new SouthRidge.Views.ErrorView( { message: "Unknown internal error." } );
       }
     });
 

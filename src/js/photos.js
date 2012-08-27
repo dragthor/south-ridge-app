@@ -113,32 +113,34 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
     forge.topbar.addButton({ text: "Back", position: "left", tint: [59, 118, 38, 255] }, function () { 
       SouthRidge.Router.navigate('albums', { trigger: true });
     });
+  
+    var params = { albumName: decodeURIComponent(this.albumName), photos: this.collection.models };
 
-    
-    
-    $(this.el).empty().show();
+    var template = _.template($("#photos").html(), params);
 
-    $(this.el).append("<h1>" + decodeURIComponent(this.albumName) + "</h1>");
-
-    for (var i = 0; i < this.collection.models.length; i++) {
-      var m = this.collection.models[i];
-      
-      $(this.el).append('<div id="' + m.get("id") + '" class="photo" style="background-image: url(' + m.get("picture") + ')"></div>');
-    
-      var k = $("#" + m.get("id")).data("photoUrl", m.get("source"));
-      
-      k.on("tap", function(e){
-        e.preventDefault();
-
-        forge.tabs.openWithOptions({
-          url: $(this).data("photoUrl"),
-          tint: [59, 118, 38, 255]
-        }, function (data) {
-          SouthRidge.Utils.Log(data.url);
-        });
-      });
-    }
+    $(this.el).unbind().html(template).show();
 
     SouthRidge.Utils.DoneLoading();
+  },
+
+  events: {
+    "tap div.photo": "handleTap"
+  },
+
+  handleTap: function(e) {
+    e.preventDefault();
+
+    var photo = this.collection.where({ id: $(e.target).attr("id") });
+
+    if (photo.length === 1) {
+      var photoUrl = photo[0].get("source");
+    
+      forge.tabs.openWithOptions({
+        url: photoUrl,
+        tint: [59, 118, 38, 255]
+      }, function (data) {
+        SouthRidge.Utils.Log(data.url);
+      });
+    }
   }
 });

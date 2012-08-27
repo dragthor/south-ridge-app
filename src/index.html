@@ -37,13 +37,30 @@
       		$(SouthRidge.init);
     	</script>
 
+    	<script type="text/template" id="disconnected">
+    		<div class="error"><h1>Oops! Disconnected</h1><p>We were unable to detect a network connection.</p><p>You must be connected to the internet in order to use the South Ridge app.</p></div>
+    	</script>
+
+    	<script type="text/template" id="error">
+    		<div class="error"><h1>Oops! Error</h1><p>Unfortunately an error has occurred.  Sometimes this indicates a poor network connection.  Please try again later. If the error persists, email the developer listed under <a href="#about">About</a>.</p><p>Error Details:</p><p>{{= message }}</p></div>
+    	</script>
+
     	<script type="text/template" id="chat">
-    		<p>{{ author }}</p>
-    		<p>{{ message }}</p>
+    		<p>{{= author }}</p>
+    		<p>{{= message }}</p>
+    	</script>
+
+    	<script type="text/template" id ="photos">
+    		<h1>{{= albumName }}</h1>
+
+			{{ _(photos).each(function(photo) { }}
+				<div id="{{= photo.get("id") }}" class="photo" style="background-image: url({{= photo.get("picture") }})"></div>
+				{{ $("#" + photo.get("id")).data("photoUrl", photo.get("source")); }}
+        	{{ }); }}
     	</script>
 
     	<script type="text/template" id="about">
-    		<img class="logo" src="{{ logo }}" />
+    		<img class="logo" src="{{= logo }}" />
     		<p>The mission of South Ridge is to embrace God's grace and extend His love.</p>
 
 			<p>South Ridge Community Church<br/>7 Pittstown Road<br/>Clinton, NJ 08809<br/><a href="tel:9087355252">(908) 735-5252</a></p>
