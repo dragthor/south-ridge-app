@@ -45,7 +45,7 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
       
       m.set("icon", this.icon);
       m.set("include", false);
-      m.set("VideoId", m.get("id"));
+      m.set("VideoId", parseInt(m.get("id")));
 
       if (tags == undefined) tags = "";
 
@@ -78,10 +78,7 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
 
     if (forge.is.android()) return false;
 
-    var video = this.collection.where({ VideoId: $(e.target).attr("id") });
-
-    SouthRidge.Utils.Log('VideoId - ' + $(e.target).attr("id"));
-    SouthRidge.Utils.Log('FirstId - ' + this.collection.models[0].get("VideoId"));
+    var video = this.collection.where({ VideoId: parseInt($(e.target).attr("id")) });
 
     if (video.length === 1) {
       forge.tabs.openWithOptions({
