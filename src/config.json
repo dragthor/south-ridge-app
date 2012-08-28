@@ -49,9 +49,9 @@
         "display": {
             "orientations": {
                 "default": "any", 
-                "ipad": "portrait", 
-                "android": "portrait", 
-                "iphone": "portrait"
+                "ipad": "any", 
+                "android": "any", 
+                "iphone": "any"
             }
         }, 
         "tabbar": true, 

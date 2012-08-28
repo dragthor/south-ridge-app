@@ -41,9 +41,17 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
     for (var i = 0; i < this.collection.models.length; i++) {
       var m = this.collection.models[i];
 
-      var img = base + "resources/images/" + m.get("Image");
-      var mp3 = base + "resources/" + m.get("Mp3");
+      var img = m.get("Image");
+      var mp3 = m.get("Mp3");
+
+      if (m.get("Image").indexOf(base) == -1) {
+        img = base + "resources/images/" + m.get("Image");
+      }
       
+      if (m.get("Mp3").indexOf(base)== -1) {
+        mp3 = base + "resources/" + m.get("Mp3");
+      }
+
       m.set("Podcast", m.get("Mp3"));
       m.set("Image", img);
       m.set("Icon", this.icon);
