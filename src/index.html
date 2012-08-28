@@ -55,9 +55,13 @@
     	<script type="text/template" id="videos">
     		<ul id="mainList" class="list">
     			{{ _(videos).each(function(video) { }}
-    				<li>test</li>
+    				{{ if (forge.is.android() && video.get("include")) { }}
+    					<li><a class="android-vimeo" href="{{= video.get("mobile_url") }}" target="_blank"><div><div class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="desc">{{= video.get("description")}}</div></div></div></a></li>
+    				{{ } else if (video.get("include")) { }}
+    					<li><div><div id="{{= video.get("id") }}" class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="desc">{{= video.get("description") }}</div></div></div></li>
+    				{{ } }}
     			{{ }); }}
-    		</ul>'
+    		</ul>
     	</script>
 
     	<script type="text/template" id="podcasts">

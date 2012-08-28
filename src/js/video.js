@@ -35,20 +35,17 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
   render: function(){
     SouthRidge.Utils.SetTopBar('Video');
     SouthRidge.Utils.ScrollTop();
-  
-    //$(this.el).empty().show();
-
-    //var elemt = $('<ul id="mainList" class="list"></ul>');
-
-    //$(this.el).append(elemt);
 
     for (var i = 0; i < this.collection.models.length; i++) {
       var m = this.collection.models[i];
 
-      var desc = m.get("description");
       var tags = m.get("tags");
 
-      if (desc == undefined) desc = "";
+      if (m.get("description") == undefined) m.set("description", "");
+      
+      m.set("icon", this.icon);
+      m.set("include", false);
+
       if (tags == undefined) tags = "";
 
       var specificTags = tags.split(",");
@@ -56,30 +53,7 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
       for (var t = 0; t < specificTags.length; t++) {
         // Only look for those videos with a specific tag.
         if ($.trim(specificTags[t]).toLowerCase() === "south ridge community church") {
-          var videoTitle = m.get("title");
-
-          // Vimeo videos are not working within the modal so "pop out" to device browser instead.
-         // if (forge.is.android() === true) {
-         //   $(elemt).append('<li><a class="android-vimeo" href="' + m.get("mobile_url") + '" target="_blank"><div><div class="podcast" style="background-image: url(' + m.get("thumbnail_small") + ')"><img class="podcastItem" src="' + this.icon + '" /></div><div class="podInfo">' + videoTitle + '<div class="desc">' + desc + '</div></div></div></a></li>');
-         // } else {
-         //   $(elemt).append('<li><div><div id="' + m.get("id") + '" class="podcast" style="background-image: url(' + m.get("thumbnail_small") + ')"><img class="podcastItem" src="' + this.icon + '" /></div><div class="podInfo">' + videoTitle + '<div class="desc">' + desc + '</div></div></div></li>');
-      
-            /*var v = $("#" + m.get("id")).data("mobileUrl", m.get("mobile_url"));
-
-            v.on("tap", function(e){
-              e.preventDefault();
-
-              var videoUrl = $(this).data("mobileUrl");
-
-              forge.tabs.openWithOptions({
-                url: videoUrl,
-                tint: [59, 118, 38, 255]
-              }, function (data) {
-                SouthRidge.Utils.Log(data.url);
-              });
-            }); */
-         // }
-
+          m.set("include", true);
           break;
         }
       }
@@ -91,6 +65,27 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
       $(this.el).unbind().html(template).show();
 
       SouthRidge.Utils.DoneLoading();
+    }
+  },
+  
+  events: {
+    "tap div.podcast": "handleTap"
+  },
+
+  handleTap: function(e) {
+    e.preventDefault();
+
+    if (forge.is.android()) return false;
+
+    var video = this.collection.where({ id: $(e.target).attr("id") });
+
+    if (video.length === 1) {
+      forge.tabs.openWithOptions({
+        url: video[0].get("mobile_url"),
+        tint: [59, 118, 38, 255]
+      }, function (data) {
+        SouthRidge.Utils.Log(data.url);
+      });
     }
   }
 });
