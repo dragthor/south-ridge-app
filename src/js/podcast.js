@@ -52,7 +52,7 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
         mp3 = base + "resources/" + m.get("Mp3");
       }
 
-      m.set("Podcast", m.get("Mp3"));
+      m.set("PodcastId", m.get("Mp3"));
       m.set("Image", img);
       m.set("Icon", this.icon);
       m.set("Mp3", mp3);
@@ -74,7 +74,7 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
   handleTap: function(e) {
     e.preventDefault();
 
-    var podcast = this.collection.where({ Podcast: $(e.target).attr("id") });
+    var podcast = this.collection.where({ PodcastId: $(e.target).attr("id") });
 
     if (podcast.length === 1) {
        forge.media.videoPlay(podcast[0].get("Mp3"), function() {}, function() {});

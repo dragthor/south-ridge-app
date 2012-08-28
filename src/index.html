@@ -58,7 +58,7 @@
     				{{ if (forge.is.android() && video.get("include")) { }}
     					<li><a class="android-vimeo" href="{{= video.get("mobile_url") }}" target="_blank"><div><div class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="desc">{{= video.get("description")}}</div></div></div></a></li>
     				{{ } else if (video.get("include")) { }}
-    					<li><div><div id="{{= video.get("id") }}" class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="desc">{{= video.get("description") }}</div></div></div></li>
+    					<li><div><div id="{{= video.get("VideoId") }}" class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="desc">{{= video.get("description") }}</div></div></div></li>
     				{{ } }}
     			{{ }); }}
     		</ul>
@@ -67,7 +67,7 @@
     	<script type="text/template" id="podcasts">
     		<ul id="mainList" class="list">
     			{{ _(podcasts).each(function(podcast) { }}
-					<li><div><div id="{{= podcast.get("Podcast") }}" class="podcast" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfo">{{= podcast.get("Title") }}<br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>{{= podcast.get("Passage") }}</div></div></li>    			
+					<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcast" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfo">{{= podcast.get("Title") }}<br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>{{= podcast.get("Passage") }}</div></div></li>    			
 				{{ }); }}
     		</ul>
     	</script>
