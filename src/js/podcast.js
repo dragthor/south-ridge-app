@@ -36,36 +36,40 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('Podcast');    
     SouthRidge.Utils.ScrollTop();
 
-    $(this.el).empty().show();
-
-    var elemt = $('<ul id="mainList" class="list"></ul>');
-
-    $(this.el).append(elemt);
-
     var base = "http://www.southridgecc.org/";
 
     for (var i = 0; i < this.collection.models.length; i++) {
       var m = this.collection.models[i];
 
-      var img = base + "resources/images/" + m.attributes["Image"];
-      var guid = i;
-      var mp3 = m.attributes["Mp3"];
-      var title = m.attributes["Title"];
-      var author = m.attributes["Speaker"];
-      var passage = m.attributes["Passage"];
-      var podcastDate = m.attributes["Date"];
-
-      $(elemt).append('<li><div><div id="' + guid + '" class="podcast" style="background-image: url(' + img + ')"><img class="podcastItem" src="' + this.icon + '" /></div><div class="podInfo">' + title + '<br/>' + author + ', ' + podcastDate + '<br/>' + passage + '</div></div></li>');
-    
-      var p = $("#" + guid).data("url", base + "resources/" + mp3);
-
-      p.on("tap", function(e){
-        e.preventDefault();
-
-        forge.media.videoPlay($(this).data("url"), function() {}, function() {});
-      });
+      var img = base + "resources/images/" + m.get("Image");
+      var mp3 = base + "resources/" + m.get("Mp3");
+      
+      m.set("Podcast", m.get("Mp3"));
+      m.set("Image", img);
+      m.set("Icon", this.icon);
+      m.set("Mp3", mp3);
     }
 
+    var params = { podcasts: this.collection.models };
+
+    var template = _.template($("#podcasts").html(), params);
+
+    $(this.el).unbind().html(template).show();
+
     SouthRidge.Utils.DoneLoading();
+  },
+
+  events: {
+    "tap div.podcast": "handleTap"
+  },
+
+  handleTap: function(e) {
+    e.preventDefault();
+
+    var podcast = this.collection.where({ Podcast: $(e.target).attr("id") });
+
+    if (podcast.length === 1) {
+       forge.media.videoPlay(podcast[0].get("Mp3"), function() {}, function() {});
+    }
   }
 });

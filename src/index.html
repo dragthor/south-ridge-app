@@ -24,6 +24,8 @@
 	    <script src="js/podcast.js" type="text/javascript"></script>
 	    <script src="js/photos.js" type="text/javascript"></script>
 		<script src="js/chat.js" type="text/javascript"></script>
+
+		<script src="https://trigger.io/catalyst/target/target-script-min.js#C0FDE119-06E8-4DC3-A89C-EB477CF6E0DB"></script>
 	</head>
 	<body>
 		
@@ -50,6 +52,14 @@
     		<p>{{= message }}</p>
     	</script>
 
+    	<script type="text/template" id="podcasts">
+    		<ul id="mainList" class="list">
+    			{{ _(podcasts).each(function(podcast) { }}
+					<li><div><div id="{{= podcast.get("Podcast") }}" class="podcast" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfo">{{= podcast.get("Title") }}<br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>{{= podcast.get("Passage") }}</div></div></li>    			
+				{{ }); }}
+    		</ul>
+    	</script>
+
     	<script type="text/template" id ="albums">
     		<ul id="mainList" class="list">
     			{{ _(albums).each(function(album) { }}
@@ -59,7 +69,6 @@
     			{{ }); }}
     		</ul>
     	</script>
-
 
     	<script type="text/template" id ="photos">
     		<h1>{{= albumName }}</h1>

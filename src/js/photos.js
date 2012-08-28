@@ -83,8 +83,6 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
         } else {
             var cover = m.get("cover_photo");
 
-            SouthRidge.Utils.Log(cover);
-
             $("#" + cover).attr("style", "background-image: url(" + SouthRidge.Cache.CoverPhotos[cover] + ")");
         }
       }
