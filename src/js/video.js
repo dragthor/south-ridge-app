@@ -36,11 +36,11 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('Video');
     SouthRidge.Utils.ScrollTop();
   
-    $(this.el).empty().show();
+    //$(this.el).empty().show();
 
-    var elemt = $('<ul id="mainList" class="list"></ul>');
+    //var elemt = $('<ul id="mainList" class="list"></ul>');
 
-    $(this.el).append(elemt);
+    //$(this.el).append(elemt);
 
     for (var i = 0; i < this.collection.models.length; i++) {
       var m = this.collection.models[i];
@@ -59,12 +59,12 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
           var videoTitle = m.get("title");
 
           // Vimeo videos are not working within the modal so "pop out" to device browser instead.
-          if (forge.is.android() === true) {
-            $(elemt).append('<li><a class="android-vimeo" href="' + m.get("mobile_url") + '" target="_blank"><div><div class="podcast" style="background-image: url(' + m.get("thumbnail_small") + ')"><img class="podcastItem" src="' + this.icon + '" /></div><div class="podInfo">' + videoTitle + '<div class="desc">' + desc + '</div></div></div></a></li>');
-          } else {
-            $(elemt).append('<li><div><div id="' + m.get("id") + '" class="podcast" style="background-image: url(' + m.get("thumbnail_small") + ')"><img class="podcastItem" src="' + this.icon + '" /></div><div class="podInfo">' + videoTitle + '<div class="desc">' + desc + '</div></div></div></li>');
+         // if (forge.is.android() === true) {
+         //   $(elemt).append('<li><a class="android-vimeo" href="' + m.get("mobile_url") + '" target="_blank"><div><div class="podcast" style="background-image: url(' + m.get("thumbnail_small") + ')"><img class="podcastItem" src="' + this.icon + '" /></div><div class="podInfo">' + videoTitle + '<div class="desc">' + desc + '</div></div></div></a></li>');
+         // } else {
+         //   $(elemt).append('<li><div><div id="' + m.get("id") + '" class="podcast" style="background-image: url(' + m.get("thumbnail_small") + ')"><img class="podcastItem" src="' + this.icon + '" /></div><div class="podInfo">' + videoTitle + '<div class="desc">' + desc + '</div></div></div></li>');
       
-            var v = $("#" + m.get("id")).data("mobileUrl", m.get("mobile_url"));
+            /*var v = $("#" + m.get("id")).data("mobileUrl", m.get("mobile_url"));
 
             v.on("tap", function(e){
               e.preventDefault();
@@ -77,12 +77,18 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
               }, function (data) {
                 SouthRidge.Utils.Log(data.url);
               });
-            });
-          }
+            }); */
+         // }
 
           break;
         }
       }
+
+      var params = { videos: this.collection.models };
+
+      var template = _.template($("#videos").html(), params);
+
+      $(this.el).unbind().html(template).show();
 
       SouthRidge.Utils.DoneLoading();
     }
