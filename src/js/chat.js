@@ -30,8 +30,7 @@ SouthRidge.Views.ChatView = Backbone.View.extend({
     this.collection = options.collection;
     this.render();
   },
-  render: function(){
-    SouthRidge.Utils.SetTopBar('South Ridge eNews');    
+  render: function(){   
     SouthRidge.Utils.ScrollTop();
 
     var chat = this.collection.models[0]; // Only one at a time right now.
@@ -51,6 +50,7 @@ SouthRidge.Views.ChatView = Backbone.View.extend({
 
     var template = _.template($("#chat").html(), params);
 
+    SouthRidge.Utils.SetTopBar('South Ridge eNews'); 
     SouthRidge.Utils.DoneLoading();
 
     $(this.el).unbind().html(template).show();

@@ -33,24 +33,7 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    SouthRidge.Utils.SetTopBar('Photos');
     SouthRidge.Utils.ScrollTop();
-
-    forge.topbar.addButton({ icon: "img/167-upload-photo@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () {
-  	  try {
-    		var params = { width: 500, height: 500 };
-    		
-    		if (SouthRidge.Utils.KindleFire()) {
-    			params.source = "gallery";
-    		}
-    		
-    		forge.file.getImage(params, function(file) {
-    			SouthRidge.Utils.Uploader.ImageFile(file);
-    		});
-  	  } catch (err) {
-  		  SouthRidge.Utils.Alert("Unable to access camera or photo gallery at this time.");
-  	  }
-    });
 
     var params = { albums: this.collection.models };
 
@@ -65,9 +48,27 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
 
     var template = _.template($("#albums").html(), params);
 
-    $(this.el).unbind().html(template).show();
+    SouthRidge.Utils.SetTopBar('Photos');
+
+    forge.topbar.addButton({ icon: "img/167-upload-photo@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () {
+      try {
+        var params = { width: 500, height: 500 };
+        
+        if (SouthRidge.Utils.KindleFire()) {
+          params.source = "gallery";
+        }
+        
+        forge.file.getImage(params, function(file) {
+          SouthRidge.Utils.Uploader.ImageFile(file);
+        });
+      } catch (err) {
+        SouthRidge.Utils.Alert("Unable to access camera or photo gallery at this time.");
+      }
+    });
 
     SouthRidge.Utils.DoneLoading();
+
+    $(this.el).unbind().html(template).show();
 
     // Set album art after the view loads.
     for (var i = 0; i < this.collection.models.length; i++) {
@@ -115,19 +116,21 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    SouthRidge.Utils.SetTopBar('');
-
-    forge.topbar.addButton({ text: "Back", position: "left", tint: [59, 118, 38, 255] }, function () { 
-      SouthRidge.Router.navigate('albums', { trigger: true });
-    });
+    SouthRidge.Utils.ScrollTop();
   
     var params = { albumName: decodeURIComponent(this.albumName), photos: this.collection.models };
 
     var template = _.template($("#photos").html(), params);
 
-    $(this.el).unbind().html(template).show();
+    SouthRidge.Utils.SetTopBar('');
+
+    forge.topbar.addButton({ text: "Back", position: "left", tint: [59, 118, 38, 255] }, function () { 
+      SouthRidge.Router.navigate('albums', { trigger: true });
+    });
 
     SouthRidge.Utils.DoneLoading();
+
+    $(this.el).unbind().html(template).show();
   },
 
   events: {

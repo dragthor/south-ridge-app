@@ -33,7 +33,6 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    SouthRidge.Utils.SetTopBar('Video');
     SouthRidge.Utils.ScrollTop();
 
     for (var i = 0; i < this.collection.models.length; i++) {
@@ -63,9 +62,10 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
 
       var template = _.template($("#videos").html(), params);
 
-      $(this.el).unbind().html(template).show();
-
+      SouthRidge.Utils.SetTopBar('Video');
       SouthRidge.Utils.DoneLoading();
+
+      $(this.el).unbind().html(template).show();
     }
   },
   

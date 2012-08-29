@@ -32,8 +32,7 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
     this.icon = options.icon;
     this.render();
   },
-  render: function(){
-    SouthRidge.Utils.SetTopBar('Podcast');    
+  render: function(){   
     SouthRidge.Utils.ScrollTop();
 
     var base = "http://www.southridgecc.org/";
@@ -62,9 +61,10 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
 
     var template = _.template($("#podcasts").html(), params);
 
-    $(this.el).unbind().html(template).show();
-
+    SouthRidge.Utils.SetTopBar('Podcast'); 
     SouthRidge.Utils.DoneLoading();
+
+    $(this.el).unbind().html(template).show();
   },
 
   events: {
