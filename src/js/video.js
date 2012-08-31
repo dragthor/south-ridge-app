@@ -70,7 +70,7 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
   },
   
   events: {
-    "tap div.podcast": "handleTap"
+    "tap div.video, div.videoTablet": "handleTap"
   },
 
   handleTap: function(e) {
