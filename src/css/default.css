@@ -51,6 +51,15 @@ h1 {
 	 float: left;
 }
 
+.photoTablet {
+	 height: 100px;
+	 width: 100px;
+	 border-style: solid;
+	 border-width: 1px;
+	 border-color: #000;
+	 float: left;
+}
+
 .podcast {
 	height: 70px;
 	width: 75px;
@@ -73,6 +82,95 @@ h1 {
 	margin-left: 84px;
 }
 
+.album {
+	height: 70px;
+	width: 75px;
+	padding: 2px 4px 2px 0px;
+	vertical-align: middle;
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+}
+
+.albumItem {
+	height: 18px;
+	width: 18px;
+	margin-left: 2px;
+	margin-top: 0px;
+}
+
+.albumInfo {
+	margin-left: 84px;
+}
+
+.albumTablet {
+	height: 80px;
+	width: 116px;
+	padding: 2px 4px 2px 0px;
+	vertical-align: middle;
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+}
+
+.albumInfoTablet {
+	margin-left: 128px;
+}
+
+.podcastTablet {
+	height: 80px;
+	width: 116px;
+	padding: 2px 4px 2px 0px;
+	vertical-align: middle;
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+}
+
+.podInfoTablet {
+	margin-left: 128px;
+}
+
+.video {
+	height: 70px;
+	width: 75px;
+	padding: 2px 4px 2px 0px;
+	vertical-align: middle;
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+}
+
+.videoItem {
+	height: 18px;
+	width: 18px;
+	margin-left: 2px;
+	margin-top: 0px;
+}
+
+.videoInfo {
+	margin-left: 84px;
+}
+
+.videoTablet {
+	height: 80px;
+	width: 116px;
+	padding: 2px 4px 2px 0px;
+	vertical-align: middle;
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+}
+
+.videoInfoTablet {
+	margin-left: 128px;
+}
+
 .logo {
 	padding-top: 2px;
 	margin: 0px;
@@ -92,7 +190,6 @@ h1 {
 	font-size: 16px;
 	overflow: visible;
 	white-space: normal;
-	max-height: 40px;	
 }
 
 .error {

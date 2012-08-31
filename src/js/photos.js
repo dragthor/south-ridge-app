@@ -90,7 +90,7 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
   },
 
   events: {
-    "tap div.podcast": "handleTap"
+    "tap div.album, div.albumTablet": "handleTap"
   },
 
   handleTap: function(e) {
@@ -134,7 +134,7 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
   },
 
   events: {
-    "tap div.photo": "handleTap"
+    "tap div.photo, div.photoTablet": "handleTap"
   },
 
   handleTap: function(e) {
