@@ -53,10 +53,22 @@
     	<script type="text/template" id="videos">
     		<ul id="mainList" class="list">
     			{{ _(videos).each(function(video) { }}
-    				{{ if (forge.is.android() && video.get("include")) { }}
-    					<li><a class="android-vimeo" href="{{= video.get("mobile_url") }}" target="_blank"><div><div id="{{= video.get("VideoId") }}" class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="desc">{{= video.get("description")}}</div></div></div></a></li>
-    				{{ } else if (video.get("include")) { }}
-    					<li><div><div id="{{= video.get("VideoId") }}" class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="desc">{{= video.get("description") }}</div></div></div></li>
+    				{{ if (SouthRidge.Utils.Tablet()) { }}
+
+	    				{{ if (forge.is.android() && video.get("include")) { }}
+	    					<li><a class="android-vimeo" href="{{= video.get("mobile_url") }}" target="_blank"><div><div id="{{= video.get("VideoId") }}" class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="descTablet">{{= video.get("description")}}</div></div></div></a></li>
+	    				{{ } else if (video.get("include")) { }}
+	    					<li><div><div id="{{= video.get("VideoId") }}" class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="descTablet">{{= video.get("description") }}</div></div></div></li>
+	    				{{ } }}
+
+    				{{ } else { }}
+
+	    				{{ if (forge.is.android() && video.get("include")) { }}
+	    					<li><a class="android-vimeo" href="{{= video.get("mobile_url") }}" target="_blank"><div><div id="{{= video.get("VideoId") }}" class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="desc">{{= video.get("description")}}</div></div></div></a></li>
+	    				{{ } else if (video.get("include")) { }}
+	    					<li><div><div id="{{= video.get("VideoId") }}" class="podcast" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="podcastItem" src="{{= video.get("icon") }}" /></div><div class="podInfo">{{= video.get("title") }}<div class="desc">{{= video.get("description") }}</div></div></div></li>
+	    				{{ } }}
+
     				{{ } }}
     			{{ }); }}
     		</ul>
@@ -74,7 +86,11 @@
     		<ul id="mainList" class="list">
     			{{ _(albums).each(function(album) { }}
     				{{ if (album.get("name") != "Untitled Album") { }}
-					<li id="{{= album.get("id") }}"><div><div class="podcast" id="{{= album.get("cover_photo") }}" ><img class="podcastItem" src="{{= album.get("icon") }}" /></div><div class="podInfo">{{= album.get("name") }}<div class="desc">{{= album.get("description") }}</div></div></div></li>
+	    				{{ if (SouthRidge.Utils.Tablet()) { }}
+						<li id="{{= album.get("id") }}"><div><div class="podcast" id="{{= album.get("cover_photo") }}" ><img class="podcastItem" src="{{= album.get("icon") }}" /></div><div class="podInfo">{{= album.get("name") }}<div class="descTablet">{{= album.get("description") }}</div></div></div></li>
+	    				{{ } else { }}
+						<li id="{{= album.get("id") }}"><div><div class="podcast" id="{{= album.get("cover_photo") }}" ><img class="podcastItem" src="{{= album.get("icon") }}" /></div><div class="podInfo">{{= album.get("name") }}<div class="desc">{{= album.get("description") }}</div></div></div></li>
+						{{ } }}
 					{{ } }}
     			{{ }); }}
     		</ul>

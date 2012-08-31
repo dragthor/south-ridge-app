@@ -26,9 +26,9 @@ SouthRidge.ViewManager.Albums = function () {
     var view = null;
 
     forge.tools.getURL('img/magnify18x18-white.png', function(path) {
-      if (albums == undefined) {
-        SouthRidge.Utils.Loading();
+      SouthRidge.Utils.Loading();
 
+      if (albums == undefined) {
         albums = new SouthRidge.Models.Albums([], {
           success: function() {
             SouthRidge.Cache.Albums = albums;
@@ -55,9 +55,9 @@ SouthRidge.ViewManager.Photos = function (id, name) {
     var photos = SouthRidge.Cache.Photos[id];
     var view = null;
 
+    SouthRidge.Utils.Loading();
+
     if (photos == undefined) {
-      SouthRidge.Utils.Loading();
-      
       photos = new SouthRidge.Models.Photos([], {
         albumId: id,
         success: function() {
@@ -85,9 +85,9 @@ SouthRidge.ViewManager.Videos = function () {
     var view = null;
 
     forge.tools.getURL('img/play18x18.png', function(path) {
-      if (videos == undefined) {
-        SouthRidge.Utils.Loading();
+      SouthRidge.Utils.Loading();
 
+      if (videos == undefined) {
         videos = new SouthRidge.Models.Videos([], {
           success: function() {
             SouthRidge.Cache.Videos = videos;
@@ -115,9 +115,9 @@ SouthRidge.ViewManager.Podcasts = function () {
     var view = null;
 
     forge.tools.getURL('img/play18x18.png', function(path) {
-      if (podcasts == undefined) {
-        SouthRidge.Utils.Loading();
+      SouthRidge.Utils.Loading();
 
+      if (podcasts == undefined) {
         podcasts = new SouthRidge.Models.Podcasts([], {
           success: function() {
             SouthRidge.Cache.Podcasts = podcasts;
@@ -144,9 +144,9 @@ SouthRidge.ViewManager.Chat = function () {
     var chats = SouthRidge.Cache.Chats;
     var view = null;
 
-    if (chats == undefined) {
-      SouthRidge.Utils.Loading();
+    SouthRidge.Utils.Loading();
 
+    if (chats == undefined) {
       chats = new SouthRidge.Models.Chats([], {
         success: function() {
           SouthRidge.Cache.Chats = chats;

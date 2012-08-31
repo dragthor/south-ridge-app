@@ -61,7 +61,7 @@ SouthRidge.Utils.DeactivateTabs = function() {
 };
 
 SouthRidge.Utils.Loading = function() {
-	$("#content").hide();
+	$("#content").empty();
 	$("#loading").show()
 };
 

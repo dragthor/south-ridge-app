@@ -88,6 +88,13 @@ h1 {
 	max-height: 40px;
 }
 
+.descTablet {
+	font-size: 16px;
+	overflow: visible;
+	white-space: normal;
+	max-height: 40px;	
+}
+
 .error {
 	
 }
