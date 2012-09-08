@@ -32,7 +32,6 @@ SouthRidge.Views.NotConnectedView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('South Ridge');
     SouthRidge.Utils.ScrollTop();
     SouthRidge.Utils.DeactivateTabs();
-    SouthRidge.Utils.DoneLoading();
 
     var template = _.template($("#disconnected").html());
 

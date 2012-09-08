@@ -34,7 +34,6 @@ SouthRidge.Views.ErrorView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('South Ridge');
     SouthRidge.Utils.ScrollTop();
     SouthRidge.Utils.DeactivateTabs();
-    SouthRidge.Utils.DoneLoading();
 
     var params = { message: this.message };
 
