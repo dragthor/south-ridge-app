@@ -11,6 +11,7 @@
             "ipad": "img/768x1004.png", 
             "android-landscape": "img/1024x748.png", 
             "iphone-retina": "img/640x960.png", 
+            "iphone-retina4": "img/640x1136.png",
             "iphone": "img/320x480.png", 
             "android": "img/640x960.png", 
             "ipad-landscape": "img/1024x748.png",
