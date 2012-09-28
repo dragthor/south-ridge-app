@@ -61,7 +61,6 @@
     }, 
     "name": "South Ridge", 
     "platform_version": "v1.4", 
-    "reload": true, 
-    "version": "1.6", 
+    "version": "1.7", 
     "description": "South Ridge Community Church"
 }
