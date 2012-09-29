@@ -1,0 +1,509 @@
+2012-07-21 06:21:22,902 [   INFO] Forge tools running at version 3.3.5
+2012-07-21 06:21:22,905 [  DEBUG] Forge build tools version: 3.3.5
+2012-07-21 06:21:22,905 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-07-21 06:21:22,916 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
+2012-07-21 06:21:23,443 [  DEBUG] Checking API response for success or error
+2012-07-21 06:21:23,443 [   INFO] Update result: you already have the latest tools
+2012-07-21 06:21:23,443 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-07-21 06:21:23,478 [  DEBUG] Checking API response for success or error
+2012-07-21 06:21:23,478 [  DEBUG] already authenticated via cookie - continuing
+2012-07-21 06:21:23,478 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-07-21 06:21:23,750 [  DEBUG] Checking API response for success or error
+2012-07-21 06:21:23,961 [  DEBUG] 'modules' has changed in configuration
+2012-07-21 06:21:23,962 [  DEBUG] already authenticated - continuing
+2012-07-21 06:21:23,962 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-21 06:21:23,962 [  DEBUG] ignoring non-target directory config.json
+2012-07-21 06:21:23,962 [  DEBUG] ignoring non-target directory lib
+2012-07-21 06:21:23,962 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-21 06:21:23,962 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-07-21 06:21:23,997 [  DEBUG] Checking API response for success or error
+2012-07-21 06:21:23,997 [   INFO] Your app configuration has changed: we need to rebuild your app
+2012-07-21 06:21:23,997 [   INFO] Starting new build
+2012-07-21 06:21:23,997 [  DEBUG] already authenticated - continuing
+2012-07-21 06:21:23,997 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
+2012-07-21 06:21:24,065 [  DEBUG] Checking API response for success or error
+2012-07-21 06:21:24,082 [  ERROR] Something went wrong that we didn't expect:
+2012-07-21 06:21:24,082 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Required field 'ipad' is missing from config.modules.orientations"]
+2012-07-21 06:21:24,083 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
+    build = remote.build(development=True, template_only=True, config=reload_config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
+    build = self._request_development_build(config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
+    return self._api_post(url, data=data)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
+    _check_api_response_for_error(url, 'POST', resp)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
+    raise RequestError(resp, error_message, errors=errors)
+RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Required field 'ipad' is missing from config.modules.orientations"]
+
+2012-07-21 06:21:24,083 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-07-21 06:21:24,083 [  ERROR] Please contact support@trigger.io
+2012-07-21 06:25:55,902 [   INFO] Forge tools running at version 3.3.5
+2012-07-21 06:25:55,905 [  DEBUG] Forge build tools version: 3.3.5
+2012-07-21 06:25:55,905 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-07-21 06:25:55,916 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
+2012-07-21 06:25:56,443 [  DEBUG] Checking API response for success or error
+2012-07-21 06:25:56,443 [   INFO] Update result: you already have the latest tools
+2012-07-21 06:25:56,443 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-07-21 06:25:56,510 [  DEBUG] Checking API response for success or error
+2012-07-21 06:25:56,510 [  DEBUG] already authenticated via cookie - continuing
+2012-07-21 06:25:56,510 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-07-21 06:25:56,810 [  DEBUG] Checking API response for success or error
+2012-07-21 06:25:56,995 [  DEBUG] 'modules' has changed in configuration
+2012-07-21 06:25:56,995 [  DEBUG] already authenticated - continuing
+2012-07-21 06:25:56,995 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-21 06:25:56,996 [  DEBUG] ignoring non-target directory config.json
+2012-07-21 06:25:56,996 [  DEBUG] ignoring non-target directory lib
+2012-07-21 06:25:56,996 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-21 06:25:56,996 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-07-21 06:25:57,064 [  DEBUG] Checking API response for success or error
+2012-07-21 06:25:57,064 [   INFO] Your app configuration has changed: we need to rebuild your app
+2012-07-21 06:25:57,064 [   INFO] Starting new build
+2012-07-21 06:25:57,064 [  DEBUG] already authenticated - continuing
+2012-07-21 06:25:57,064 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
+2012-07-21 06:25:57,183 [  DEBUG] Checking API response for success or error
+2012-07-21 06:25:57,183 [  ERROR] Something went wrong that we didn't expect:
+2012-07-21 06:25:57,183 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-landscape' is required by field 'ipad'"]
+2012-07-21 06:25:57,184 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
+    build = remote.build(development=True, template_only=True, config=reload_config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
+    build = self._request_development_build(config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
+    return self._api_post(url, data=data)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
+    _check_api_response_for_error(url, 'POST', resp)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
+    raise RequestError(resp, error_message, errors=errors)
+RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-landscape' is required by field 'ipad'"]
+
+2012-07-21 06:25:57,184 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-07-21 06:25:57,184 [  ERROR] Please contact support@trigger.io
+2012-07-21 06:27:05,271 [   INFO] Forge tools running at version 3.3.5
+2012-07-21 06:27:05,274 [  DEBUG] Forge build tools version: 3.3.5
+2012-07-21 06:27:05,274 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-07-21 06:27:05,286 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
+2012-07-21 06:27:05,455 [  DEBUG] Checking API response for success or error
+2012-07-21 06:27:05,455 [   INFO] Update result: you already have the latest tools
+2012-07-21 06:27:05,456 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-07-21 06:27:05,574 [  DEBUG] Checking API response for success or error
+2012-07-21 06:27:05,574 [  DEBUG] already authenticated via cookie - continuing
+2012-07-21 06:27:05,574 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-07-21 06:27:05,651 [  DEBUG] Checking API response for success or error
+2012-07-21 06:27:05,847 [  DEBUG] 'modules' has changed in configuration
+2012-07-21 06:27:05,847 [  DEBUG] already authenticated - continuing
+2012-07-21 06:27:05,847 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-21 06:27:05,847 [  DEBUG] ignoring non-target directory config.json
+2012-07-21 06:27:05,848 [  DEBUG] ignoring non-target directory lib
+2012-07-21 06:27:05,848 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-21 06:27:05,848 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-07-21 06:27:05,882 [  DEBUG] Checking API response for success or error
+2012-07-21 06:27:05,882 [   INFO] Your app configuration has changed: we need to rebuild your app
+2012-07-21 06:27:05,882 [   INFO] Starting new build
+2012-07-21 06:27:05,882 [  DEBUG] already authenticated - continuing
+2012-07-21 06:27:05,882 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
+2012-07-21 06:27:06,001 [  DEBUG] Checking API response for success or error
+2012-07-21 06:27:06,001 [  ERROR] Something went wrong that we didn't expect:
+2012-07-21 06:27:06,002 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-landscape' is required by field 'ipad'"]
+2012-07-21 06:27:06,002 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
+    build = remote.build(development=True, template_only=True, config=reload_config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
+    build = self._request_development_build(config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
+    return self._api_post(url, data=data)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
+    _check_api_response_for_error(url, 'POST', resp)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
+    raise RequestError(resp, error_message, errors=errors)
+RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-landscape' is required by field 'ipad'"]
+
+2012-07-21 06:27:06,002 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-07-21 06:27:06,002 [  ERROR] Please contact support@trigger.io
+2012-07-26 05:15:07,516 [   INFO] Forge tools running at version 3.3.5
+2012-07-26 05:15:07,518 [  DEBUG] Forge build tools version: 3.3.5
+2012-07-26 05:15:07,518 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-07-26 05:15:07,530 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
+2012-07-26 05:15:07,699 [  DEBUG] Checking API response for success or error
+2012-07-26 05:15:07,699 [   INFO] Update result: you already have the latest tools
+2012-07-26 05:15:07,700 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-07-26 05:15:07,767 [  DEBUG] Checking API response for success or error
+2012-07-26 05:15:07,768 [  DEBUG] already authenticated via cookie - continuing
+2012-07-26 05:15:07,768 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-07-26 05:15:07,892 [  DEBUG] Checking API response for success or error
+2012-07-26 05:15:08,101 [  DEBUG] 'platform_version' has changed in configuration
+2012-07-26 05:15:08,101 [  DEBUG] already authenticated - continuing
+2012-07-26 05:15:08,101 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-26 05:15:08,101 [  DEBUG] ignoring non-target directory config.json
+2012-07-26 05:15:08,101 [  DEBUG] ignoring non-target directory lib
+2012-07-26 05:15:08,101 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-26 05:15:08,101 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-07-26 05:15:08,136 [  DEBUG] Checking API response for success or error
+2012-07-26 05:15:08,136 [   INFO] Your app configuration has changed: we need to rebuild your app
+2012-07-26 05:15:08,136 [   INFO] Starting new build
+2012-07-26 05:15:08,136 [  DEBUG] already authenticated - continuing
+2012-07-26 05:15:08,136 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
+2012-07-26 05:15:08,255 [  DEBUG] Checking API response for success or error
+2012-07-26 05:15:08,255 [  ERROR] Something went wrong that we didn't expect:
+2012-07-26 05:15:08,255 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-retina' is required by field 'ipad'"]
+2012-07-26 05:15:08,255 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
+    build = remote.build(development=True, template_only=True, config=reload_config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
+    build = self._request_development_build(config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
+    return self._api_post(url, data=data)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
+    _check_api_response_for_error(url, 'POST', resp)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
+    raise RequestError(resp, error_message, errors=errors)
+RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-retina' is required by field 'ipad'"]
+
+2012-07-26 05:15:08,255 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-07-26 05:15:08,256 [  ERROR] Please contact support@trigger.io
+2012-07-26 05:15:14,164 [   INFO] Forge tools running at version 3.3.5
+2012-07-26 05:15:14,167 [  DEBUG] Forge build tools version: 3.3.5
+2012-07-26 05:15:14,167 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-07-26 05:15:14,179 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
+2012-07-26 05:15:15,012 [  DEBUG] Checking API response for success or error
+2012-07-26 05:15:15,012 [   INFO] Update result: you already have the latest tools
+2012-07-26 05:15:15,012 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-07-26 05:15:15,079 [  DEBUG] Checking API response for success or error
+2012-07-26 05:15:15,080 [  DEBUG] already authenticated via cookie - continuing
+2012-07-26 05:15:15,080 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-07-26 05:15:15,170 [  DEBUG] Checking API response for success or error
+2012-07-26 05:15:15,342 [  DEBUG] 'platform_version' has changed in configuration
+2012-07-26 05:15:15,342 [  DEBUG] already authenticated - continuing
+2012-07-26 05:15:15,342 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-26 05:15:15,342 [  DEBUG] ignoring non-target directory config.json
+2012-07-26 05:15:15,342 [  DEBUG] ignoring non-target directory lib
+2012-07-26 05:15:15,343 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-26 05:15:15,343 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-07-26 05:15:15,410 [  DEBUG] Checking API response for success or error
+2012-07-26 05:15:15,411 [   INFO] Your app configuration has changed: we need to rebuild your app
+2012-07-26 05:15:15,411 [   INFO] Starting new build
+2012-07-26 05:15:15,411 [  DEBUG] already authenticated - continuing
+2012-07-26 05:15:15,411 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
+2012-07-26 05:15:15,530 [  DEBUG] Checking API response for success or error
+2012-07-26 05:15:15,530 [  ERROR] Something went wrong that we didn't expect:
+2012-07-26 05:15:15,530 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-retina' is required by field 'ipad'"]
+2012-07-26 05:15:15,530 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
+    build = remote.build(development=True, template_only=True, config=reload_config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
+    build = self._request_development_build(config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
+    return self._api_post(url, data=data)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
+    _check_api_response_for_error(url, 'POST', resp)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
+    raise RequestError(resp, error_message, errors=errors)
+RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-retina' is required by field 'ipad'"]
+
+2012-07-26 05:15:15,530 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-07-26 05:15:15,530 [  ERROR] Please contact support@trigger.io
+2012-07-26 05:18:40,024 [   INFO] Forge tools running at version 3.3.5
+2012-07-26 05:18:40,027 [  DEBUG] Forge build tools version: 3.3.5
+2012-07-26 05:18:40,027 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-07-26 05:18:40,039 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
+2012-07-26 05:18:40,566 [  DEBUG] Checking API response for success or error
+2012-07-26 05:18:40,566 [   INFO] Update result: you already have the latest tools
+2012-07-26 05:18:40,566 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-07-26 05:18:40,633 [  DEBUG] Checking API response for success or error
+2012-07-26 05:18:40,633 [  DEBUG] already authenticated via cookie - continuing
+2012-07-26 05:18:40,633 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-07-26 05:18:40,960 [  DEBUG] Checking API response for success or error
+2012-07-26 05:18:41,171 [  DEBUG] 'platform_version' has changed in configuration
+2012-07-26 05:18:41,171 [  DEBUG] already authenticated - continuing
+2012-07-26 05:18:41,171 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-26 05:18:41,172 [  DEBUG] ignoring non-target directory config.json
+2012-07-26 05:18:41,172 [  DEBUG] ignoring non-target directory lib
+2012-07-26 05:18:41,172 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-26 05:18:41,172 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-07-26 05:18:41,206 [  DEBUG] Checking API response for success or error
+2012-07-26 05:18:41,207 [   INFO] Your app configuration has changed: we need to rebuild your app
+2012-07-26 05:18:41,207 [   INFO] Starting new build
+2012-07-26 05:18:41,207 [  DEBUG] already authenticated - continuing
+2012-07-26 05:18:41,207 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
+2012-07-26 05:18:41,275 [  DEBUG] Checking API response for success or error
+2012-07-26 05:18:41,275 [  ERROR] Something went wrong that we didn't expect:
+2012-07-26 05:18:41,275 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Required field '144' is missing from config.modules.icons.ios"]
+2012-07-26 05:18:41,275 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
+    build = remote.build(development=True, template_only=True, config=reload_config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
+    build = self._request_development_build(config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
+    return self._api_post(url, data=data)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
+    _check_api_response_for_error(url, 'POST', resp)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
+    raise RequestError(resp, error_message, errors=errors)
+RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Required field '144' is missing from config.modules.icons.ios"]
+
+2012-07-26 05:18:41,275 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-07-26 05:18:41,275 [  ERROR] Please contact support@trigger.io
+2012-07-29 20:20:38,780 [   INFO] Forge tools running at version 3.3.5
+2012-07-29 20:20:38,798 [  DEBUG] Forge build tools version: 3.3.5
+2012-07-29 20:20:38,799 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-07-29 20:20:38,904 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
+2012-07-29 20:20:39,139 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:39,139 [   INFO] Update result: you already have the latest tools
+2012-07-29 20:20:39,174 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-07-29 20:20:39,242 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:39,242 [  DEBUG] already authenticated via cookie - continuing
+2012-07-29 20:20:39,242 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-07-29 20:20:39,483 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:40,686 [  DEBUG] configuration is identical to last run
+2012-07-29 20:20:40,686 [  DEBUG] already authenticated - continuing
+2012-07-29 20:20:40,704 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-29 20:20:40,704 [  DEBUG] ignoring non-target directory config.json
+2012-07-29 20:20:40,704 [  DEBUG] ignoring non-target directory lib
+2012-07-29 20:20:40,704 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-29 20:20:40,704 [  DEBUG] ignoring non-target directory reload
+2012-07-29 20:20:40,704 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-07-29 20:20:40,821 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:40,821 [   INFO] Configuration is unchanged: using existing templates
+2012-07-29 20:20:41,756 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-29 20:20:41,756 [  DEBUG] ignoring non-target directory config.json
+2012-07-29 20:20:41,756 [  DEBUG] ignoring non-target directory lib
+2012-07-29 20:20:41,756 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-29 20:20:41,756 [  DEBUG] Enabled platforms: ['android', 'chrome', 'ios', 'web']
+2012-07-29 20:20:41,756 [  ERROR] Failed to parse command line arguments at ois
+2012-07-29 20:20:41,756 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 377, in development_build
+    generator.all('development', defaults.SRC_DIR, extra_args=unhandled_args, config=reload_config_for_local)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/generate.py", line 42, in all
+    extra_args=extra_args,
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/build.py", line 111, in create_build
+    local_config=local_config, extra_args=extra_args, forge_root=defaults.FORGE_ROOT)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 272, in __init__
+    self.tool_config = ToolConfig(self.log, local_config, extra_args, self.enabled_platforms)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 54, in __init__
+    self._overrides = self._arguments_to_overrides(arguments)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 95, in _arguments_to_overrides
+    key_values = self._arguments_to_key_values(arguments)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 76, in _arguments_to_key_values
+    raise ArgumentError("Failed to parse command line arguments at {arg}".format(arg=arg))
+ArgumentError: Failed to parse command line arguments at ois
+
+2012-07-29 20:20:46,692 [   INFO] Forge tools running at version 3.3.5
+2012-07-29 20:20:46,695 [  DEBUG] Forge build tools version: 3.3.5
+2012-07-29 20:20:46,695 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-07-29 20:20:46,706 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
+2012-07-29 20:20:46,927 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:46,927 [   INFO] Update result: you already have the latest tools
+2012-07-29 20:20:46,927 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-07-29 20:20:46,927 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:46,928 [  DEBUG] already authenticated via cookie - continuing
+2012-07-29 20:20:46,928 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-07-29 20:20:47,046 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:47,221 [  DEBUG] configuration is identical to last run
+2012-07-29 20:20:47,221 [  DEBUG] already authenticated - continuing
+2012-07-29 20:20:47,222 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-29 20:20:47,222 [  DEBUG] ignoring non-target directory config.json
+2012-07-29 20:20:47,222 [  DEBUG] ignoring non-target directory lib
+2012-07-29 20:20:47,222 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-29 20:20:47,222 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-07-29 20:20:47,289 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:47,290 [   INFO] Configuration is unchanged: using existing templates
+2012-07-29 20:20:47,356 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-29 20:20:47,356 [  DEBUG] ignoring non-target directory config.json
+2012-07-29 20:20:47,356 [  DEBUG] ignoring non-target directory lib
+2012-07-29 20:20:47,356 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-29 20:20:47,356 [  DEBUG] Enabled platforms: ['android', 'chrome', 'ios', 'web']
+2012-07-29 20:20:47,356 [  ERROR] Failed to parse command line arguments at ios
+2012-07-29 20:20:47,356 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 377, in development_build
+    generator.all('development', defaults.SRC_DIR, extra_args=unhandled_args, config=reload_config_for_local)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/generate.py", line 42, in all
+    extra_args=extra_args,
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/build.py", line 111, in create_build
+    local_config=local_config, extra_args=extra_args, forge_root=defaults.FORGE_ROOT)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 272, in __init__
+    self.tool_config = ToolConfig(self.log, local_config, extra_args, self.enabled_platforms)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 54, in __init__
+    self._overrides = self._arguments_to_overrides(arguments)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 95, in _arguments_to_overrides
+    key_values = self._arguments_to_key_values(arguments)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 76, in _arguments_to_key_values
+    raise ArgumentError("Failed to parse command line arguments at {arg}".format(arg=arg))
+ArgumentError: Failed to parse command line arguments at ios
+
+2012-07-29 20:20:52,458 [   INFO] Forge tools running at version 3.3.5
+2012-07-29 20:20:52,460 [  DEBUG] Forge build tools version: 3.3.5
+2012-07-29 20:20:52,460 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-07-29 20:20:52,466 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
+2012-07-29 20:20:52,690 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:52,690 [   INFO] Update result: you already have the latest tools
+2012-07-29 20:20:52,690 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-07-29 20:20:52,708 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:52,708 [  DEBUG] already authenticated via cookie - continuing
+2012-07-29 20:20:52,708 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-07-29 20:20:52,838 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:53,053 [  DEBUG] configuration is identical to last run
+2012-07-29 20:20:53,053 [  DEBUG] already authenticated - continuing
+2012-07-29 20:20:53,053 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-29 20:20:53,053 [  DEBUG] ignoring non-target directory config.json
+2012-07-29 20:20:53,053 [  DEBUG] ignoring non-target directory lib
+2012-07-29 20:20:53,053 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-29 20:20:53,053 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-07-29 20:20:53,088 [  DEBUG] Checking API response for success or error
+2012-07-29 20:20:53,088 [   INFO] Configuration is unchanged: using existing templates
+2012-07-29 20:20:53,206 [  DEBUG] ignoring non-target directory __init__.py
+2012-07-29 20:20:53,206 [  DEBUG] ignoring non-target directory config.json
+2012-07-29 20:20:53,206 [  DEBUG] ignoring non-target directory lib
+2012-07-29 20:20:53,206 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-07-29 20:20:53,206 [  DEBUG] Enabled platforms: ['android', 'chrome', 'ios', 'web']
+2012-07-29 20:20:53,206 [  ERROR] Failed to parse command line arguments at ios
+2012-07-29 20:20:53,207 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 377, in development_build
+    generator.all('development', defaults.SRC_DIR, extra_args=unhandled_args, config=reload_config_for_local)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/generate.py", line 42, in all
+    extra_args=extra_args,
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/build.py", line 111, in create_build
+    local_config=local_config, extra_args=extra_args, forge_root=defaults.FORGE_ROOT)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 272, in __init__
+    self.tool_config = ToolConfig(self.log, local_config, extra_args, self.enabled_platforms)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 54, in __init__
+    self._overrides = self._arguments_to_overrides(arguments)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 95, in _arguments_to_overrides
+    key_values = self._arguments_to_key_values(arguments)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 76, in _arguments_to_key_values
+    raise ArgumentError("Failed to parse command line arguments at {arg}".format(arg=arg))
+ArgumentError: Failed to parse command line arguments at ios
+
+2012-08-24 06:25:15,803 [   INFO] Forge tools running at version 3.3.11
+2012-08-24 06:25:15,805 [  DEBUG] Forge build tools version: 3.3.11
+2012-08-24 06:25:15,816 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-08-24 06:25:15,816 [  DEBUG] GET https://trigger.io/api/version_check/3/3/11/
+2012-08-24 06:25:15,986 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:15,986 [   INFO] Update result: you already have the latest tools
+2012-08-24 06:25:16,053 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-08-24 06:25:16,053 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:23,422 [   INFO] authenticating as "kris.krause@gmail.com"
+2012-08-24 06:25:23,422 [  DEBUG] GET https://trigger.io/api/auth/hello
+2012-08-24 06:25:23,457 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:23,457 [  DEBUG] POST https://trigger.io/api/auth/verify
+2012-08-24 06:25:23,678 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:23,678 [   INFO] authentication successful
+2012-08-24 06:25:23,678 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-08-24 06:25:23,892 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:25,094 [  DEBUG] configuration is identical to last run
+2012-08-24 06:25:25,094 [  DEBUG] already authenticated - continuing
+2012-08-24 06:25:25,102 [  DEBUG] ignoring non-target directory __init__.py
+2012-08-24 06:25:25,102 [  DEBUG] ignoring non-target directory config.json
+2012-08-24 06:25:25,102 [  DEBUG] ignoring non-target directory lib
+2012-08-24 06:25:25,102 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-08-24 06:25:25,102 [  DEBUG] ignoring non-target directory reload
+2012-08-24 06:25:25,102 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-08-24 06:25:26,104 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:26,104 [  DEBUG] Server requires rebuild: platform has changed for kris.krause@gmail.com: 43342a5d8c4b vs. 20009b5cb5b7
+2012-08-24 06:25:26,104 [   INFO] Your Forge platform has been updated: we need to rebuild your app
+2012-08-24 06:25:26,105 [   INFO] Starting new build
+2012-08-24 06:25:26,105 [  DEBUG] already authenticated - continuing
+2012-08-24 06:25:26,105 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
+2012-08-24 06:25:26,224 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:26,224 [  ERROR] Something went wrong that we didn't expect:
+2012-08-24 06:25:26,224 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: 
+You requested modules which weren't enabled for you:
+launchimage
+
+If you want to use these, you'll need to upgrade your plan, see https://trigger.io/pricing/ for more details. Otherwise, you'll need to disable them in your app config to work with this app.
+
+2012-08-24 06:25:26,224 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
+    build = remote.build(development=True, template_only=True, config=reload_config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
+    build = self._request_development_build(config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
+    return self._api_post(url, data=data)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
+    _check_api_response_for_error(url, 'POST', resp)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
+    raise RequestError(resp, error_message, errors=errors)
+RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: 
+You requested modules which weren't enabled for you:
+launchimage
+
+If you want to use these, you'll need to upgrade your plan, see https://trigger.io/pricing/ for more details. Otherwise, you'll need to disable them in your app config to work with this app.
+
+
+2012-08-24 06:25:26,224 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-08-24 06:25:26,224 [  ERROR] Please contact support@trigger.io
+2012-08-24 06:25:45,781 [   INFO] Forge tools running at version 3.3.11
+2012-08-24 06:25:45,783 [  DEBUG] Forge build tools version: 3.3.11
+2012-08-24 06:25:45,783 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-08-24 06:25:45,795 [  DEBUG] GET https://trigger.io/api/version_check/3/3/11/
+2012-08-24 06:25:45,965 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:45,965 [   INFO] Update result: you already have the latest tools
+2012-08-24 06:25:45,965 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-08-24 06:25:46,135 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:46,135 [  DEBUG] already authenticated via cookie - continuing
+2012-08-24 06:25:46,136 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
+2012-08-24 06:25:46,217 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:46,437 [  DEBUG] configuration is identical to last run
+2012-08-24 06:25:46,437 [  DEBUG] already authenticated - continuing
+2012-08-24 06:25:46,437 [  DEBUG] ignoring non-target directory __init__.py
+2012-08-24 06:25:46,437 [  DEBUG] ignoring non-target directory config.json
+2012-08-24 06:25:46,437 [  DEBUG] ignoring non-target directory lib
+2012-08-24 06:25:46,437 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-08-24 06:25:46,437 [  DEBUG] ignoring non-target directory reload
+2012-08-24 06:25:46,438 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
+2012-08-24 06:25:46,471 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:46,472 [  DEBUG] Server requires rebuild: platform has changed for kris.krause@gmail.com: 43342a5d8c4b vs. 20009b5cb5b7
+2012-08-24 06:25:46,472 [   INFO] Your Forge platform has been updated: we need to rebuild your app
+2012-08-24 06:25:46,472 [   INFO] Starting new build
+2012-08-24 06:25:46,472 [  DEBUG] already authenticated - continuing
+2012-08-24 06:25:46,472 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
+2012-08-24 06:25:46,591 [  DEBUG] Checking API response for success or error
+2012-08-24 06:25:46,591 [  ERROR] Something went wrong that we didn't expect:
+2012-08-24 06:25:46,591 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: 
+You requested modules which weren't enabled for you:
+launchimage
+
+If you want to use these, you'll need to upgrade your plan, see https://trigger.io/pricing/ for more details. Otherwise, you'll need to disable them in your app config to work with this app.
+
+2012-08-24 06:25:46,591 [  DEBUG] Traceback (most recent call last):
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
+    build = remote.build(development=True, template_only=True, config=reload_config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
+    build = self._request_development_build(config)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
+    return self._api_post(url, data=data)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
+    _check_api_response_for_error(url, 'POST', resp)
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
+    raise RequestError(resp, error_message, errors=errors)
+RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: 
+You requested modules which weren't enabled for you:
+launchimage
+
+If you want to use these, you'll need to upgrade your plan, see https://trigger.io/pricing/ for more details. Otherwise, you'll need to disable them in your app config to work with this app.
+
+
+2012-08-24 06:25:46,591 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-08-24 06:25:46,591 [  ERROR] Please contact support@trigger.io
