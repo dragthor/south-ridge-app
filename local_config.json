@@ -8,7 +8,7 @@
 			},
 			"release": {
 		        "provisioning_profile": "/users/kristoferkrause/Documents/ProdMobileProvision.mobileprovision",
-		        "developer_certificate": "iPhone Distribution: Kristofer Krause"
+		        "developer_certificate": "iPhone Distribution"
 		      }
 		}
 	},

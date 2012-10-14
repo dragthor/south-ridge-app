@@ -19,7 +19,7 @@
 			"ipad-landscape-retina": "img/2048x1496.png"
         }, 
         "logging": {
-            "level": "INFO"
+            "level": "CRITICAL"
         }, 
         "file": true, 
         "icons": {

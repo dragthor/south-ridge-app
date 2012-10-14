@@ -1,509 +1,792 @@
-2012-07-21 06:21:22,902 [   INFO] Forge tools running at version 3.3.5
-2012-07-21 06:21:22,905 [  DEBUG] Forge build tools version: 3.3.5
-2012-07-21 06:21:22,905 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-07-21 06:21:22,916 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
-2012-07-21 06:21:23,443 [  DEBUG] Checking API response for success or error
-2012-07-21 06:21:23,443 [   INFO] Update result: you already have the latest tools
-2012-07-21 06:21:23,443 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-07-21 06:21:23,478 [  DEBUG] Checking API response for success or error
-2012-07-21 06:21:23,478 [  DEBUG] already authenticated via cookie - continuing
-2012-07-21 06:21:23,478 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-07-21 06:21:23,750 [  DEBUG] Checking API response for success or error
-2012-07-21 06:21:23,961 [  DEBUG] 'modules' has changed in configuration
-2012-07-21 06:21:23,962 [  DEBUG] already authenticated - continuing
-2012-07-21 06:21:23,962 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-21 06:21:23,962 [  DEBUG] ignoring non-target directory config.json
-2012-07-21 06:21:23,962 [  DEBUG] ignoring non-target directory lib
-2012-07-21 06:21:23,962 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-21 06:21:23,962 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-07-21 06:21:23,997 [  DEBUG] Checking API response for success or error
-2012-07-21 06:21:23,997 [   INFO] Your app configuration has changed: we need to rebuild your app
-2012-07-21 06:21:23,997 [   INFO] Starting new build
-2012-07-21 06:21:23,997 [  DEBUG] already authenticated - continuing
-2012-07-21 06:21:23,997 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
-2012-07-21 06:21:24,065 [  DEBUG] Checking API response for success or error
-2012-07-21 06:21:24,082 [  ERROR] Something went wrong that we didn't expect:
-2012-07-21 06:21:24,082 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Required field 'ipad' is missing from config.modules.orientations"]
-2012-07-21 06:21:24,083 [  DEBUG] Traceback (most recent call last):
+2012-10-14 13:17:03,733 [   INFO] Forge tools running at version 3.3.17
+2012-10-14 13:17:03,968 [  DEBUG] ignoring non-target directory reload
+2012-10-14 13:17:03,968 [  DEBUG] Enabled platforms: ['ios']
+2012-10-14 13:17:03,968 [  DEBUG] Forge build tools version: 3.3.17
+2012-10-14 13:17:03,968 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-10-14 13:17:03,968 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-10-14 13:17:04,138 [  DEBUG] Checking API response for success or error
+2012-10-14 13:17:04,138 [  DEBUG] already authenticated via cookie - continuing
+2012-10-14 13:17:04,138 [  DEBUG] POST https://trigger.io/api/track/
+2012-10-14 13:17:04,257 [  DEBUG] Checking API response for success or error
+2012-10-14 13:17:04,257 [  DEBUG] <ForgeTask (ios)> running...
+2012-10-14 13:17:04,257 [  DEBUG] <ForgeTask (ios)> script:
+[{'do': {'lint_javascript': ()}},
+ {'do': {'check_local_config_schema': ()}},
+ {'do': {'package_ios': ()}, 'when': {'platform_is': 'ios'}}]
+2012-10-14 13:17:04,257 [   INFO] Checking JavaScript files...
+2012-10-14 13:17:04,257 [  DEBUG] Running: '/Users/kristoferkrause/Documents/forge-tools/bin/jsl-mac' '-conf' '/Users/kristoferkrause/Documents/forge-tools/jsl.conf' '-process' '/Users/kristoferkrause/Documents/south-ridge-app/src/*.js' '-nologo' '-nofilelisting' '-nosummary'
+2012-10-14 13:17:04,258 [   INFO] JavaScript check complete
+2012-10-14 13:17:04,258 [   INFO] Verifying your configuration settings...
+2012-10-14 13:17:04,258 [   INFO] Configuration settings check complete
+2012-10-14 13:17:04,258 [  DEBUG] Using configuration file value u'/users/kristoferkrause/Documents/ProdMobileProvision.mobileprovision' for ios.profile.provisioning_profile
+2012-10-14 13:17:04,258 [  DEBUG] Using configuration file value u'iPhone Distribution' for ios.profile.developer_certificate
+2012-10-14 13:17:04,258 [   INFO] Starting package process for iOS
+2012-10-14 13:17:04,258 [   INFO] Going to package: /Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app
+2012-10-14 13:17:04,258 [  DEBUG] Application ID in app and provisioning profile match
+2012-10-14 13:17:04,258 [   INFO] Plist OK
+2012-10-14 13:17:04,258 [   INFO] No Provisioned Devices, profile is Appstore
+2012-10-14 13:17:04,259 [  DEBUG] Extracted seed ID: EHAHXS2HH2
+2012-10-14 13:17:04,259 [  DEBUG] Making Payload directory
+2012-10-14 13:17:04,259 [  DEBUG] Running: '/usr/bin/codesign' '--force' '--preserve-metadata' '--entitlements' '/var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpsVIPsN' '--sign' 'iPhone Distribution' '--resource-rules=/Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app/ResourceRules.plist' '/Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app'
+2012-10-14 13:17:04,478 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/app_config.json
+2012-10-14 13:17:04,478 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/Default-568h@2x~iphone.png
+2012-10-14 13:17:04,478 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/Default-Landscape@2x~ipad.png
+2012-10-14 13:17:04,478 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/Default-Landscape~ipad.png
+2012-10-14 13:17:04,478 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/Default-Portrait@2x~ipad.png
+2012-10-14 13:17:04,478 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/Default-Portrait~ipad.png
+2012-10-14 13:17:04,478 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/Default@2x~iphone.png
+2012-10-14 13:17:04,478 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/Default~iphone.png
+2012-10-14 13:17:04,478 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/embedded.mobileprovision
+2012-10-14 13:17:04,480 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/Forge
+2012-10-14 13:17:04,514 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/Info.plist
+2012-10-14 13:17:04,514 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/ipad-retina.png
+2012-10-14 13:17:04,514 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/ipad.png
+2012-10-14 13:17:04,514 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/normal.png
+2012-10-14 13:17:04,514 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/PkgInfo
+2012-10-14 13:17:04,514 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/ResourceRules.plist
+2012-10-14 13:17:04,514 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/retina.png
+2012-10-14 13:17:04,514 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/tabs_modalWebViewController.nib
+2012-10-14 13:17:04,515 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/UINavigationBarBlackOpaqueBack.png
+2012-10-14 13:17:04,515 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/UINavigationBarBlackOpaqueBack@2x.png
+2012-10-14 13:17:04,515 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/UINavigationBarBlackOpaqueBackPressed.png
+2012-10-14 13:17:04,515 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/UINavigationBarBlackOpaqueBackPressed@2x.png
+2012-10-14 13:17:04,515 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/_CodeSignature/CodeResources
+2012-10-14 13:17:04,515 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/hash_to_file.json
+2012-10-14 13:17:04,515 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/forge/all.js
+2012-10-14 13:17:04,515 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/forge/disable-frames.js
+2012-10-14 13:17:04,515 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/.DS_Store
+2012-10-14 13:17:04,516 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/config.json.bak
+2012-10-14 13:17:04,516 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/index.html
+2012-10-14 13:17:04,516 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/css/default.css
+2012-10-14 13:17:04,516 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/css/reset.css
+2012-10-14 13:17:04,518 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/.DS_Store
+2012-10-14 13:17:04,518 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/01-refresh.png
+2012-10-14 13:17:04,518 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/01-refresh@2x.png
+2012-10-14 13:17:04,518 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/08-chat.png
+2012-10-14 13:17:04,518 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/08-chat@2x.png
+2012-10-14 13:17:04,519 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/1024x748.png
+2012-10-14 13:17:04,519 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/112-group.png
+2012-10-14 13:17:04,521 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/112-group@2x.png
+2012-10-14 13:17:04,521 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/1536x2008.png
+2012-10-14 13:17:04,522 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/167-upload-photo.png
+2012-10-14 13:17:04,522 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/167-upload-photo@2x.png
+2012-10-14 13:17:04,522 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/2048x1496.png
+2012-10-14 13:17:04,523 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/30-circle-play-white.png
+2012-10-14 13:17:04,523 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/30-circle-play.png
+2012-10-14 13:17:04,523 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/31-ipod.png
+2012-10-14 13:17:04,525 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/31-ipod@2x.png
+2012-10-14 13:17:04,525 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/320x480.png
+2012-10-14 13:17:04,525 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/640x1136.png
+2012-10-14 13:17:04,526 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/640x960.png
+2012-10-14 13:17:04,527 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/70-tv.png
+2012-10-14 13:17:04,527 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/70-tv@2x.png
+2012-10-14 13:17:04,527 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/768x1004.png
+2012-10-14 13:17:04,529 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/86-camera.png
+2012-10-14 13:17:04,529 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/86-camera@2x.png
+2012-10-14 13:17:04,529 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/indicator.gif
+2012-10-14 13:17:04,529 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/logo.png
+2012-10-14 13:17:04,530 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/magnify18x18-white.png
+2012-10-14 13:17:04,530 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/magnify18x18.png
+2012-10-14 13:17:04,530 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/play18x18-white.png
+2012-10-14 13:17:04,530 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/play18x18.png
+2012-10-14 13:17:04,530 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/icons/icon1024-ios.png
+2012-10-14 13:17:04,532 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/icons/icon114-ios.png
+2012-10-14 13:17:04,532 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/icons/icon144-ios.png
+2012-10-14 13:17:04,532 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/icons/icon36-android.png
+2012-10-14 13:17:04,532 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/icons/icon48-android.png
+2012-10-14 13:17:04,532 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/icons/icon512-ios.png
+2012-10-14 13:17:04,533 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/icons/icon57-ios.png
+2012-10-14 13:17:04,533 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/icons/icon72-android.png
+2012-10-14 13:17:04,533 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/img/icons/icon72-ios.png
+2012-10-14 13:17:04,534 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/about.js
+2012-10-14 13:17:04,534 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/chat.js
+2012-10-14 13:17:04,535 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/connected.js
+2012-10-14 13:17:04,535 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/error.js
+2012-10-14 13:17:04,535 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/main.js
+2012-10-14 13:17:04,535 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/models.js
+2012-10-14 13:17:04,535 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/photos.js
+2012-10-14 13:17:04,535 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/photoupload.js
+2012-10-14 13:17:04,537 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/podcast.js
+2012-10-14 13:17:04,537 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/utils.js
+2012-10-14 13:17:04,537 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/video.js
+2012-10-14 13:17:04,537 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/viewmanager.js
+2012-10-14 13:17:04,537 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/lib/backbone-min.js
+2012-10-14 13:17:04,538 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/lib/json2.min.js
+2012-10-14 13:17:04,538 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/lib/underscore-min.js
+2012-10-14 13:17:04,538 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/assets/src/js/lib/zepto.min.js
+2012-10-14 13:17:04,538 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/en.lproj/InfoPlist.strings
+2012-10-14 13:17:04,540 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/Contents/Resources/en.lproj/Localizable.strings
+2012-10-14 13:17:04,540 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/Contents/Resources/he.lproj/Localizable.strings
+2012-10-14 13:17:04,540 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/close.png
+2012-10-14 13:17:04,540 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/close@2x.png
+2012-10-14 13:17:04,541 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/fbicon.png
+2012-10-14 13:17:04,541 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBFriendPickerView/images/default.png
+2012-10-14 13:17:04,541 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/bluetint.png
+2012-10-14 13:17:04,541 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/f_logo.png
+2012-10-14 13:17:04,543 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/facebook.png
+2012-10-14 13:17:04,543 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small-pressed.png
+2012-10-14 13:17:04,543 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small-pressed@2x.png
+2012-10-14 13:17:04,543 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small.png
+2012-10-14 13:17:04,543 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small@2x.png
+2012-10-14 13:17:04,544 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBPlacePickerView/images/fb_generic_place.png
+2012-10-14 13:17:04,544 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBProfilePictureView/images/fb_blank_profile_portrait.png
+2012-10-14 13:17:04,544 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/FacebookSDKResources.bundle/FBProfilePictureView/images/fb_blank_profile_square.png
+2012-10-14 13:17:04,544 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp5QrOOG/Payload/device-ios.app/ForgeCore.bundle/ForgeViewController.nib
+2012-10-14 13:17:04,562 [   INFO] created IPA: /Users/kristoferkrause/Documents/south-ridge-app/release/ios/southridge-1350235024.ipa
+2012-10-14 13:17:04,562 [  ERROR] Something went wrong that we didn't expect:
+2012-10-14 13:17:04,562 [  ERROR] 'ProvisionedDevices'
+2012-10-14 13:17:04,562 [  DEBUG] Traceback (most recent call last):
   File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
     result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
-    build = remote.build(development=True, template_only=True, config=reload_config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
-    build = self._request_development_build(config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
-    return self._api_post(url, data=data)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
-    _check_api_response_for_error(url, 'POST', resp)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
-    raise RequestError(resp, error_message, errors=errors)
-RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Required field 'ipad' is missing from config.modules.orientations"]
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 452, in package
+    build_to_run=build_to_run,
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/customer_goals.py", line 136, in package_app
+    build_to_run.run()
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 337, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 666, in package_ios
+    output_path_for_manifest=output_path_for_manifest,
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 411, in create_ipa_from_app
+    if output_path_for_manifest and self.plist_supports_wireless_distribution(plist_dict):
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 150, in plist_supports_wireless_distribution
+    return not plist_dict['Entitlements']['get-task-allow'] and (plist_dict['ProvisionedDevices'] or plist_dict['ProvisionsAllDevices'])
+KeyError: 'ProvisionedDevices'
 
-2012-07-21 06:21:24,083 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
-2012-07-21 06:21:24,083 [  ERROR] Please contact support@trigger.io
-2012-07-21 06:25:55,902 [   INFO] Forge tools running at version 3.3.5
-2012-07-21 06:25:55,905 [  DEBUG] Forge build tools version: 3.3.5
-2012-07-21 06:25:55,905 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-07-21 06:25:55,916 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
-2012-07-21 06:25:56,443 [  DEBUG] Checking API response for success or error
-2012-07-21 06:25:56,443 [   INFO] Update result: you already have the latest tools
-2012-07-21 06:25:56,443 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-07-21 06:25:56,510 [  DEBUG] Checking API response for success or error
-2012-07-21 06:25:56,510 [  DEBUG] already authenticated via cookie - continuing
-2012-07-21 06:25:56,510 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-07-21 06:25:56,810 [  DEBUG] Checking API response for success or error
-2012-07-21 06:25:56,995 [  DEBUG] 'modules' has changed in configuration
-2012-07-21 06:25:56,995 [  DEBUG] already authenticated - continuing
-2012-07-21 06:25:56,995 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-21 06:25:56,996 [  DEBUG] ignoring non-target directory config.json
-2012-07-21 06:25:56,996 [  DEBUG] ignoring non-target directory lib
-2012-07-21 06:25:56,996 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-21 06:25:56,996 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-07-21 06:25:57,064 [  DEBUG] Checking API response for success or error
-2012-07-21 06:25:57,064 [   INFO] Your app configuration has changed: we need to rebuild your app
-2012-07-21 06:25:57,064 [   INFO] Starting new build
-2012-07-21 06:25:57,064 [  DEBUG] already authenticated - continuing
-2012-07-21 06:25:57,064 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
-2012-07-21 06:25:57,183 [  DEBUG] Checking API response for success or error
-2012-07-21 06:25:57,183 [  ERROR] Something went wrong that we didn't expect:
-2012-07-21 06:25:57,183 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-landscape' is required by field 'ipad'"]
-2012-07-21 06:25:57,184 [  DEBUG] Traceback (most recent call last):
+2012-10-14 13:17:04,562 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-10-14 13:17:04,562 [  ERROR] Please contact support@trigger.io
+2012-10-14 13:18:49,307 [   INFO] Forge tools running at version 3.3.17
+2012-10-14 13:18:49,543 [  DEBUG] ignoring non-target directory reload
+2012-10-14 13:18:49,543 [  DEBUG] Enabled platforms: ['ios']
+2012-10-14 13:18:49,543 [  DEBUG] Forge build tools version: 3.3.17
+2012-10-14 13:18:49,543 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-10-14 13:18:49,543 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-10-14 13:18:49,764 [  DEBUG] Checking API response for success or error
+2012-10-14 13:18:49,764 [  DEBUG] already authenticated via cookie - continuing
+2012-10-14 13:18:49,764 [  DEBUG] POST https://trigger.io/api/track/
+2012-10-14 13:18:49,832 [  DEBUG] Checking API response for success or error
+2012-10-14 13:18:49,832 [  DEBUG] <ForgeTask (ios)> running...
+2012-10-14 13:18:49,832 [  DEBUG] <ForgeTask (ios)> script:
+[{'do': {'lint_javascript': ()}},
+ {'do': {'check_local_config_schema': ()}},
+ {'do': {'package_ios': ()}, 'when': {'platform_is': 'ios'}}]
+2012-10-14 13:18:49,832 [   INFO] Checking JavaScript files...
+2012-10-14 13:18:49,832 [  DEBUG] Running: '/Users/kristoferkrause/Documents/forge-tools/bin/jsl-mac' '-conf' '/Users/kristoferkrause/Documents/forge-tools/jsl.conf' '-process' '/Users/kristoferkrause/Documents/south-ridge-app/src/*.js' '-nologo' '-nofilelisting' '-nosummary'
+2012-10-14 13:18:49,836 [   INFO] JavaScript check complete
+2012-10-14 13:18:49,836 [   INFO] Verifying your configuration settings...
+2012-10-14 13:18:49,837 [   INFO] Configuration settings check complete
+2012-10-14 13:18:49,837 [  DEBUG] Using configuration file value u'/users/kristoferkrause/Documents/ProdMobileProvision.mobileprovision' for ios.profile.provisioning_profile
+2012-10-14 13:18:49,838 [  DEBUG] Using configuration file value u'iPhone Distribution: Kristofer Krause' for ios.profile.developer_certificate
+2012-10-14 13:18:49,838 [  DEBUG] Using configuration file value u'/users/kristoferkrause/Documents/ios_distribution.cer' for ios.profile.developer_certificate_path
+2012-10-14 13:18:49,842 [   INFO] Starting package process for iOS
+2012-10-14 13:18:49,842 [   INFO] Going to package: /Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app
+2012-10-14 13:18:49,846 [  DEBUG] Application ID in app and provisioning profile match
+2012-10-14 13:18:49,846 [   INFO] Plist OK
+2012-10-14 13:18:49,846 [   INFO] No Provisioned Devices, profile is Appstore
+2012-10-14 13:18:49,847 [  DEBUG] Extracted seed ID: EHAHXS2HH2
+2012-10-14 13:18:49,847 [  DEBUG] Making Payload directory
+2012-10-14 13:18:49,855 [  DEBUG] Running: '/usr/bin/codesign' '--force' '--preserve-metadata' '--entitlements' '/var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp4w5OGY' '--sign' 'iPhone Distribution: Kristofer Krause' '--resource-rules=/Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app/ResourceRules.plist' '/Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app'
+2012-10-14 13:18:49,922 [  DEBUG] /Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app: replacing existing signature
+2012-10-14 13:18:50,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/app_config.json
+2012-10-14 13:18:50,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/Default-568h@2x~iphone.png
+2012-10-14 13:18:50,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/Default-Landscape@2x~ipad.png
+2012-10-14 13:18:50,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/Default-Landscape~ipad.png
+2012-10-14 13:18:50,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/Default-Portrait@2x~ipad.png
+2012-10-14 13:18:50,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/Default-Portrait~ipad.png
+2012-10-14 13:18:50,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/Default@2x~iphone.png
+2012-10-14 13:18:50,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/Default~iphone.png
+2012-10-14 13:18:50,099 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/embedded.mobileprovision
+2012-10-14 13:18:50,099 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/Forge
+2012-10-14 13:18:50,116 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/Info.plist
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/ipad-retina.png
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/ipad.png
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/normal.png
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/PkgInfo
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/ResourceRules.plist
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/retina.png
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/tabs_modalWebViewController.nib
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/UINavigationBarBlackOpaqueBack.png
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/UINavigationBarBlackOpaqueBack@2x.png
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/UINavigationBarBlackOpaqueBackPressed.png
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/UINavigationBarBlackOpaqueBackPressed@2x.png
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/_CodeSignature/CodeResources
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/hash_to_file.json
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/forge/all.js
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/forge/disable-frames.js
+2012-10-14 13:18:50,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/.DS_Store
+2012-10-14 13:18:50,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/config.json.bak
+2012-10-14 13:18:50,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/index.html
+2012-10-14 13:18:50,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/css/default.css
+2012-10-14 13:18:50,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/css/reset.css
+2012-10-14 13:18:50,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/.DS_Store
+2012-10-14 13:18:50,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/01-refresh.png
+2012-10-14 13:18:50,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/01-refresh@2x.png
+2012-10-14 13:18:50,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/08-chat.png
+2012-10-14 13:18:50,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/08-chat@2x.png
+2012-10-14 13:18:50,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/1024x748.png
+2012-10-14 13:18:50,120 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/112-group.png
+2012-10-14 13:18:50,120 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/112-group@2x.png
+2012-10-14 13:18:50,121 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/1536x2008.png
+2012-10-14 13:18:50,121 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/167-upload-photo.png
+2012-10-14 13:18:50,122 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/167-upload-photo@2x.png
+2012-10-14 13:18:50,122 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/2048x1496.png
+2012-10-14 13:18:50,124 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/30-circle-play-white.png
+2012-10-14 13:18:50,124 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/30-circle-play.png
+2012-10-14 13:18:50,124 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/31-ipod.png
+2012-10-14 13:18:50,124 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/31-ipod@2x.png
+2012-10-14 13:18:50,125 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/320x480.png
+2012-10-14 13:18:50,125 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/640x1136.png
+2012-10-14 13:18:50,127 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/640x960.png
+2012-10-14 13:18:50,127 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/70-tv.png
+2012-10-14 13:18:50,128 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/70-tv@2x.png
+2012-10-14 13:18:50,128 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/768x1004.png
+2012-10-14 13:18:50,129 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/86-camera.png
+2012-10-14 13:18:50,129 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/86-camera@2x.png
+2012-10-14 13:18:50,129 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/indicator.gif
+2012-10-14 13:18:50,129 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/logo.png
+2012-10-14 13:18:50,130 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/magnify18x18-white.png
+2012-10-14 13:18:50,130 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/magnify18x18.png
+2012-10-14 13:18:50,131 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/play18x18-white.png
+2012-10-14 13:18:50,131 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/play18x18.png
+2012-10-14 13:18:50,131 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/icons/icon1024-ios.png
+2012-10-14 13:18:50,131 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/icons/icon114-ios.png
+2012-10-14 13:18:50,132 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/icons/icon144-ios.png
+2012-10-14 13:18:50,132 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/icons/icon36-android.png
+2012-10-14 13:18:50,133 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/icons/icon48-android.png
+2012-10-14 13:18:50,133 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/icons/icon512-ios.png
+2012-10-14 13:18:50,133 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/icons/icon57-ios.png
+2012-10-14 13:18:50,134 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/icons/icon72-android.png
+2012-10-14 13:18:50,134 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/img/icons/icon72-ios.png
+2012-10-14 13:18:50,134 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/about.js
+2012-10-14 13:18:50,134 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/chat.js
+2012-10-14 13:18:50,134 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/connected.js
+2012-10-14 13:18:50,135 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/error.js
+2012-10-14 13:18:50,136 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/main.js
+2012-10-14 13:18:50,136 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/models.js
+2012-10-14 13:18:50,136 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/photos.js
+2012-10-14 13:18:50,136 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/photoupload.js
+2012-10-14 13:18:50,137 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/podcast.js
+2012-10-14 13:18:50,137 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/utils.js
+2012-10-14 13:18:50,137 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/video.js
+2012-10-14 13:18:50,137 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/viewmanager.js
+2012-10-14 13:18:50,137 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/lib/backbone-min.js
+2012-10-14 13:18:50,139 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/lib/json2.min.js
+2012-10-14 13:18:50,139 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/lib/underscore-min.js
+2012-10-14 13:18:50,139 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/assets/src/js/lib/zepto.min.js
+2012-10-14 13:18:50,139 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/en.lproj/InfoPlist.strings
+2012-10-14 13:18:50,140 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/Contents/Resources/en.lproj/Localizable.strings
+2012-10-14 13:18:50,140 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/Contents/Resources/he.lproj/Localizable.strings
+2012-10-14 13:18:50,140 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/close.png
+2012-10-14 13:18:50,141 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/close@2x.png
+2012-10-14 13:18:50,142 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/fbicon.png
+2012-10-14 13:18:50,142 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBFriendPickerView/images/default.png
+2012-10-14 13:18:50,142 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/bluetint.png
+2012-10-14 13:18:50,142 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/f_logo.png
+2012-10-14 13:18:50,143 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/facebook.png
+2012-10-14 13:18:50,143 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small-pressed.png
+2012-10-14 13:18:50,143 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small-pressed@2x.png
+2012-10-14 13:18:50,143 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small.png
+2012-10-14 13:18:50,144 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small@2x.png
+2012-10-14 13:18:50,145 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBPlacePickerView/images/fb_generic_place.png
+2012-10-14 13:18:50,145 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBProfilePictureView/images/fb_blank_profile_portrait.png
+2012-10-14 13:18:50,145 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/FacebookSDKResources.bundle/FBProfilePictureView/images/fb_blank_profile_square.png
+2012-10-14 13:18:50,145 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpKfNZdz/Payload/device-ios.app/ForgeCore.bundle/ForgeViewController.nib
+2012-10-14 13:18:50,161 [   INFO] created IPA: /Users/kristoferkrause/Documents/south-ridge-app/release/ios/southridge-1350235129.ipa
+2012-10-14 13:18:50,162 [  ERROR] Something went wrong that we didn't expect:
+2012-10-14 13:18:50,162 [  ERROR] 'ProvisionedDevices'
+2012-10-14 13:18:50,162 [  DEBUG] Traceback (most recent call last):
   File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
     result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
-    build = remote.build(development=True, template_only=True, config=reload_config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
-    build = self._request_development_build(config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
-    return self._api_post(url, data=data)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
-    _check_api_response_for_error(url, 'POST', resp)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
-    raise RequestError(resp, error_message, errors=errors)
-RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-landscape' is required by field 'ipad'"]
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 452, in package
+    build_to_run=build_to_run,
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/customer_goals.py", line 136, in package_app
+    build_to_run.run()
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 337, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 666, in package_ios
+    output_path_for_manifest=output_path_for_manifest,
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 411, in create_ipa_from_app
+    if output_path_for_manifest and self.plist_supports_wireless_distribution(plist_dict):
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 150, in plist_supports_wireless_distribution
+    return not plist_dict['Entitlements']['get-task-allow'] and (plist_dict['ProvisionedDevices'] or plist_dict['ProvisionsAllDevices'])
+KeyError: 'ProvisionedDevices'
 
-2012-07-21 06:25:57,184 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
-2012-07-21 06:25:57,184 [  ERROR] Please contact support@trigger.io
-2012-07-21 06:27:05,271 [   INFO] Forge tools running at version 3.3.5
-2012-07-21 06:27:05,274 [  DEBUG] Forge build tools version: 3.3.5
-2012-07-21 06:27:05,274 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-07-21 06:27:05,286 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
-2012-07-21 06:27:05,455 [  DEBUG] Checking API response for success or error
-2012-07-21 06:27:05,455 [   INFO] Update result: you already have the latest tools
-2012-07-21 06:27:05,456 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-07-21 06:27:05,574 [  DEBUG] Checking API response for success or error
-2012-07-21 06:27:05,574 [  DEBUG] already authenticated via cookie - continuing
-2012-07-21 06:27:05,574 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-07-21 06:27:05,651 [  DEBUG] Checking API response for success or error
-2012-07-21 06:27:05,847 [  DEBUG] 'modules' has changed in configuration
-2012-07-21 06:27:05,847 [  DEBUG] already authenticated - continuing
-2012-07-21 06:27:05,847 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-21 06:27:05,847 [  DEBUG] ignoring non-target directory config.json
-2012-07-21 06:27:05,848 [  DEBUG] ignoring non-target directory lib
-2012-07-21 06:27:05,848 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-21 06:27:05,848 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-07-21 06:27:05,882 [  DEBUG] Checking API response for success or error
-2012-07-21 06:27:05,882 [   INFO] Your app configuration has changed: we need to rebuild your app
-2012-07-21 06:27:05,882 [   INFO] Starting new build
-2012-07-21 06:27:05,882 [  DEBUG] already authenticated - continuing
-2012-07-21 06:27:05,882 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
-2012-07-21 06:27:06,001 [  DEBUG] Checking API response for success or error
-2012-07-21 06:27:06,001 [  ERROR] Something went wrong that we didn't expect:
-2012-07-21 06:27:06,002 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-landscape' is required by field 'ipad'"]
-2012-07-21 06:27:06,002 [  DEBUG] Traceback (most recent call last):
+2012-10-14 13:18:50,162 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-10-14 13:18:50,162 [  ERROR] Please contact support@trigger.io
+2012-10-14 13:19:08,613 [   INFO] Forge tools running at version 3.3.17
+2012-10-14 13:19:08,874 [  DEBUG] ignoring non-target directory reload
+2012-10-14 13:19:08,874 [  DEBUG] Enabled platforms: ['ios']
+2012-10-14 13:19:08,874 [  DEBUG] Forge build tools version: 3.3.17
+2012-10-14 13:19:08,874 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-10-14 13:19:08,874 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-10-14 13:19:09,145 [  DEBUG] Checking API response for success or error
+2012-10-14 13:19:09,146 [  DEBUG] already authenticated via cookie - continuing
+2012-10-14 13:19:09,146 [  DEBUG] POST https://trigger.io/api/track/
+2012-10-14 13:19:09,213 [  DEBUG] Checking API response for success or error
+2012-10-14 13:19:09,214 [  DEBUG] <ForgeTask (ios)> running...
+2012-10-14 13:19:09,214 [  DEBUG] <ForgeTask (ios)> script:
+[{'do': {'lint_javascript': ()}},
+ {'do': {'check_local_config_schema': ()}},
+ {'do': {'package_ios': ()}, 'when': {'platform_is': 'ios'}}]
+2012-10-14 13:19:09,214 [   INFO] Checking JavaScript files...
+2012-10-14 13:19:09,214 [  DEBUG] Running: '/Users/kristoferkrause/Documents/forge-tools/bin/jsl-mac' '-conf' '/Users/kristoferkrause/Documents/forge-tools/jsl.conf' '-process' '/Users/kristoferkrause/Documents/south-ridge-app/src/*.js' '-nologo' '-nofilelisting' '-nosummary'
+2012-10-14 13:19:09,218 [   INFO] JavaScript check complete
+2012-10-14 13:19:09,218 [   INFO] Verifying your configuration settings...
+2012-10-14 13:19:09,218 [   INFO] Configuration settings check complete
+2012-10-14 13:19:09,219 [  DEBUG] Using configuration file value u'/users/kristoferkrause/Documents/ProdMobileProvision.mobileprovision' for ios.profile.provisioning_profile
+2012-10-14 13:19:09,224 [   INFO] Starting package process for iOS
+2012-10-14 13:19:09,224 [   INFO] Going to package: /Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app
+2012-10-14 13:19:09,228 [  DEBUG] Application ID in app and provisioning profile match
+2012-10-14 13:19:09,228 [   INFO] Plist OK
+2012-10-14 13:19:09,228 [   INFO] No Provisioned Devices, profile is Appstore
+2012-10-14 13:19:09,228 [  DEBUG] Extracted seed ID: EHAHXS2HH2
+2012-10-14 13:19:09,229 [  DEBUG] Making Payload directory
+2012-10-14 13:19:09,238 [  DEBUG] Running: '/usr/bin/codesign' '--force' '--preserve-metadata' '--entitlements' '/var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZhD2A' '--sign' 'iPhone Distribution' '--resource-rules=/Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app/ResourceRules.plist' '/Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app'
+2012-10-14 13:19:09,304 [  DEBUG] /Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app: replacing existing signature
+2012-10-14 13:19:09,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/app_config.json
+2012-10-14 13:19:09,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/Default-568h@2x~iphone.png
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/Default-Landscape@2x~ipad.png
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/Default-Landscape~ipad.png
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/Default-Portrait@2x~ipad.png
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/Default-Portrait~ipad.png
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/Default@2x~iphone.png
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/Default~iphone.png
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/embedded.mobileprovision
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/Forge
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/Info.plist
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/ipad-retina.png
+2012-10-14 13:19:09,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/ipad.png
+2012-10-14 13:19:09,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/normal.png
+2012-10-14 13:19:09,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/PkgInfo
+2012-10-14 13:19:09,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/ResourceRules.plist
+2012-10-14 13:19:09,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/retina.png
+2012-10-14 13:19:09,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/tabs_modalWebViewController.nib
+2012-10-14 13:19:09,477 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/UINavigationBarBlackOpaqueBack.png
+2012-10-14 13:19:09,477 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/UINavigationBarBlackOpaqueBack@2x.png
+2012-10-14 13:19:09,477 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/UINavigationBarBlackOpaqueBackPressed.png
+2012-10-14 13:19:09,477 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/UINavigationBarBlackOpaqueBackPressed@2x.png
+2012-10-14 13:19:09,477 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/_CodeSignature/CodeResources
+2012-10-14 13:19:09,478 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/hash_to_file.json
+2012-10-14 13:19:09,479 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/forge/all.js
+2012-10-14 13:19:09,479 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/forge/disable-frames.js
+2012-10-14 13:19:09,479 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/.DS_Store
+2012-10-14 13:19:09,480 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/config.json.bak
+2012-10-14 13:19:09,480 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/index.html
+2012-10-14 13:19:09,480 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/css/default.css
+2012-10-14 13:19:09,480 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/css/reset.css
+2012-10-14 13:19:09,481 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/.DS_Store
+2012-10-14 13:19:09,481 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/01-refresh.png
+2012-10-14 13:19:09,482 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/01-refresh@2x.png
+2012-10-14 13:19:09,482 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/08-chat.png
+2012-10-14 13:19:09,483 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/08-chat@2x.png
+2012-10-14 13:19:09,483 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/1024x748.png
+2012-10-14 13:19:09,483 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/112-group.png
+2012-10-14 13:19:09,484 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/112-group@2x.png
+2012-10-14 13:19:09,484 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/1536x2008.png
+2012-10-14 13:19:09,486 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/167-upload-photo.png
+2012-10-14 13:19:09,486 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/167-upload-photo@2x.png
+2012-10-14 13:19:09,486 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/2048x1496.png
+2012-10-14 13:19:09,487 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/30-circle-play-white.png
+2012-10-14 13:19:09,487 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/30-circle-play.png
+2012-10-14 13:19:09,487 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/31-ipod.png
+2012-10-14 13:19:09,488 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/31-ipod@2x.png
+2012-10-14 13:19:09,489 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/320x480.png
+2012-10-14 13:19:09,489 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/640x1136.png
+2012-10-14 13:19:09,490 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/640x960.png
+2012-10-14 13:19:09,491 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/70-tv.png
+2012-10-14 13:19:09,491 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/70-tv@2x.png
+2012-10-14 13:19:09,491 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/768x1004.png
+2012-10-14 13:19:09,493 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/86-camera.png
+2012-10-14 13:19:09,493 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/86-camera@2x.png
+2012-10-14 13:19:09,493 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/indicator.gif
+2012-10-14 13:19:09,494 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/logo.png
+2012-10-14 13:19:09,494 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/magnify18x18-white.png
+2012-10-14 13:19:09,494 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/magnify18x18.png
+2012-10-14 13:19:09,494 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/play18x18-white.png
+2012-10-14 13:19:09,494 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/play18x18.png
+2012-10-14 13:19:09,496 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/icons/icon1024-ios.png
+2012-10-14 13:19:09,496 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/icons/icon114-ios.png
+2012-10-14 13:19:09,496 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/icons/icon144-ios.png
+2012-10-14 13:19:09,496 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/icons/icon36-android.png
+2012-10-14 13:19:09,497 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/icons/icon48-android.png
+2012-10-14 13:19:09,497 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/icons/icon512-ios.png
+2012-10-14 13:19:09,497 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/icons/icon57-ios.png
+2012-10-14 13:19:09,497 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/icons/icon72-android.png
+2012-10-14 13:19:09,497 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/img/icons/icon72-ios.png
+2012-10-14 13:19:09,499 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/about.js
+2012-10-14 13:19:09,499 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/chat.js
+2012-10-14 13:19:09,499 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/connected.js
+2012-10-14 13:19:09,499 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/error.js
+2012-10-14 13:19:09,500 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/main.js
+2012-10-14 13:19:09,500 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/models.js
+2012-10-14 13:19:09,500 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/photos.js
+2012-10-14 13:19:09,500 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/photoupload.js
+2012-10-14 13:19:09,500 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/podcast.js
+2012-10-14 13:19:09,500 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/utils.js
+2012-10-14 13:19:09,502 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/video.js
+2012-10-14 13:19:09,502 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/viewmanager.js
+2012-10-14 13:19:09,502 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/lib/backbone-min.js
+2012-10-14 13:19:09,502 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/lib/json2.min.js
+2012-10-14 13:19:09,503 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/lib/underscore-min.js
+2012-10-14 13:19:09,503 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/assets/src/js/lib/zepto.min.js
+2012-10-14 13:19:09,503 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/en.lproj/InfoPlist.strings
+2012-10-14 13:19:09,504 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/Contents/Resources/en.lproj/Localizable.strings
+2012-10-14 13:19:09,505 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/Contents/Resources/he.lproj/Localizable.strings
+2012-10-14 13:19:09,505 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/close.png
+2012-10-14 13:19:09,505 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/close@2x.png
+2012-10-14 13:19:09,506 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/fbicon.png
+2012-10-14 13:19:09,506 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBFriendPickerView/images/default.png
+2012-10-14 13:19:09,506 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/bluetint.png
+2012-10-14 13:19:09,506 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/f_logo.png
+2012-10-14 13:19:09,507 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/facebook.png
+2012-10-14 13:19:09,507 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small-pressed.png
+2012-10-14 13:19:09,507 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small-pressed@2x.png
+2012-10-14 13:19:09,508 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small.png
+2012-10-14 13:19:09,508 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small@2x.png
+2012-10-14 13:19:09,509 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBPlacePickerView/images/fb_generic_place.png
+2012-10-14 13:19:09,509 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBProfilePictureView/images/fb_blank_profile_portrait.png
+2012-10-14 13:19:09,509 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/FacebookSDKResources.bundle/FBProfilePictureView/images/fb_blank_profile_square.png
+2012-10-14 13:19:09,509 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpIS9w6n/Payload/device-ios.app/ForgeCore.bundle/ForgeViewController.nib
+2012-10-14 13:19:09,527 [   INFO] created IPA: /Users/kristoferkrause/Documents/south-ridge-app/release/ios/southridge-1350235149.ipa
+2012-10-14 13:19:09,527 [  ERROR] Something went wrong that we didn't expect:
+2012-10-14 13:19:09,527 [  ERROR] 'ProvisionedDevices'
+2012-10-14 13:19:09,527 [  DEBUG] Traceback (most recent call last):
   File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
     result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
-    build = remote.build(development=True, template_only=True, config=reload_config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
-    build = self._request_development_build(config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
-    return self._api_post(url, data=data)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
-    _check_api_response_for_error(url, 'POST', resp)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
-    raise RequestError(resp, error_message, errors=errors)
-RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-landscape' is required by field 'ipad'"]
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 452, in package
+    build_to_run=build_to_run,
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/customer_goals.py", line 136, in package_app
+    build_to_run.run()
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 337, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 666, in package_ios
+    output_path_for_manifest=output_path_for_manifest,
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 411, in create_ipa_from_app
+    if output_path_for_manifest and self.plist_supports_wireless_distribution(plist_dict):
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 150, in plist_supports_wireless_distribution
+    return not plist_dict['Entitlements']['get-task-allow'] and (plist_dict['ProvisionedDevices'] or plist_dict['ProvisionsAllDevices'])
+KeyError: 'ProvisionedDevices'
 
-2012-07-21 06:27:06,002 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
-2012-07-21 06:27:06,002 [  ERROR] Please contact support@trigger.io
-2012-07-26 05:15:07,516 [   INFO] Forge tools running at version 3.3.5
-2012-07-26 05:15:07,518 [  DEBUG] Forge build tools version: 3.3.5
-2012-07-26 05:15:07,518 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-07-26 05:15:07,530 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
-2012-07-26 05:15:07,699 [  DEBUG] Checking API response for success or error
-2012-07-26 05:15:07,699 [   INFO] Update result: you already have the latest tools
-2012-07-26 05:15:07,700 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-07-26 05:15:07,767 [  DEBUG] Checking API response for success or error
-2012-07-26 05:15:07,768 [  DEBUG] already authenticated via cookie - continuing
-2012-07-26 05:15:07,768 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-07-26 05:15:07,892 [  DEBUG] Checking API response for success or error
-2012-07-26 05:15:08,101 [  DEBUG] 'platform_version' has changed in configuration
-2012-07-26 05:15:08,101 [  DEBUG] already authenticated - continuing
-2012-07-26 05:15:08,101 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-26 05:15:08,101 [  DEBUG] ignoring non-target directory config.json
-2012-07-26 05:15:08,101 [  DEBUG] ignoring non-target directory lib
-2012-07-26 05:15:08,101 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-26 05:15:08,101 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-07-26 05:15:08,136 [  DEBUG] Checking API response for success or error
-2012-07-26 05:15:08,136 [   INFO] Your app configuration has changed: we need to rebuild your app
-2012-07-26 05:15:08,136 [   INFO] Starting new build
-2012-07-26 05:15:08,136 [  DEBUG] already authenticated - continuing
-2012-07-26 05:15:08,136 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
-2012-07-26 05:15:08,255 [  DEBUG] Checking API response for success or error
-2012-07-26 05:15:08,255 [  ERROR] Something went wrong that we didn't expect:
-2012-07-26 05:15:08,255 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-retina' is required by field 'ipad'"]
-2012-07-26 05:15:08,255 [  DEBUG] Traceback (most recent call last):
+2012-10-14 13:19:09,527 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-10-14 13:19:09,527 [  ERROR] Please contact support@trigger.io
+2012-10-14 13:19:42,393 [   INFO] Forge tools running at version 3.3.17
+2012-10-14 13:19:42,658 [  DEBUG] ignoring non-target directory reload
+2012-10-14 13:19:42,658 [  DEBUG] Enabled platforms: ['ios']
+2012-10-14 13:19:42,658 [  DEBUG] Forge build tools version: 3.3.17
+2012-10-14 13:19:42,658 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-10-14 13:19:42,658 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-10-14 13:19:43,032 [  DEBUG] Checking API response for success or error
+2012-10-14 13:19:43,032 [  DEBUG] already authenticated via cookie - continuing
+2012-10-14 13:19:43,032 [  DEBUG] POST https://trigger.io/api/track/
+2012-10-14 13:19:43,100 [  DEBUG] Checking API response for success or error
+2012-10-14 13:19:43,100 [  DEBUG] <ForgeTask (ios)> running...
+2012-10-14 13:19:43,100 [  DEBUG] <ForgeTask (ios)> script:
+[{'do': {'lint_javascript': ()}},
+ {'do': {'check_local_config_schema': ()}},
+ {'do': {'package_ios': ()}, 'when': {'platform_is': 'ios'}}]
+2012-10-14 13:19:43,101 [   INFO] Checking JavaScript files...
+2012-10-14 13:19:43,101 [  DEBUG] Running: '/Users/kristoferkrause/Documents/forge-tools/bin/jsl-mac' '-conf' '/Users/kristoferkrause/Documents/forge-tools/jsl.conf' '-process' '/Users/kristoferkrause/Documents/south-ridge-app/src/*.js' '-nologo' '-nofilelisting' '-nosummary'
+2012-10-14 13:19:43,136 [   INFO] JavaScript check complete
+2012-10-14 13:19:43,136 [   INFO] Verifying your configuration settings...
+2012-10-14 13:19:43,137 [   INFO] Configuration settings check complete
+2012-10-14 13:19:43,138 [  DEBUG] Using configuration file value u'/users/kristoferkrause/Documents/ProdMobileProvision.mobileprovision' for ios.profile.provisioning_profile
+2012-10-14 13:19:43,138 [   INFO] Starting package process for iOS
+2012-10-14 13:19:43,139 [   INFO] Going to package: /Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app
+2012-10-14 13:19:43,139 [  DEBUG] Application ID in app and provisioning profile match
+2012-10-14 13:19:43,139 [   INFO] Plist OK
+2012-10-14 13:19:43,141 [   INFO] No Provisioned Devices, profile is Appstore
+2012-10-14 13:19:43,141 [  DEBUG] Extracted seed ID: EHAHXS2HH2
+2012-10-14 13:19:43,141 [  DEBUG] Making Payload directory
+2012-10-14 13:19:43,142 [  DEBUG] Running: '/usr/bin/codesign' '--force' '--preserve-metadata' '--entitlements' '/var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpEHs1ne' '--sign' 'iPhone Distribution' '--resource-rules=/Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app/ResourceRules.plist' '/Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app'
+2012-10-14 13:19:43,361 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/app_config.json
+2012-10-14 13:19:43,361 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/Default-568h@2x~iphone.png
+2012-10-14 13:19:43,395 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/Default-Landscape@2x~ipad.png
+2012-10-14 13:19:43,399 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/Default-Landscape~ipad.png
+2012-10-14 13:19:43,399 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/Default-Portrait@2x~ipad.png
+2012-10-14 13:19:43,400 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/Default-Portrait~ipad.png
+2012-10-14 13:19:43,401 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/Default@2x~iphone.png
+2012-10-14 13:19:43,403 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/Default~iphone.png
+2012-10-14 13:19:43,403 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/embedded.mobileprovision
+2012-10-14 13:19:43,403 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/Forge
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/Info.plist
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/ipad-retina.png
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/ipad.png
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/normal.png
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/PkgInfo
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/ResourceRules.plist
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/retina.png
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/tabs_modalWebViewController.nib
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/UINavigationBarBlackOpaqueBack.png
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/UINavigationBarBlackOpaqueBack@2x.png
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/UINavigationBarBlackOpaqueBackPressed.png
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/UINavigationBarBlackOpaqueBackPressed@2x.png
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/_CodeSignature/CodeResources
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/hash_to_file.json
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/forge/all.js
+2012-10-14 13:19:43,471 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/forge/disable-frames.js
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/.DS_Store
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/config.json.bak
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/index.html
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/css/default.css
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/css/reset.css
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/.DS_Store
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/01-refresh.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/01-refresh@2x.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/08-chat.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/08-chat@2x.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/1024x748.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/112-group.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/112-group@2x.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/1536x2008.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/167-upload-photo.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/167-upload-photo@2x.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/2048x1496.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/30-circle-play-white.png
+2012-10-14 13:19:43,472 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/30-circle-play.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/31-ipod.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/31-ipod@2x.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/320x480.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/640x1136.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/640x960.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/70-tv.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/70-tv@2x.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/768x1004.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/86-camera.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/86-camera@2x.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/indicator.gif
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/logo.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/magnify18x18-white.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/magnify18x18.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/play18x18-white.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/play18x18.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/icons/icon1024-ios.png
+2012-10-14 13:19:43,473 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/icons/icon114-ios.png
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/icons/icon144-ios.png
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/icons/icon36-android.png
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/icons/icon48-android.png
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/icons/icon512-ios.png
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/icons/icon57-ios.png
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/icons/icon72-android.png
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/img/icons/icon72-ios.png
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/about.js
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/chat.js
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/connected.js
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/error.js
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/main.js
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/models.js
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/photos.js
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/photoupload.js
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/podcast.js
+2012-10-14 13:19:43,474 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/utils.js
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/video.js
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/viewmanager.js
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/lib/backbone-min.js
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/lib/json2.min.js
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/lib/underscore-min.js
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/assets/src/js/lib/zepto.min.js
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/en.lproj/InfoPlist.strings
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/Contents/Resources/en.lproj/Localizable.strings
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/Contents/Resources/he.lproj/Localizable.strings
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/close.png
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/close@2x.png
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/fbicon.png
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBFriendPickerView/images/default.png
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/bluetint.png
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/f_logo.png
+2012-10-14 13:19:43,475 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/facebook.png
+2012-10-14 13:19:43,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small-pressed.png
+2012-10-14 13:19:43,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small-pressed@2x.png
+2012-10-14 13:19:43,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small.png
+2012-10-14 13:19:43,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small@2x.png
+2012-10-14 13:19:43,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBPlacePickerView/images/fb_generic_place.png
+2012-10-14 13:19:43,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBProfilePictureView/images/fb_blank_profile_portrait.png
+2012-10-14 13:19:43,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/FacebookSDKResources.bundle/FBProfilePictureView/images/fb_blank_profile_square.png
+2012-10-14 13:19:43,476 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpCZ5wNL/Payload/device-ios.app/ForgeCore.bundle/ForgeViewController.nib
+2012-10-14 13:19:43,493 [   INFO] created IPA: /Users/kristoferkrause/Documents/south-ridge-app/release/ios/southridge-1350235183.ipa
+2012-10-14 13:19:43,493 [  ERROR] Something went wrong that we didn't expect:
+2012-10-14 13:19:43,493 [  ERROR] 'ProvisionedDevices'
+2012-10-14 13:19:43,494 [  DEBUG] Traceback (most recent call last):
   File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
     result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
-    build = remote.build(development=True, template_only=True, config=reload_config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
-    build = self._request_development_build(config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
-    return self._api_post(url, data=data)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
-    _check_api_response_for_error(url, 'POST', resp)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
-    raise RequestError(resp, error_message, errors=errors)
-RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-retina' is required by field 'ipad'"]
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 452, in package
+    build_to_run=build_to_run,
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/customer_goals.py", line 136, in package_app
+    build_to_run.run()
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 337, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 666, in package_ios
+    output_path_for_manifest=output_path_for_manifest,
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 411, in create_ipa_from_app
+    if output_path_for_manifest and self.plist_supports_wireless_distribution(plist_dict):
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 150, in plist_supports_wireless_distribution
+    return not plist_dict['Entitlements']['get-task-allow'] and (plist_dict['ProvisionedDevices'] or plist_dict['ProvisionsAllDevices'])
+KeyError: 'ProvisionedDevices'
 
-2012-07-26 05:15:08,255 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
-2012-07-26 05:15:08,256 [  ERROR] Please contact support@trigger.io
-2012-07-26 05:15:14,164 [   INFO] Forge tools running at version 3.3.5
-2012-07-26 05:15:14,167 [  DEBUG] Forge build tools version: 3.3.5
-2012-07-26 05:15:14,167 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-07-26 05:15:14,179 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
-2012-07-26 05:15:15,012 [  DEBUG] Checking API response for success or error
-2012-07-26 05:15:15,012 [   INFO] Update result: you already have the latest tools
-2012-07-26 05:15:15,012 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-07-26 05:15:15,079 [  DEBUG] Checking API response for success or error
-2012-07-26 05:15:15,080 [  DEBUG] already authenticated via cookie - continuing
-2012-07-26 05:15:15,080 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-07-26 05:15:15,170 [  DEBUG] Checking API response for success or error
-2012-07-26 05:15:15,342 [  DEBUG] 'platform_version' has changed in configuration
-2012-07-26 05:15:15,342 [  DEBUG] already authenticated - continuing
-2012-07-26 05:15:15,342 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-26 05:15:15,342 [  DEBUG] ignoring non-target directory config.json
-2012-07-26 05:15:15,342 [  DEBUG] ignoring non-target directory lib
-2012-07-26 05:15:15,343 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-26 05:15:15,343 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-07-26 05:15:15,410 [  DEBUG] Checking API response for success or error
-2012-07-26 05:15:15,411 [   INFO] Your app configuration has changed: we need to rebuild your app
-2012-07-26 05:15:15,411 [   INFO] Starting new build
-2012-07-26 05:15:15,411 [  DEBUG] already authenticated - continuing
-2012-07-26 05:15:15,411 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
-2012-07-26 05:15:15,530 [  DEBUG] Checking API response for success or error
-2012-07-26 05:15:15,530 [  ERROR] Something went wrong that we didn't expect:
-2012-07-26 05:15:15,530 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-retina' is required by field 'ipad'"]
-2012-07-26 05:15:15,530 [  DEBUG] Traceback (most recent call last):
+2012-10-14 13:19:43,494 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-10-14 13:19:43,494 [  ERROR] Please contact support@trigger.io
+2012-10-14 13:20:59,915 [   INFO] Forge tools running at version 3.3.17
+2012-10-14 13:21:00,126 [  DEBUG] ignoring non-target directory reload
+2012-10-14 13:21:00,126 [  DEBUG] Enabled platforms: ['ios']
+2012-10-14 13:21:00,142 [  DEBUG] Forge build tools version: 3.3.17
+2012-10-14 13:21:00,142 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-10-14 13:21:00,142 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-10-14 13:21:00,719 [  DEBUG] Checking API response for success or error
+2012-10-14 13:21:00,720 [  DEBUG] already authenticated via cookie - continuing
+2012-10-14 13:21:00,720 [  DEBUG] POST https://trigger.io/api/track/
+2012-10-14 13:21:00,787 [  DEBUG] Checking API response for success or error
+2012-10-14 13:21:00,787 [  DEBUG] <ForgeTask (ios)> running...
+2012-10-14 13:21:00,787 [  DEBUG] <ForgeTask (ios)> script:
+[{'do': {'lint_javascript': ()}},
+ {'do': {'check_local_config_schema': ()}},
+ {'do': {'package_ios': ()}, 'when': {'platform_is': 'ios'}}]
+2012-10-14 13:21:00,787 [   INFO] Checking JavaScript files...
+2012-10-14 13:21:00,787 [  DEBUG] Running: '/Users/kristoferkrause/Documents/forge-tools/bin/jsl-mac' '-conf' '/Users/kristoferkrause/Documents/forge-tools/jsl.conf' '-process' '/Users/kristoferkrause/Documents/south-ridge-app/src/*.js' '-nologo' '-nofilelisting' '-nosummary'
+2012-10-14 13:21:00,807 [   INFO] JavaScript check complete
+2012-10-14 13:21:00,807 [   INFO] Verifying your configuration settings...
+2012-10-14 13:21:00,807 [   INFO] Configuration settings check complete
+2012-10-14 13:21:00,807 [  DEBUG] Using configuration file value u'/users/kristoferkrause/Documents/ProdMobileProvision.mobileprovision' for ios.profile.provisioning_profile
+2012-10-14 13:21:00,808 [  DEBUG] Using configuration file value u'iPhone Distribution' for ios.profile.developer_certificate
+2012-10-14 13:21:00,808 [   INFO] Starting package process for iOS
+2012-10-14 13:21:00,808 [   INFO] Going to package: /Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app
+2012-10-14 13:21:00,810 [  DEBUG] Application ID in app and provisioning profile match
+2012-10-14 13:21:00,810 [   INFO] Plist OK
+2012-10-14 13:21:00,810 [   INFO] No Provisioned Devices, profile is Appstore
+2012-10-14 13:21:00,811 [  DEBUG] Extracted seed ID: EHAHXS2HH2
+2012-10-14 13:21:00,814 [  DEBUG] Making Payload directory
+2012-10-14 13:21:00,824 [  DEBUG] Running: '/usr/bin/codesign' '--force' '--preserve-metadata' '--entitlements' '/var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmp_qVRPd' '--sign' 'iPhone Distribution' '--resource-rules=/Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app/ResourceRules.plist' '/Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app'
+2012-10-14 13:21:00,892 [  DEBUG] /Users/kristoferkrause/Documents/south-ridge-app/development/ios/device-ios.app: replacing existing signature
+2012-10-14 13:21:01,060 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/app_config.json
+2012-10-14 13:21:01,060 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/Default-568h@2x~iphone.png
+2012-10-14 13:21:01,060 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/Default-Landscape@2x~ipad.png
+2012-10-14 13:21:01,060 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/Default-Landscape~ipad.png
+2012-10-14 13:21:01,062 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/Default-Portrait@2x~ipad.png
+2012-10-14 13:21:01,063 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/Default-Portrait~ipad.png
+2012-10-14 13:21:01,080 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/Default@2x~iphone.png
+2012-10-14 13:21:01,080 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/Default~iphone.png
+2012-10-14 13:21:01,080 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/embedded.mobileprovision
+2012-10-14 13:21:01,080 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/Forge
+2012-10-14 13:21:01,089 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/Info.plist
+2012-10-14 13:21:01,089 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/ipad-retina.png
+2012-10-14 13:21:01,089 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/ipad.png
+2012-10-14 13:21:01,089 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/normal.png
+2012-10-14 13:21:01,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/PkgInfo
+2012-10-14 13:21:01,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/ResourceRules.plist
+2012-10-14 13:21:01,091 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/retina.png
+2012-10-14 13:21:01,092 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/tabs_modalWebViewController.nib
+2012-10-14 13:21:01,092 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/UINavigationBarBlackOpaqueBack.png
+2012-10-14 13:21:01,092 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/UINavigationBarBlackOpaqueBack@2x.png
+2012-10-14 13:21:01,093 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/UINavigationBarBlackOpaqueBackPressed.png
+2012-10-14 13:21:01,094 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/UINavigationBarBlackOpaqueBackPressed@2x.png
+2012-10-14 13:21:01,094 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/_CodeSignature/CodeResources
+2012-10-14 13:21:01,095 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/hash_to_file.json
+2012-10-14 13:21:01,095 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/forge/all.js
+2012-10-14 13:21:01,096 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/forge/disable-frames.js
+2012-10-14 13:21:01,097 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/.DS_Store
+2012-10-14 13:21:01,097 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/config.json.bak
+2012-10-14 13:21:01,098 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/index.html
+2012-10-14 13:21:01,099 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/css/default.css
+2012-10-14 13:21:01,099 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/css/reset.css
+2012-10-14 13:21:01,100 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/.DS_Store
+2012-10-14 13:21:01,100 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/01-refresh.png
+2012-10-14 13:21:01,100 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/01-refresh@2x.png
+2012-10-14 13:21:01,102 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/08-chat.png
+2012-10-14 13:21:01,102 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/08-chat@2x.png
+2012-10-14 13:21:01,102 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/1024x748.png
+2012-10-14 13:21:01,105 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/112-group.png
+2012-10-14 13:21:01,105 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/112-group@2x.png
+2012-10-14 13:21:01,105 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/1536x2008.png
+2012-10-14 13:21:01,107 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/167-upload-photo.png
+2012-10-14 13:21:01,107 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/167-upload-photo@2x.png
+2012-10-14 13:21:01,107 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/2048x1496.png
+2012-10-14 13:21:01,108 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/30-circle-play-white.png
+2012-10-14 13:21:01,108 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/30-circle-play.png
+2012-10-14 13:21:01,108 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/31-ipod.png
+2012-10-14 13:21:01,108 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/31-ipod@2x.png
+2012-10-14 13:21:01,110 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/320x480.png
+2012-10-14 13:21:01,110 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/640x1136.png
+2012-10-14 13:21:01,111 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/640x960.png
+2012-10-14 13:21:01,111 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/70-tv.png
+2012-10-14 13:21:01,112 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/70-tv@2x.png
+2012-10-14 13:21:01,113 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/768x1004.png
+2012-10-14 13:21:01,113 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/86-camera.png
+2012-10-14 13:21:01,114 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/86-camera@2x.png
+2012-10-14 13:21:01,114 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/indicator.gif
+2012-10-14 13:21:01,114 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/logo.png
+2012-10-14 13:21:01,114 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/magnify18x18-white.png
+2012-10-14 13:21:01,114 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/magnify18x18.png
+2012-10-14 13:21:01,114 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/play18x18-white.png
+2012-10-14 13:21:01,116 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/play18x18.png
+2012-10-14 13:21:01,116 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/icons/icon1024-ios.png
+2012-10-14 13:21:01,116 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/icons/icon114-ios.png
+2012-10-14 13:21:01,116 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/icons/icon144-ios.png
+2012-10-14 13:21:01,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/icons/icon36-android.png
+2012-10-14 13:21:01,117 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/icons/icon48-android.png
+2012-10-14 13:21:01,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/icons/icon512-ios.png
+2012-10-14 13:21:01,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/icons/icon57-ios.png
+2012-10-14 13:21:01,118 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/icons/icon72-android.png
+2012-10-14 13:21:01,119 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/img/icons/icon72-ios.png
+2012-10-14 13:21:01,119 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/about.js
+2012-10-14 13:21:01,119 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/chat.js
+2012-10-14 13:21:01,119 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/connected.js
+2012-10-14 13:21:01,119 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/error.js
+2012-10-14 13:21:01,120 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/main.js
+2012-10-14 13:21:01,121 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/models.js
+2012-10-14 13:21:01,121 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/photos.js
+2012-10-14 13:21:01,121 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/photoupload.js
+2012-10-14 13:21:01,121 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/podcast.js
+2012-10-14 13:21:01,122 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/utils.js
+2012-10-14 13:21:01,122 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/video.js
+2012-10-14 13:21:01,122 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/viewmanager.js
+2012-10-14 13:21:01,122 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/lib/backbone-min.js
+2012-10-14 13:21:01,122 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/lib/json2.min.js
+2012-10-14 13:21:01,123 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/lib/underscore-min.js
+2012-10-14 13:21:01,124 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/assets/src/js/lib/zepto.min.js
+2012-10-14 13:21:01,124 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/en.lproj/InfoPlist.strings
+2012-10-14 13:21:01,124 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/Contents/Resources/en.lproj/Localizable.strings
+2012-10-14 13:21:01,125 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/Contents/Resources/he.lproj/Localizable.strings
+2012-10-14 13:21:01,125 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/close.png
+2012-10-14 13:21:01,125 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/close@2x.png
+2012-10-14 13:21:01,125 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBDialog/images/fbicon.png
+2012-10-14 13:21:01,126 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBFriendPickerView/images/default.png
+2012-10-14 13:21:01,127 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/bluetint.png
+2012-10-14 13:21:01,127 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/f_logo.png
+2012-10-14 13:21:01,127 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/facebook.png
+2012-10-14 13:21:01,127 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small-pressed.png
+2012-10-14 13:21:01,128 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small-pressed@2x.png
+2012-10-14 13:21:01,128 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small.png
+2012-10-14 13:21:01,128 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBLoginView/images/login-button-small@2x.png
+2012-10-14 13:21:01,128 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBPlacePickerView/images/fb_generic_place.png
+2012-10-14 13:21:01,128 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBProfilePictureView/images/fb_blank_profile_portrait.png
+2012-10-14 13:21:01,130 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/FacebookSDKResources.bundle/FBProfilePictureView/images/fb_blank_profile_square.png
+2012-10-14 13:21:01,130 [  DEBUG] adding to IPA: /var/folders/qz/5mg2tz252lqb7_gchtr9wb7c0000gn/T/tmpLoJ7Ir/Payload/device-ios.app/ForgeCore.bundle/ForgeViewController.nib
+2012-10-14 13:21:01,147 [   INFO] created IPA: /Users/kristoferkrause/Documents/south-ridge-app/release/ios/southridge-1350235260.ipa
+2012-10-14 13:21:01,147 [  ERROR] Something went wrong that we didn't expect:
+2012-10-14 13:21:01,147 [  ERROR] 'ProvisionedDevices'
+2012-10-14 13:21:01,148 [  DEBUG] Traceback (most recent call last):
   File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
     result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
-    build = remote.build(development=True, template_only=True, config=reload_config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
-    build = self._request_development_build(config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
-    return self._api_post(url, data=data)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
-    _check_api_response_for_error(url, 'POST', resp)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
-    raise RequestError(resp, error_message, errors=errors)
-RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Field 'ipad-retina' is required by field 'ipad'"]
+  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 452, in package
+    build_to_run=build_to_run,
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/customer_goals.py", line 136, in package_app
+    build_to_run.run()
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 337, in run
+    self._call_with_params(task_method, task_args)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 666, in package_ios
+    output_path_for_manifest=output_path_for_manifest,
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 411, in create_ipa_from_app
+    if output_path_for_manifest and self.plist_supports_wireless_distribution(plist_dict):
+  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/ios_tasks.py", line 150, in plist_supports_wireless_distribution
+    return not plist_dict['Entitlements']['get-task-allow'] and (plist_dict['ProvisionedDevices'] or plist_dict['ProvisionsAllDevices'])
+KeyError: 'ProvisionedDevices'
 
-2012-07-26 05:15:15,530 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
-2012-07-26 05:15:15,530 [  ERROR] Please contact support@trigger.io
-2012-07-26 05:18:40,024 [   INFO] Forge tools running at version 3.3.5
-2012-07-26 05:18:40,027 [  DEBUG] Forge build tools version: 3.3.5
-2012-07-26 05:18:40,027 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-07-26 05:18:40,039 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
-2012-07-26 05:18:40,566 [  DEBUG] Checking API response for success or error
-2012-07-26 05:18:40,566 [   INFO] Update result: you already have the latest tools
-2012-07-26 05:18:40,566 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-07-26 05:18:40,633 [  DEBUG] Checking API response for success or error
-2012-07-26 05:18:40,633 [  DEBUG] already authenticated via cookie - continuing
-2012-07-26 05:18:40,633 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-07-26 05:18:40,960 [  DEBUG] Checking API response for success or error
-2012-07-26 05:18:41,171 [  DEBUG] 'platform_version' has changed in configuration
-2012-07-26 05:18:41,171 [  DEBUG] already authenticated - continuing
-2012-07-26 05:18:41,171 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-26 05:18:41,172 [  DEBUG] ignoring non-target directory config.json
-2012-07-26 05:18:41,172 [  DEBUG] ignoring non-target directory lib
-2012-07-26 05:18:41,172 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-26 05:18:41,172 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-07-26 05:18:41,206 [  DEBUG] Checking API response for success or error
-2012-07-26 05:18:41,207 [   INFO] Your app configuration has changed: we need to rebuild your app
-2012-07-26 05:18:41,207 [   INFO] Starting new build
-2012-07-26 05:18:41,207 [  DEBUG] already authenticated - continuing
-2012-07-26 05:18:41,207 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
-2012-07-26 05:18:41,275 [  DEBUG] Checking API response for success or error
-2012-07-26 05:18:41,275 [  ERROR] Something went wrong that we didn't expect:
-2012-07-26 05:18:41,275 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Required field '144' is missing from config.modules.icons.ios"]
-2012-07-26 05:18:41,275 [  DEBUG] Traceback (most recent call last):
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
-    result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
-    build = remote.build(development=True, template_only=True, config=reload_config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
-    build = self._request_development_build(config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
-    return self._api_post(url, data=data)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
-    _check_api_response_for_error(url, 'POST', resp)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
-    raise RequestError(resp, error_message, errors=errors)
-RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: [u"Invalid JSON configuration: Required field '144' is missing from config.modules.icons.ios"]
-
-2012-07-26 05:18:41,275 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
-2012-07-26 05:18:41,275 [  ERROR] Please contact support@trigger.io
-2012-07-29 20:20:38,780 [   INFO] Forge tools running at version 3.3.5
-2012-07-29 20:20:38,798 [  DEBUG] Forge build tools version: 3.3.5
-2012-07-29 20:20:38,799 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-07-29 20:20:38,904 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
-2012-07-29 20:20:39,139 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:39,139 [   INFO] Update result: you already have the latest tools
-2012-07-29 20:20:39,174 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-07-29 20:20:39,242 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:39,242 [  DEBUG] already authenticated via cookie - continuing
-2012-07-29 20:20:39,242 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-07-29 20:20:39,483 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:40,686 [  DEBUG] configuration is identical to last run
-2012-07-29 20:20:40,686 [  DEBUG] already authenticated - continuing
-2012-07-29 20:20:40,704 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-29 20:20:40,704 [  DEBUG] ignoring non-target directory config.json
-2012-07-29 20:20:40,704 [  DEBUG] ignoring non-target directory lib
-2012-07-29 20:20:40,704 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-29 20:20:40,704 [  DEBUG] ignoring non-target directory reload
-2012-07-29 20:20:40,704 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-07-29 20:20:40,821 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:40,821 [   INFO] Configuration is unchanged: using existing templates
-2012-07-29 20:20:41,756 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-29 20:20:41,756 [  DEBUG] ignoring non-target directory config.json
-2012-07-29 20:20:41,756 [  DEBUG] ignoring non-target directory lib
-2012-07-29 20:20:41,756 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-29 20:20:41,756 [  DEBUG] Enabled platforms: ['android', 'chrome', 'ios', 'web']
-2012-07-29 20:20:41,756 [  ERROR] Failed to parse command line arguments at ois
-2012-07-29 20:20:41,756 [  DEBUG] Traceback (most recent call last):
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
-    result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 377, in development_build
-    generator.all('development', defaults.SRC_DIR, extra_args=unhandled_args, config=reload_config_for_local)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/generate.py", line 42, in all
-    extra_args=extra_args,
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/build.py", line 111, in create_build
-    local_config=local_config, extra_args=extra_args, forge_root=defaults.FORGE_ROOT)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 272, in __init__
-    self.tool_config = ToolConfig(self.log, local_config, extra_args, self.enabled_platforms)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 54, in __init__
-    self._overrides = self._arguments_to_overrides(arguments)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 95, in _arguments_to_overrides
-    key_values = self._arguments_to_key_values(arguments)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 76, in _arguments_to_key_values
-    raise ArgumentError("Failed to parse command line arguments at {arg}".format(arg=arg))
-ArgumentError: Failed to parse command line arguments at ois
-
-2012-07-29 20:20:46,692 [   INFO] Forge tools running at version 3.3.5
-2012-07-29 20:20:46,695 [  DEBUG] Forge build tools version: 3.3.5
-2012-07-29 20:20:46,695 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-07-29 20:20:46,706 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
-2012-07-29 20:20:46,927 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:46,927 [   INFO] Update result: you already have the latest tools
-2012-07-29 20:20:46,927 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-07-29 20:20:46,927 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:46,928 [  DEBUG] already authenticated via cookie - continuing
-2012-07-29 20:20:46,928 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-07-29 20:20:47,046 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:47,221 [  DEBUG] configuration is identical to last run
-2012-07-29 20:20:47,221 [  DEBUG] already authenticated - continuing
-2012-07-29 20:20:47,222 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-29 20:20:47,222 [  DEBUG] ignoring non-target directory config.json
-2012-07-29 20:20:47,222 [  DEBUG] ignoring non-target directory lib
-2012-07-29 20:20:47,222 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-29 20:20:47,222 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-07-29 20:20:47,289 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:47,290 [   INFO] Configuration is unchanged: using existing templates
-2012-07-29 20:20:47,356 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-29 20:20:47,356 [  DEBUG] ignoring non-target directory config.json
-2012-07-29 20:20:47,356 [  DEBUG] ignoring non-target directory lib
-2012-07-29 20:20:47,356 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-29 20:20:47,356 [  DEBUG] Enabled platforms: ['android', 'chrome', 'ios', 'web']
-2012-07-29 20:20:47,356 [  ERROR] Failed to parse command line arguments at ios
-2012-07-29 20:20:47,356 [  DEBUG] Traceback (most recent call last):
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
-    result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 377, in development_build
-    generator.all('development', defaults.SRC_DIR, extra_args=unhandled_args, config=reload_config_for_local)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/generate.py", line 42, in all
-    extra_args=extra_args,
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/build.py", line 111, in create_build
-    local_config=local_config, extra_args=extra_args, forge_root=defaults.FORGE_ROOT)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 272, in __init__
-    self.tool_config = ToolConfig(self.log, local_config, extra_args, self.enabled_platforms)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 54, in __init__
-    self._overrides = self._arguments_to_overrides(arguments)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 95, in _arguments_to_overrides
-    key_values = self._arguments_to_key_values(arguments)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 76, in _arguments_to_key_values
-    raise ArgumentError("Failed to parse command line arguments at {arg}".format(arg=arg))
-ArgumentError: Failed to parse command line arguments at ios
-
-2012-07-29 20:20:52,458 [   INFO] Forge tools running at version 3.3.5
-2012-07-29 20:20:52,460 [  DEBUG] Forge build tools version: 3.3.5
-2012-07-29 20:20:52,460 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-07-29 20:20:52,466 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
-2012-07-29 20:20:52,690 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:52,690 [   INFO] Update result: you already have the latest tools
-2012-07-29 20:20:52,690 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-07-29 20:20:52,708 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:52,708 [  DEBUG] already authenticated via cookie - continuing
-2012-07-29 20:20:52,708 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-07-29 20:20:52,838 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:53,053 [  DEBUG] configuration is identical to last run
-2012-07-29 20:20:53,053 [  DEBUG] already authenticated - continuing
-2012-07-29 20:20:53,053 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-29 20:20:53,053 [  DEBUG] ignoring non-target directory config.json
-2012-07-29 20:20:53,053 [  DEBUG] ignoring non-target directory lib
-2012-07-29 20:20:53,053 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-29 20:20:53,053 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-07-29 20:20:53,088 [  DEBUG] Checking API response for success or error
-2012-07-29 20:20:53,088 [   INFO] Configuration is unchanged: using existing templates
-2012-07-29 20:20:53,206 [  DEBUG] ignoring non-target directory __init__.py
-2012-07-29 20:20:53,206 [  DEBUG] ignoring non-target directory config.json
-2012-07-29 20:20:53,206 [  DEBUG] ignoring non-target directory lib
-2012-07-29 20:20:53,206 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-07-29 20:20:53,206 [  DEBUG] Enabled platforms: ['android', 'chrome', 'ios', 'web']
-2012-07-29 20:20:53,206 [  ERROR] Failed to parse command line arguments at ios
-2012-07-29 20:20:53,207 [  DEBUG] Traceback (most recent call last):
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
-    result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 377, in development_build
-    generator.all('development', defaults.SRC_DIR, extra_args=unhandled_args, config=reload_config_for_local)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/generate.py", line 42, in all
-    extra_args=extra_args,
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/build.py", line 111, in create_build
-    local_config=local_config, extra_args=extra_args, forge_root=defaults.FORGE_ROOT)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 272, in __init__
-    self.tool_config = ToolConfig(self.log, local_config, extra_args, self.enabled_platforms)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 54, in __init__
-    self._overrides = self._arguments_to_overrides(arguments)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 95, in _arguments_to_overrides
-    key_values = self._arguments_to_key_values(arguments)
-  File "/Users/kristoferkrause/Documents/south-ridge-app/.template/generate_dynamic/build.py", line 76, in _arguments_to_key_values
-    raise ArgumentError("Failed to parse command line arguments at {arg}".format(arg=arg))
-ArgumentError: Failed to parse command line arguments at ios
-
-2012-08-24 06:25:15,803 [   INFO] Forge tools running at version 3.3.11
-2012-08-24 06:25:15,805 [  DEBUG] Forge build tools version: 3.3.11
-2012-08-24 06:25:15,816 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-08-24 06:25:15,816 [  DEBUG] GET https://trigger.io/api/version_check/3/3/11/
-2012-08-24 06:25:15,986 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:15,986 [   INFO] Update result: you already have the latest tools
-2012-08-24 06:25:16,053 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-08-24 06:25:16,053 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:23,422 [   INFO] authenticating as "kris.krause@gmail.com"
-2012-08-24 06:25:23,422 [  DEBUG] GET https://trigger.io/api/auth/hello
-2012-08-24 06:25:23,457 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:23,457 [  DEBUG] POST https://trigger.io/api/auth/verify
-2012-08-24 06:25:23,678 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:23,678 [   INFO] authentication successful
-2012-08-24 06:25:23,678 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-08-24 06:25:23,892 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:25,094 [  DEBUG] configuration is identical to last run
-2012-08-24 06:25:25,094 [  DEBUG] already authenticated - continuing
-2012-08-24 06:25:25,102 [  DEBUG] ignoring non-target directory __init__.py
-2012-08-24 06:25:25,102 [  DEBUG] ignoring non-target directory config.json
-2012-08-24 06:25:25,102 [  DEBUG] ignoring non-target directory lib
-2012-08-24 06:25:25,102 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-08-24 06:25:25,102 [  DEBUG] ignoring non-target directory reload
-2012-08-24 06:25:25,102 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-08-24 06:25:26,104 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:26,104 [  DEBUG] Server requires rebuild: platform has changed for kris.krause@gmail.com: 43342a5d8c4b vs. 20009b5cb5b7
-2012-08-24 06:25:26,104 [   INFO] Your Forge platform has been updated: we need to rebuild your app
-2012-08-24 06:25:26,105 [   INFO] Starting new build
-2012-08-24 06:25:26,105 [  DEBUG] already authenticated - continuing
-2012-08-24 06:25:26,105 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
-2012-08-24 06:25:26,224 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:26,224 [  ERROR] Something went wrong that we didn't expect:
-2012-08-24 06:25:26,224 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: 
-You requested modules which weren't enabled for you:
-launchimage
-
-If you want to use these, you'll need to upgrade your plan, see https://trigger.io/pricing/ for more details. Otherwise, you'll need to disable them in your app config to work with this app.
-
-2012-08-24 06:25:26,224 [  DEBUG] Traceback (most recent call last):
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
-    result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
-    build = remote.build(development=True, template_only=True, config=reload_config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
-    build = self._request_development_build(config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
-    return self._api_post(url, data=data)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
-    _check_api_response_for_error(url, 'POST', resp)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
-    raise RequestError(resp, error_message, errors=errors)
-RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: 
-You requested modules which weren't enabled for you:
-launchimage
-
-If you want to use these, you'll need to upgrade your plan, see https://trigger.io/pricing/ for more details. Otherwise, you'll need to disable them in your app config to work with this app.
-
-
-2012-08-24 06:25:26,224 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
-2012-08-24 06:25:26,224 [  ERROR] Please contact support@trigger.io
-2012-08-24 06:25:45,781 [   INFO] Forge tools running at version 3.3.11
-2012-08-24 06:25:45,783 [  DEBUG] Forge build tools version: 3.3.11
-2012-08-24 06:25:45,783 [  DEBUG] main: {"server": "https://trigger.io/api/"}
-2012-08-24 06:25:45,795 [  DEBUG] GET https://trigger.io/api/version_check/3/3/11/
-2012-08-24 06:25:45,965 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:45,965 [   INFO] Update result: you already have the latest tools
-2012-08-24 06:25:45,965 [  DEBUG] GET https://trigger.io/api/auth/loggedin
-2012-08-24 06:25:46,135 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:46,135 [  DEBUG] already authenticated via cookie - continuing
-2012-08-24 06:25:46,136 [  DEBUG] POST https://trigger.io/api/reload/buildevents/76dc3764af5b11e197fc12313d1adcbe
-2012-08-24 06:25:46,217 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:46,437 [  DEBUG] configuration is identical to last run
-2012-08-24 06:25:46,437 [  DEBUG] already authenticated - continuing
-2012-08-24 06:25:46,437 [  DEBUG] ignoring non-target directory __init__.py
-2012-08-24 06:25:46,437 [  DEBUG] ignoring non-target directory config.json
-2012-08-24 06:25:46,437 [  DEBUG] ignoring non-target directory lib
-2012-08-24 06:25:46,437 [  DEBUG] ignoring non-target directory platform_version.txt
-2012-08-24 06:25:46,437 [  DEBUG] ignoring non-target directory reload
-2012-08-24 06:25:46,438 [  DEBUG] GET https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/should_rebuild
-2012-08-24 06:25:46,471 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:46,472 [  DEBUG] Server requires rebuild: platform has changed for kris.krause@gmail.com: 43342a5d8c4b vs. 20009b5cb5b7
-2012-08-24 06:25:46,472 [   INFO] Your Forge platform has been updated: we need to rebuild your app
-2012-08-24 06:25:46,472 [   INFO] Starting new build
-2012-08-24 06:25:46,472 [  DEBUG] already authenticated - continuing
-2012-08-24 06:25:46,472 [  DEBUG] POST https://trigger.io/api/app/76dc3764af5b11e197fc12313d1adcbe/template
-2012-08-24 06:25:46,591 [  DEBUG] Checking API response for success or error
-2012-08-24 06:25:46,591 [  ERROR] Something went wrong that we didn't expect:
-2012-08-24 06:25:46,591 [  ERROR] Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: 
-You requested modules which weren't enabled for you:
-launchimage
-
-If you want to use these, you'll need to upgrade your plan, see https://trigger.io/pricing/ for more details. Otherwise, you'll need to disable them in your app config to work with this app.
-
-2012-08-24 06:25:46,591 [  DEBUG] Traceback (most recent call last):
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/async.py", line 96, in run
-    result = self._target(*self._args, **self._kwargs)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/main.py", line 341, in development_build
-    build = remote.build(development=True, template_only=True, config=reload_config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 486, in build
-    build = self._request_development_build(config)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 447, in _request_development_build
-    return self._api_post(url, data=data)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 196, in _api_post
-    _check_api_response_for_error(url, 'POST', resp)
-  File "/Users/kristoferkrause/Documents/forge-tools/forge/remote.py", line 88, in _check_api_response_for_error
-    raise RequestError(resp, error_message, errors=errors)
-RequestError: Forge API call to app/76dc3764af5b11e197fc12313d1adcbe/template went wrong: 
-You requested modules which weren't enabled for you:
-launchimage
-
-If you want to use these, you'll need to upgrade your plan, see https://trigger.io/pricing/ for more details. Otherwise, you'll need to disable them in your app config to work with this app.
-
-
-2012-08-24 06:25:46,591 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
-2012-08-24 06:25:46,591 [  ERROR] Please contact support@trigger.io
+2012-10-14 13:21:01,148 [  ERROR] See /Users/kristoferkrause/Documents/south-ridge-app/forge-error.log for more details
+2012-10-14 13:21:01,148 [  ERROR] Please contact support@trigger.io
