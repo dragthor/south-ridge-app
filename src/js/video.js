@@ -57,16 +57,16 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
           break;
         }
       }
-
-      var params = { videos: this.collection.models };
-
-      var template = _.template($("#videos").html(), params);
-
-      SouthRidge.Utils.SetTopBar('Video');
-      SouthRidge.Utils.DoneLoading();
-
-      $(this.el).unbind().html(template).show();
     }
+
+    var params = { videos: this.collection.models };
+
+    var template = _.template($("#videos").html(), params);
+
+    SouthRidge.Utils.SetTopBar('Video');
+    SouthRidge.Utils.DoneLoading();
+
+    $(this.el).unbind().html(template).show();
   },
   
   events: {
