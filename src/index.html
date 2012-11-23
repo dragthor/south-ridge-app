@@ -25,120 +25,118 @@
 	    <script src="js/photos.min.js" type="text/javascript"></script>
 		<script src="js/chat.min.js" type="text/javascript"></script>
 	</head>
-	<body>
-		
+
+	<body>	
 		<div id="loading"><img src="img/indicator.gif" /></div>
 
-		<div id="content">
-
-		</div>
-
-		<script type="text/javascript">
-      		$(SouthRidge.init);
-    	</script>
-
-    	<script type="text/template" id="disconnected">
-    		<div class="error"><h1>Oops! Disconnected</h1><p>We were unable to detect a network connection.</p><p>You must be connected to the internet in order to use the South Ridge app.</p></div>
-    	</script>
-
-    	<script type="text/template" id="error">
-    		<div class="error"><h1>Oops! Error</h1><p>Unfortunately an error has occurred.  Sometimes this indicates a poor network connection.  Please try again later. If the error persists, email the developer listed under <a href="#about">About</a>.</p><p>Error Details:</p><p>{{= message }}</p></div>
-    	</script>
-
-    	<script type="text/template" id="chat">
-    		<p>{{= author }}</p>
-    		<p>{{= message }}</p>
-    	</script>
-
-    	<script type="text/template" id="videos">
-    		<ul id="mainList" class="list">
-    			{{ _(videos).each(function(video) { }}
-    				{{ if (SouthRidge.Utils.Tablet()) { }}
-
-	    				{{ if (forge.is.android() && video.get("include")) { }}
-	    					<li><a class="android-vimeo" href="{{= video.get("mobile_url") }}" target="_blank"><div><div id="{{= video.get("VideoId") }}" class="videoTablet" style="background-image: url({{= video.get("thumbnail_medium") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfoTablet"><b>{{= video.get("title") }}</b><div class="descTablet">{{= video.get("description")}}</div></div></div></a></li>
-	    				{{ } else if (video.get("include")) { }}
-	    					<li><div><div id="{{= video.get("VideoId") }}" class="videoTablet" style="background-image: url({{= video.get("thumbnail_medium") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfoTablet"><b>{{= video.get("title") }}</b><div class="descTablet">{{= video.get("description") }}</div></div></div></li>
-	    				{{ } }}
-
-    				{{ } else { }}
-
-	    				{{ if (forge.is.android() && video.get("include")) { }}
-	    					<li><a class="android-vimeo" href="{{= video.get("mobile_url") }}" target="_blank"><div><div id="{{= video.get("VideoId") }}" class="video" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfo"><b>{{= video.get("title") }}</b><div class="desc">{{= video.get("description")}}</div></div></div></a></li>
-	    				{{ } else if (video.get("include")) { }}
-	    					<li><div><div id="{{= video.get("VideoId") }}" class="video" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfo"><b>{{= video.get("title") }}</b><div class="desc">{{= video.get("description") }}</div></div></div></li>
-	    				{{ } }}
-
-    				{{ } }}
-    			{{ }); }}
-    		</ul>
-    	</script>
-
-    	<script type="text/template" id="podcasts">
-    		<ul id="mainList" class="list">
-    			{{ _(podcasts).each(function(podcast) { }}
-    				{{ if (SouthRidge.Utils.Tablet()) { }}
-						<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcastTablet" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfoTablet"><b>{{= podcast.get("Title") }}</b><br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>
-						
-						{{ if (podcast.get("Passage") != "N/A") { }}
-							<a href="{{= SouthRidge.Utils.BibleGatewayUrl }}{{= encodeURIComponent(podcast.get("Passage")) }}" target="_blank">{{= podcast.get("Passage") }}</a>
-						{{ } else { }}
-							{{= podcast.get("Passage") }}
-						{{ } }} 
-
-						</div></div></li>
-    				{{ } else { }}
-						<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcast" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfo"><b>{{= podcast.get("Title") }}</b><br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>
-
-						{{ if (podcast.get("Passage") != "N/A") { }}
-							<a href="{{= SouthRidge.Utils.BibleGatewayUrl }}{{= encodeURIComponent(podcast.get("Passage")) }}" target="_blank">{{= podcast.get("Passage") }}</a>
-						{{ } else { }}
-							{{= podcast.get("Passage") }}
-						{{ } }} 
-
-						</div></div></li>
-					{{ } }} 			
-				{{ }); }}
-    		</ul>
-    	</script>
-
-    	<script type="text/template" id ="albums">
-    		<ul id="mainList" class="list">
-    			{{ _(albums).each(function(album) { }}
-    				{{ if (album.get("name") != "Untitled Album") { }}
-	    				{{ if (SouthRidge.Utils.Tablet()) { }}
-						<li id="{{= album.get("id") }}"><div><div class="albumTablet" id="{{= album.get("cover_photo") }}" ><img class="albumItem" src="{{= album.get("icon") }}" /></div><div class="albumInfoTablet"><b>{{= album.get("name") }}</b><div class="descTablet">{{= album.get("description") }}</div></div></div></li>
-	    				{{ } else { }}
-						<li id="{{= album.get("id") }}"><div><div class="album" id="{{= album.get("cover_photo") }}" ><img class="albumItem" src="{{= album.get("icon") }}" /></div><div class="albumInfo"><b>{{= album.get("name") }}</b><div class="desc">{{= album.get("description") }}</div></div></div></li>
-						{{ } }}
-					{{ } }}
-    			{{ }); }}
-    		</ul>
-    	</script>
-
-    	<script type="text/template" id ="photos">
-    		<h1>{{= albumName }}</h1>
-
-			{{ _(photos).each(function(photo) { }}
-				{{ if (SouthRidge.Utils.Tablet()) { }}
-					<div id="{{= photo.get("id") }}" class="photoTablet" style="background-image: url({{= photo.get("picture") }})"></div>
-				{{ } else { }}
-					<div id="{{= photo.get("id") }}" class="photo" style="background-image: url({{= photo.get("picture") }})"></div>
-				{{ } }}
-        	{{ }); }}
-    	</script>
-
-    	<script type="text/template" id="about">
-    		<img class="logo" src="{{= logo }}" />
-    		<p>The mission of South Ridge is to embrace God's grace and extend His love.</p>
-
-			<p>South Ridge Community Church<br/>7 Pittstown Road<br/>Clinton, NJ 08809<br/><a href="tel:9087355252">(908) 735-5252</a></p>
-			<p><a href="mailto:info@southridgecc.org">info@southridgecc.org</a></p>
-			<p><a target="_new" href="http://www.southridgecc.org">www.southridgecc.org</a></p>
-			<p>Version {{= version }}</p>
-			<p>Source code freely available on <a target="_blank" href="https://github.com/dragthor/south-ridge-app">Github</a> (MIT License).</p>
-			<p>Issues? Questions? Ideas? Visit the <a target="_blank" href="https://github.com/dragthor/south-ridge-app/wiki">wiki</a>.</p>
-		</script>
-		
+		<div id="content"></div>
 	</body>
+
+	<script type="text/javascript">
+  		$(SouthRidge.init);
+	</script>
+
+	<script type="text/template" id="disconnected">
+		<div class="error"><h1>Oops! Disconnected</h1><p>We were unable to detect a network connection.</p><p>You must be connected to the internet in order to use the South Ridge app.</p></div>
+	</script>
+
+	<script type="text/template" id="error">
+		<div class="error"><h1>Oops! Error</h1><p>Unfortunately an error has occurred.  Sometimes this indicates a poor network connection.  Please try again later. If the error persists, email the developer listed under <a href="#about">About</a>.</p><p>Error Details:</p><p>{{= message }}</p></div>
+	</script>
+
+	<script type="text/template" id="chat">
+		<p>{{= author }}</p>
+		<p>{{= message }}</p>
+	</script>
+
+	<script type="text/template" id="videos">
+		<ul id="mainList" class="list">
+			{{ _(videos).each(function(video) { }}
+				{{ if (SouthRidge.Utils.Tablet()) { }}
+
+    				{{ if (forge.is.android() && video.get("include")) { }}
+    					<li><a class="android-vimeo" href="{{= video.get("mobile_url") }}" target="_blank"><div><div id="{{= video.get("VideoId") }}" class="videoTablet" style="background-image: url({{= video.get("thumbnail_medium") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfoTablet"><b>{{= video.get("title") }}</b><div class="descTablet">{{= video.get("description")}}</div></div></div></a></li>
+    				{{ } else if (video.get("include")) { }}
+    					<li><div><div id="{{= video.get("VideoId") }}" class="videoTablet" style="background-image: url({{= video.get("thumbnail_medium") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfoTablet"><b>{{= video.get("title") }}</b><div class="descTablet">{{= video.get("description") }}</div></div></div></li>
+    				{{ } }}
+
+				{{ } else { }}
+
+    				{{ if (forge.is.android() && video.get("include")) { }}
+    					<li><a class="android-vimeo" href="{{= video.get("mobile_url") }}" target="_blank"><div><div id="{{= video.get("VideoId") }}" class="video" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfo"><b>{{= video.get("title") }}</b><div class="desc">{{= video.get("description")}}</div></div></div></a></li>
+    				{{ } else if (video.get("include")) { }}
+    					<li><div><div id="{{= video.get("VideoId") }}" class="video" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfo"><b>{{= video.get("title") }}</b><div class="desc">{{= video.get("description") }}</div></div></div></li>
+    				{{ } }}
+
+				{{ } }}
+			{{ }); }}
+		</ul>
+	</script>
+
+	<script type="text/template" id="podcasts">
+		<ul id="mainList" class="list">
+			{{ _(podcasts).each(function(podcast) { }}
+				{{ if (SouthRidge.Utils.Tablet()) { }}
+					<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcastTablet" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfoTablet"><b>{{= podcast.get("Title") }}</b><br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>
+					
+					{{ if (podcast.get("Passage") != "N/A") { }}
+						<a href="{{= SouthRidge.Utils.BibleGatewayUrl }}{{= encodeURIComponent(podcast.get("Passage")) }}" target="_blank">{{= podcast.get("Passage") }}</a>
+					{{ } else { }}
+						{{= podcast.get("Passage") }}
+					{{ } }} 
+
+					</div></div></li>
+				{{ } else { }}
+					<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcast" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfo"><b>{{= podcast.get("Title") }}</b><br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>
+
+					{{ if (podcast.get("Passage") != "N/A") { }}
+						<a href="{{= SouthRidge.Utils.BibleGatewayUrl }}{{= encodeURIComponent(podcast.get("Passage")) }}" target="_blank">{{= podcast.get("Passage") }}</a>
+					{{ } else { }}
+						{{= podcast.get("Passage") }}
+					{{ } }} 
+
+					</div></div></li>
+				{{ } }} 			
+			{{ }); }}
+		</ul>
+	</script>
+
+	<script type="text/template" id ="albums">
+		<ul id="mainList" class="list">
+			{{ _(albums).each(function(album) { }}
+				{{ if (album.get("name") != "Untitled Album") { }}
+    				{{ if (SouthRidge.Utils.Tablet()) { }}
+					<li id="{{= album.get("id") }}"><div><div class="albumTablet" id="{{= album.get("cover_photo") }}" ><img class="albumItem" src="{{= album.get("icon") }}" /></div><div class="albumInfoTablet"><b>{{= album.get("name") }}</b><div class="descTablet">{{= album.get("description") }}</div></div></div></li>
+    				{{ } else { }}
+					<li id="{{= album.get("id") }}"><div><div class="album" id="{{= album.get("cover_photo") }}" ><img class="albumItem" src="{{= album.get("icon") }}" /></div><div class="albumInfo"><b>{{= album.get("name") }}</b><div class="desc">{{= album.get("description") }}</div></div></div></li>
+					{{ } }}
+				{{ } }}
+			{{ }); }}
+		</ul>
+	</script>
+
+	<script type="text/template" id ="photos">
+		<h1>{{= albumName }}</h1>
+
+		{{ _(photos).each(function(photo) { }}
+			{{ if (SouthRidge.Utils.Tablet()) { }}
+				<div id="{{= photo.get("id") }}" class="photoTablet" style="background-image: url({{= photo.get("picture") }})"></div>
+			{{ } else { }}
+				<div id="{{= photo.get("id") }}" class="photo" style="background-image: url({{= photo.get("picture") }})"></div>
+			{{ } }}
+    	{{ }); }}
+	</script>
+
+	<script type="text/template" id="about">
+		<img class="logo" src="{{= logo }}" />
+		<p>The mission of South Ridge is to embrace God's grace and extend His love.</p>
+
+		<p>South Ridge Community Church<br/>7 Pittstown Road<br/>Clinton, NJ 08809<br/><a href="tel:9087355252">(908) 735-5252</a></p>
+		<p><a href="mailto:info@southridgecc.org">info@southridgecc.org</a></p>
+		<p><a target="_new" href="http://www.southridgecc.org">www.southridgecc.org</a></p>
+		<p>Version {{= version }}</p>
+		<p>Source code freely available on <a target="_blank" href="https://github.com/dragthor/south-ridge-app">Github</a> (MIT License).</p>
+		<p>Issues? Questions? Ideas? Visit the <a target="_blank" href="https://github.com/dragthor/south-ridge-app/wiki">wiki</a>.</p>
+	</script>
+
 </html>
