@@ -177,3 +177,7 @@ SouthRidge.ViewManager.About = function () {
 SouthRidge.ViewManager.NoConnection = function () {
 	var view = new SouthRidge.Views.NotConnectedView();
 };
+
+SouthRidge.ViewManager.Error = function (msg) {
+  var view = new SouthRidge.Views.ErrorView( { message: msg } );
+};

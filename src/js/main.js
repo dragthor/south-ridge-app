@@ -77,7 +77,7 @@ var SouthRidge = {
         SouthRidge.ViewManager.NoConnection();
       },
       getError: function() {
-        new SouthRidge.Views.ErrorView( { message: "Unknown internal error." } );
+        SouthRidge.ViewManager.Error("Unknown internal error.");
       }
     });
 

@@ -78,9 +78,25 @@
     		<ul id="mainList" class="list">
     			{{ _(podcasts).each(function(podcast) { }}
     				{{ if (SouthRidge.Utils.Tablet()) { }}
-						<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcastTablet" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfoTablet"><b>{{= podcast.get("Title") }}</b><br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>{{= podcast.get("Passage") }}</div></div></li>
+						<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcastTablet" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfoTablet"><b>{{= podcast.get("Title") }}</b><br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>
+						
+						{{ if (podcast.get("Passage") != "N/A") { }}
+							<a href="http://mobile.biblegateway.com/passage/?version=NIV&search={{= encodeURIComponent(podcast.get("Passage")) }}" target="_blank">{{= podcast.get("Passage") }}</a>
+						{{ } else { }}
+							{{= podcast.get("Passage") }}
+						{{ } }} 
+
+						</div></div></li>
     				{{ } else { }}
-						<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcast" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfo"><b>{{= podcast.get("Title") }}</b><br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>{{= podcast.get("Passage") }}</div></div></li>
+						<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcast" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfo"><b>{{= podcast.get("Title") }}</b><br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>
+
+						{{ if (podcast.get("Passage") != "N/A") { }}
+							<a href="http://mobile.biblegateway.com/passage/?version=NIV&search={{= encodeURIComponent(podcast.get("Passage")) }}" target="_blank">{{= podcast.get("Passage") }}</a>
+						{{ } else { }}
+							{{= podcast.get("Passage") }}
+						{{ } }} 
+
+						</div></div></li>
 					{{ } }} 			
 				{{ }); }}
     		</ul>
@@ -120,8 +136,9 @@
 			<p><a href="mailto:info@southridgecc.org">info@southridgecc.org</a></p>
 			<p><a target="_new" href="http://www.southridgecc.org">www.southridgecc.org</a></p>
 			<p>Version {{= version }}</p>
-			<p>Source code freely available on <a target="_new" href="https://github.com/dragthor/south-ridge-app">Github</a> (MIT License).</p>
-			<p>Issues? Questions? Ideas? Visit the <a href="https://github.com/dragthor/south-ridge-app/wiki">wiki</a>.</p>
+			<p>Source code freely available on <a target="_blank" href="https://github.com/dragthor/south-ridge-app">Github</a> (MIT License).</p>
+			<p>Issues? Questions? Ideas? Visit the <a target="_blank" href="https://github.com/dragthor/south-ridge-app/wiki">wiki</a>.</p>
 		</script>
+		
 	</body>
 </html>
