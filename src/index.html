@@ -81,7 +81,7 @@
 						<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcastTablet" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfoTablet"><b>{{= podcast.get("Title") }}</b><br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>
 						
 						{{ if (podcast.get("Passage") != "N/A") { }}
-							<a href="http://mobile.biblegateway.com/passage/?version=NIV&search={{= encodeURIComponent(podcast.get("Passage")) }}" target="_blank">{{= podcast.get("Passage") }}</a>
+							<a href="{{= SouthRidge.Utils.BibleGatewayUrl }}{{= encodeURIComponent(podcast.get("Passage")) }}" target="_blank">{{= podcast.get("Passage") }}</a>
 						{{ } else { }}
 							{{= podcast.get("Passage") }}
 						{{ } }} 
@@ -91,7 +91,7 @@
 						<li><div><div id="{{= podcast.get("PodcastId") }}" class="podcast" style="background-image: url({{= podcast.get("Image") }})"><img class="podcastItem" src="{{= podcast.get("Icon") }}" /></div><div class="podInfo"><b>{{= podcast.get("Title") }}</b><br/>{{= podcast.get("Speaker") }}, {{= podcast.get("Date") }}<br/>
 
 						{{ if (podcast.get("Passage") != "N/A") { }}
-							<a href="http://mobile.biblegateway.com/passage/?version=NIV&search={{= encodeURIComponent(podcast.get("Passage")) }}" target="_blank">{{= podcast.get("Passage") }}</a>
+							<a href="{{= SouthRidge.Utils.BibleGatewayUrl }}{{= encodeURIComponent(podcast.get("Passage")) }}" target="_blank">{{= podcast.get("Passage") }}</a>
 						{{ } else { }}
 							{{= podcast.get("Passage") }}
 						{{ } }} 
