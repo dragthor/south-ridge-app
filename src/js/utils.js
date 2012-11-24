@@ -49,6 +49,15 @@ SouthRidge.Utils.Alert = function(msg) {
 SouthRidge.Utils.SetTopBar = function(title) {
 	forge.topbar.setTitle(title);
     forge.topbar.removeButtons();
+
+    if (title != "" && title != "About Us") {
+	    forge.topbar.addButton({ icon: "img/01-refresh@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () { 
+	      SouthRidge.Utils.ResetCache(Backbone.history.fragment);
+	      
+	      Backbone.history.loadUrl(Backbone.history.fragment);
+
+	    });
+	}
 };
 
 SouthRidge.Utils.ScrollTop = function() {
@@ -105,11 +114,22 @@ SouthRidge.Utils.Tablet = function() {
 	return tablet;
 };
 
-SouthRidge.Utils.ResetCache = function () {
-	SouthRidge.Cache.Albums = undefined; 
-	SouthRidge.Cache.Podcasts = undefined;
-	SouthRidge.Cache.Videos = undefined;
-	SouthRidge.Cache.Chats = undefined;
-	SouthRidge.Cache.Photos = {};
-	SouthRidge.Cache.CoverPhotos = {};
+SouthRidge.Utils.ResetCache = function (fragment) {
+	if (fragment == undefined || fragment == null) {
+		SouthRidge.Cache.Albums = undefined; 
+		SouthRidge.Cache.Podcasts = undefined;
+		SouthRidge.Cache.Videos = undefined;
+		SouthRidge.Cache.Chats = undefined;
+		SouthRidge.Cache.Photos = {};
+		SouthRidge.Cache.CoverPhotos = {};
+	} else {
+		if (fragment == "videos") SouthRidge.Cache.Videos = undefined;
+		if (fragment == "podcasts") SouthRidge.Cache.Podcasts = undefined;
+		if (fragment == "chat") SouthRidge.Cache.Chats = undefined;
+		if (fragment == "albums") {
+			SouthRidge.Cache.Albums = undefined; 
+			SouthRidge.Cache.Photos = {};
+			SouthRidge.Cache.CoverPhotos = {};
+		}
+	}
 };

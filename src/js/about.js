@@ -34,10 +34,6 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
     SouthRidge.Utils.SetTopBar('About Us');
     SouthRidge.Utils.ScrollTop();
     
-    forge.topbar.addButton({ icon: "img/01-refresh@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () { 
-      SouthRidge.Utils.ResetCache();
-    });
-    
     var params = { logo: this.logo, version: SouthRidge.Utils.Version };
 
     var template = _.template($("#about").html(), params);

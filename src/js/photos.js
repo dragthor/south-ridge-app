@@ -50,7 +50,7 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
 
     SouthRidge.Utils.SetTopBar('Photos');
 
-    forge.topbar.addButton({ icon: "img/167-upload-photo@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () {
+    forge.topbar.addButton({ icon: "img/167-upload-photo@2x.png", position: "left", tint: [86, 148, 198, 255] }, function () {
       try {
         var params = { width: 500, height: 500 };
         
