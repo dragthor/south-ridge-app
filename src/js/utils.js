@@ -126,7 +126,7 @@ SouthRidge.Utils.ResetCache = function (fragment) {
 		if (fragment == "videos") SouthRidge.Cache.Videos = undefined;
 		if (fragment == "podcasts") SouthRidge.Cache.Podcasts = undefined;
 		if (fragment == "chat") SouthRidge.Cache.Chats = undefined;
-		if (fragment == "albums") {
+		if (fragment == "albums" || fragment == "") {
 			SouthRidge.Cache.Albums = undefined; 
 			SouthRidge.Cache.Photos = {};
 			SouthRidge.Cache.CoverPhotos = {};
