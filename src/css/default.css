@@ -49,6 +49,7 @@ h1 {
 	 border-width: 1px;
 	 border-color: #000;
 	 float: left;
+	 margin: 2px 2px 2px 2px; 
 }
 
 .photoTablet {
@@ -58,6 +59,7 @@ h1 {
 	 border-width: 1px;
 	 border-color: #000;
 	 float: left;
+	 margin: 2px 2px 2px 2px;
 }
 
 .podcast {
