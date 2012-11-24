@@ -51,7 +51,7 @@ SouthRidge.ViewManager.Albums = function () {
     });
 };
 
-SouthRidge.ViewManager.Photos = function (id, name) { 
+SouthRidge.ViewManager.Photos = function (id) { 
     var photos = SouthRidge.Cache.Photos[id];
     var view = null;
 
@@ -67,7 +67,7 @@ SouthRidge.ViewManager.Photos = function (id, name) {
             SouthRidge.Cache.Photos[id] = undefined;
             view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve photo feed." } );
           } else {
-            view = new SouthRidge.Views.PhotosView( { collection: photos, albumName: name } );
+            view = new SouthRidge.Views.PhotosView( { collection: photos, albumId: id } );
           }
         },
         error: function(err) {
@@ -76,7 +76,7 @@ SouthRidge.ViewManager.Photos = function (id, name) {
         }
       });
     } else {
-      view = new SouthRidge.Views.PhotosView( { collection: photos, albumName: name } );
+      view = new SouthRidge.Views.PhotosView( { collection: photos, albumId: id } );
     }
 };
 

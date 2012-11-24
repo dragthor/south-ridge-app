@@ -99,7 +99,7 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
     var album = this.collection.where({ cover_photo: $(e.target).attr("id") });
 
     if (album.length === 1) {
-      SouthRidge.Router.navigate('photos/' + album[0].get("id") + '/' + album[0].get("name"), { trigger: true }); 
+      SouthRidge.Router.navigate('photos/' + album[0].get("id"), { trigger: true }); 
     }
   }
 });
@@ -107,18 +107,34 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
 SouthRidge.Views.PhotosView = Backbone.View.extend({
   el: '#content',
   collection: null,
-  albumName: "",
+  albumId: "",
+
   initialize: function(options){
     _.bindAll(this, 'render');
 
     this.collection = options.collection;
-    this.albumName = options.albumName;
+    this.albumId = options.albumId;
     this.render();
   },
   render: function(){
     SouthRidge.Utils.ScrollTop();
   
-    var params = { albumName: decodeURIComponent(this.albumName), photos: this.collection.models };
+    var albums = SouthRidge.Cache.Albums;
+    var name = "";
+    var desc = "";
+
+    for (var i = 0; i < albums.models.length; i++) {
+      var m = albums.models[i];
+
+      if (m.get("id") == this.albumId) {
+        name = (m.get("name") == undefined) ? "Untitled Album" : m.get("name");
+        desc = (m.get("description") == undefined) ? "" : m.get("description");
+
+        break;
+      }
+    }
+
+    var params = { albumName: name, albumDesc: desc, photos: this.collection.models };
 
     var template = _.template($("#photos").html(), params);
 

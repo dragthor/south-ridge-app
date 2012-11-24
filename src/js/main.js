@@ -48,7 +48,7 @@ var SouthRidge = {
         'videos': 'getVideos',
         'albums': 'getAlbums',
         'podcasts': 'getPodcasts',
-        'photos/:id/:name': 'getPhotos',
+        'photos/:id': 'getPhotos',
         'about': 'getAbout',
         'chat': 'getChat',
         'noconnection': 'getNoConnection',
@@ -58,8 +58,8 @@ var SouthRidge = {
       getAlbums: function() {
         SouthRidge.ViewManager.Albums();
       },
-      getPhotos: function(id, name) {
-        SouthRidge.ViewManager.Photos(id, name);
+      getPhotos: function(id) {
+        SouthRidge.ViewManager.Photos(id);
       },
       getVideos: function() {
         SouthRidge.ViewManager.Videos();
