@@ -50,7 +50,7 @@ SouthRidge.Views.ChatView = Backbone.View.extend({
 
     var template = _.template($("#chat").html(), params);
 
-    SouthRidge.Utils.SetTopBar('South Ridge eNews'); 
+    SouthRidge.Utils.SetTopBar('eNews'); 
     SouthRidge.Utils.DoneLoading();
 
     $(this.el).unbind().html(template).show();

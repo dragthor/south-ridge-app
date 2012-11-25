@@ -52,16 +52,6 @@ h1 {
 	 margin: 2px 2px 2px 2px; 
 }
 
-.photoTablet {
-	 height: 100px;
-	 width: 100px;
-	 border-style: solid;
-	 border-width: 1px;
-	 border-color: #000;
-	 float: left;
-	 margin: 2px 2px 2px 2px;
-}
-
 .podcast {
 	height: 70px;
 	width: 75px;
@@ -106,36 +96,6 @@ h1 {
 	margin-left: 84px;
 }
 
-.albumTablet {
-	height: 80px;
-	width: 116px;
-	padding: 2px 4px 2px 0px;
-	vertical-align: middle;
-	float: left;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000;
-}
-
-.albumInfoTablet {
-	margin-left: 128px;
-}
-
-.podcastTablet {
-	height: 80px;
-	width: 116px;
-	padding: 2px 4px 2px 0px;
-	vertical-align: middle;
-	float: left;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000;
-}
-
-.podInfoTablet {
-	margin-left: 128px;
-}
-
 .video {
 	height: 70px;
 	width: 75px;
@@ -158,21 +118,6 @@ h1 {
 	margin-left: 84px;
 }
 
-.videoTablet {
-	height: 80px;
-	width: 116px;
-	padding: 2px 4px 2px 0px;
-	vertical-align: middle;
-	float: left;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000;
-}
-
-.videoInfoTablet {
-	margin-left: 128px;
-}
-
 .logo {
 	padding-top: 2px;
 	margin: 0px;
@@ -188,11 +133,6 @@ h1 {
 	max-height: 40px;
 }
 
-.descTablet {
-	font-size: 16px;
-	overflow: visible;
-	white-space: normal;
-}
 
 .error {
 	
@@ -225,4 +165,70 @@ a.android-vimeo:active {
 a.android-vimeo:hover {
 	text-decoration: none;
 	color: #000;
+}
+
+
+@media only screen and (min-width:600px) {
+
+.desc {
+	font-size: 16px;
+	overflow: visible;
+	white-space: normal;
+}
+
+.photo {
+	 height: 100px;
+	 width: 100px;
+	 border-style: solid;
+	 border-width: 1px;
+	 border-color: #000;
+	 float: left;
+	 margin: 2px 2px 2px 2px;
+}
+
+.album {
+	height: 80px;
+	width: 116px;
+	padding: 2px 4px 2px 0px;
+	vertical-align: middle;
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+}
+
+.albumInfo {
+	margin-left: 128px;
+}
+
+.podcast {
+	height: 80px;
+	width: 116px;
+	padding: 2px 4px 2px 0px;
+	vertical-align: middle;
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+}
+
+.podInfo {
+	margin-left: 128px;
+}
+
+.video {
+	height: 80px;
+	width: 116px;
+	padding: 2px 4px 2px 0px;
+	vertical-align: middle;
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+}
+
+.videoInfo {
+	margin-left: 128px;
+}
+
 }

@@ -83,69 +83,71 @@ var SouthRidge = {
 
     SouthRidge.Router = new AppRouter;
 
-    forge.topbar.setTint([59, 118, 38, 255]);
-    forge.tabbar.setActiveTint([59, 118, 38, 255]);
+    if (forge.is.web() === false) {
+      forge.topbar.setTint([59, 118, 38, 255]);
+      forge.tabbar.setActiveTint([59, 118, 38, 255]);
 
-    forge.event.connectionStateChange.addListener(function() {
-      // Success we have an active connection.
-    }, function(err) {
-      // Error no internet.
-      SouthRidge.Utils.Log(err);
-      SouthRidge.Utils.CheckConnection();
-    });
-
-    var photoButton = forge.tabbar.addButton({
-      text: "Photos",
-      icon: "img/86-camera.png",
-      index: 0
-    }, function (button) {
-      button.onPressed.addListener(function () {
-        SouthRidge.Router.navigate('albums', { trigger: true });
+      forge.event.connectionStateChange.addListener(function() {
+        // Success we have an active connection.
+      }, function(err) {
+        // Error no internet.
+        SouthRidge.Utils.Log(err);
+        SouthRidge.Utils.CheckConnection();
       });
 
-      // This is the default button, activate it immediately.
-      button.setActive();
-    });
+      var photoButton = forge.tabbar.addButton({
+        text: "Photos",
+        icon: "img/86-camera.png",
+        index: 0
+      }, function (button) {
+        button.onPressed.addListener(function () {
+          SouthRidge.Router.navigate('albums', { trigger: true });
+        });
 
-    var podccastButton = forge.tabbar.addButton({
-      text: "Podcast",
-      icon: "img/31-ipod.png",
-      index: 1
-    }, function (button) {
-      button.onPressed.addListener(function () {
-        SouthRidge.Router.navigate('podcasts', { trigger: true });
+        // This is the default button, activate it immediately.
+        button.setActive();
       });
-    });
 
-    var videoButton = forge.tabbar.addButton({
-      text: "Video",
-      icon: "img/70-tv.png",
-      index: 2
-    }, function (button) {
-      button.onPressed.addListener(function () {
-        SouthRidge.Router.navigate('videos', { trigger: true });
+      var podccastButton = forge.tabbar.addButton({
+        text: "Podcast",
+        icon: "img/31-ipod.png",
+        index: 1
+      }, function (button) {
+        button.onPressed.addListener(function () {
+          SouthRidge.Router.navigate('podcasts', { trigger: true });
+        });
       });
-    });
 
-    var chatButton = forge.tabbar.addButton({
-      text: "eNews",
-      icon: "img/08-chat.png",
-      index: 3
-    }, function (button) {
-      button.onPressed.addListener(function () {
-        SouthRidge.Router.navigate('chat', { trigger: true });
+      var videoButton = forge.tabbar.addButton({
+        text: "Video",
+        icon: "img/70-tv.png",
+        index: 2
+      }, function (button) {
+        button.onPressed.addListener(function () {
+          SouthRidge.Router.navigate('videos', { trigger: true });
+        });
       });
-    });
 
-    var aboutButton = forge.tabbar.addButton({
-      text: "About",
-      icon: "img/112-group.png",
-      index: 4
-    }, function (button) {
-      button.onPressed.addListener(function () {
-        SouthRidge.Router.navigate('about', { trigger: true });
+      var chatButton = forge.tabbar.addButton({
+        text: "eNews",
+        icon: "img/08-chat.png",
+        index: 3
+      }, function (button) {
+        button.onPressed.addListener(function () {
+          SouthRidge.Router.navigate('chat', { trigger: true });
+        });
       });
-    });
+
+      var aboutButton = forge.tabbar.addButton({
+        text: "About",
+        icon: "img/112-group.png",
+        index: 4
+      }, function (button) {
+        button.onPressed.addListener(function () {
+          SouthRidge.Router.navigate('about', { trigger: true });
+        });
+      });
+    }
 
     Backbone.history.start();
   }

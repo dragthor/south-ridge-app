@@ -54,10 +54,6 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
       try {
         var params = { width: 500, height: 500 };
         
-        if (SouthRidge.Utils.KindleFire()) {
-          params.source = "gallery";
-        }
-        
         forge.file.getImage(params, function(file) {
           SouthRidge.Utils.Uploader.ImageFile(file);
         });
@@ -75,12 +71,15 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
         var m = this.collection.models[i];
 
         if (SouthRidge.Cache.CoverPhotos[m.get("cover_photo")] == undefined) {
-          // We should really move this out of the view.
-          forge.request.get('http://graph.facebook.com/' + m.get("cover_photo"), function(msg) {
-            SouthRidge.Cache.CoverPhotos[msg.id] = msg.picture;
+          // Unsure why we are getting undefines here, but we need to check to prevent an uncessary network lookup.
+          if (m.get("cover_photo") != undefined) {
+            // We should really move this out of the view.
+            forge.request.get('http://graph.facebook.com/' + m.get("cover_photo"), function(msg) {
+              SouthRidge.Cache.CoverPhotos[msg.id] = msg.picture;
 
-            $("#" + msg.id).attr("style", "background-image: url(" + SouthRidge.Cache.CoverPhotos[msg.id] + ")");
-          });
+              $("#" + msg.id).attr("style", "background-image: url(" + SouthRidge.Cache.CoverPhotos[msg.id] + ")");
+            });
+          }
         } else {
             var cover = m.get("cover_photo");
 
@@ -90,7 +89,7 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
   },
 
   events: {
-    "tap div.album, div.albumTablet": "handleTap"
+    "tap div.album": "handleTap"
   },
 
   handleTap: function(e) {
@@ -150,7 +149,7 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
   },
 
   events: {
-    "tap div.photo, div.photoTablet": "handleTap"
+    "tap div.photo": "handleTap"
   },
 
   handleTap: function(e) {
