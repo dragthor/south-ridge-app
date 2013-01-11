@@ -8,7 +8,7 @@ http://www.southridgecc.org
 
 Current Production Android Version: 1.8
 
-Current Production iOS Version: 1.7 (submitted 1.8, waiting for approval)
+Current Production iOS Version: 1.8
 
 Google Play:  https://play.google.com/store/apps/details?id=com.camomedia.southridge
 
