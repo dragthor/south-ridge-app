@@ -59,7 +59,8 @@
         }, 
         "tabbar": true, 
         "tools": true, 
-        "topbar": true
+        "topbar": true,
+        "prefs": true
     }, 
     "name": "South Ridge", 
     "platform_version": "v1.4", 
