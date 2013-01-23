@@ -147,27 +147,6 @@ h1 {
 	position: absolute;
 }
 
-a.android-vimeo:link {
-	text-decoration: none;
-	color: #000;
-}
-
-a.android-vimeo:visited {
-	text-decoration: none;
-	color: #000;
-}
-
-a.android-vimeo:active {
-	text-decoration: none;
-	color: #000;
-}
-
-a.android-vimeo:hover {
-	text-decoration: none;
-	color: #000;
-}
-
-
 @media only screen and (min-width:600px) {
 
 .desc {

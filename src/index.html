@@ -30,9 +30,7 @@
 		<ul id="mainList" class="list">
 			{{ _(videos).each(function(video) { }}
 
-				{{ if (forge.is.android() && video.get("include")) { }}
-					<li><a class="android-vimeo" href="{{= video.get("mobile_url") }}" target="_blank"><div><div id="{{= video.get("VideoId") }}" class="video" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfo"><b>{{= video.get("title") }}</b><div class="desc">{{= video.get("description")}}</div></div></div></a></li>
-				{{ } else if (video.get("include")) { }}
+				{{ if (video.get("include")) { }}
 					<li><div><div id="{{= video.get("VideoId") }}" class="video" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfo"><b>{{= video.get("title") }}</b><div class="desc">{{= video.get("description") }}</div></div></div></li>
 				{{ } }}
 

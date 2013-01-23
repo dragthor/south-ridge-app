@@ -69,7 +69,8 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
 
   events: {
     "tap div.podcast": "handleTap",
-    "click a.passage": "handlePassageTap"
+    "click a.passage": "handlePassageClick",
+    "tap a.passage": "handlePassageTap"
   },
 
   handleTap: function(e) {
@@ -82,18 +83,20 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
     }
   },
 
+  handlePassageClick: function (e) {
+    e.preventDefault;
+  
+    return false;
+  },
+
   handlePassageTap: function (e) {    
     e.preventDefault();
-    e.stopPropagation();
-    
+
     var url = $(e.target).attr("href");
 
     forge.tabs.openWithOptions({ 
       url: url, 
-      title: "Passage",
       tint: [59, 118, 38, 255]
       }, function(obj) {}, function(err) {});
-
-    return false;
   }
 });

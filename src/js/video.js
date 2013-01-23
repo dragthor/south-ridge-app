@@ -76,8 +76,6 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
   handleTap: function(e) {
     e.preventDefault();
 
-    if (forge.is.android()) return false;
-
     var video = this.collection.where({ VideoId: parseInt($(e.target).attr("id")) });
 
     if (video.length === 1) {

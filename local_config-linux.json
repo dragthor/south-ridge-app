@@ -13,10 +13,10 @@
 		}
 	},
 	"android": {
-		"sdk": "C:\\Users\\Krause\\android-sdks",
+		"sdk": "/home/kkrause/Documents/android-sdk-linux",
 		"profiles": {
 			"DEFAULT": {
-				"keystore": "C:\\Users\\Krause\\Documents\\camomedia.keystore",
+				"keystore": "/home/kkrause/Documents/camosites/camomedia.keystore",
 				"keyalias": "camomedia"
 			}
 		}
