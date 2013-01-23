@@ -31,7 +31,7 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    SouthRidge.Utils.SetTopBar('About Us');
+    SouthRidge.Utils.SetTopBar('Settings');
     SouthRidge.Utils.ScrollTop();
     
     var params = { logo: this.logo, version: SouthRidge.Utils.Version };

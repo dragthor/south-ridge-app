@@ -24,12 +24,14 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 SouthRidge.Views.ChatView = Backbone.View.extend({
   el: '#content',
   collection: null,
+  
   initialize: function(options){
     _.bindAll(this, 'render');
 
     this.collection = options.collection;
     this.render();
   },
+
   render: function(){   
     SouthRidge.Utils.ScrollTop();
 
@@ -38,15 +40,19 @@ SouthRidge.Views.ChatView = Backbone.View.extend({
     var date = chat.attributes["Date"];
     var author = chat.attributes["Author"];
     var message = chat.attributes["Message"];
+    
+    // Need to handle an undefined or null passageRef for backwards compatibility.
+    // Introduced in v1.8.2.
+    var passageRef = chat.attributes["Passage"];
 
     if (date != undefined && author != undefined && message != undefined) {
       author = date + ' - ' + author;
     } else {
-      author = "No news update available at this time.";
+      author = "News update unavailable at this time.";
       message = "Please check again later.";
     }
 
-    var params = { author: author, message: message };
+    var params = { author: author, message: message, passage: passageRef };
 
     var template = _.template($("#chat").html(), params);
 
@@ -54,5 +60,27 @@ SouthRidge.Views.ChatView = Backbone.View.extend({
     SouthRidge.Utils.DoneLoading();
 
     $(this.el).unbind().html(template).show();
+  },
+
+  events: {
+    "click a.passage": "handlePassageClick",
+    "tap a.passage": "handlePassageTap"
+  },
+
+  handlePassageClick: function (e) {
+    e.preventDefault;
+  
+    return false;
+  },
+
+  handlePassageTap: function (e) {    
+    e.preventDefault();
+
+    var url = $(e.target).attr("href");
+
+    forge.tabs.openWithOptions({ 
+      url: url, 
+      tint: [59, 118, 38, 255]
+      }, function(obj) {}, function(err) {});
   }
 });

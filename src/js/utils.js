@@ -50,7 +50,7 @@ SouthRidge.Utils.SetTopBar = function(title) {
 	forge.topbar.setTitle(title);
     forge.topbar.removeButtons();
 
-    if (title != "" && title != "About Us") {
+    if (title != "" && title != "Settings") {
 	    forge.topbar.addButton({ icon: "img/01-refresh@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () { 
 	      SouthRidge.Utils.ResetCache(Backbone.history.fragment);
 	      

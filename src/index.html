@@ -24,6 +24,10 @@
 	<script type="text/template" id="chat">
 		<p>{{= author }}</p>
 		<p>{{= message }}</p>
+
+		{{ if (passage != undefined && passage != null) { }}
+			<a href="{{= SouthRidge.Utils.BibleGatewayUrl }}{{= encodeURIComponent(passage) }}" class="passage">{{= passage }}</a>
+		{{ } }}
 	</script>
 
 	<script type="text/template" id="videos">
@@ -80,6 +84,33 @@
 	</script>
 
 	<script type="text/template" id="about">
+		
+		<p>
+			<fieldset>
+		    	Notifications Enabled: <input type="checkbox" id="chkNotify" />
+		  	</fieldset>
+	  	</p>
+
+		<p>
+			<fieldset>
+		    	Limit to 10 most recent podcasts: <input type="checkbox" id="chkPodcasts" />
+		  	</fieldset>
+	  	</p>
+
+		<p>
+			<fieldset>
+		    	Limit to 10 most recent videos: <input type="checkbox" id="chkVideos" />
+		  	</fieldset>
+	  	</p>
+
+		<p>
+			<fieldset>
+		    	Limit to 10 most recent albums: <input type="checkbox" id="chkAlbums" />
+		  	</fieldset>
+	  	</p>
+
+		<hr/>
+
 		<img class="logo" src="{{= logo }}" />
 		<p>The mission of South Ridge is to embrace God's grace and extend His love.</p>
 

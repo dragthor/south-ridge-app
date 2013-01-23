@@ -64,5 +64,12 @@
     "name": "South Ridge", 
     "platform_version": "v1.4", 
     "version": "1.8.2", 
-    "description": "South Ridge Community Church"
+    "description": "South Ridge Community Church",
+
+    "partners": {
+        "parse": {
+            "applicationId": "RVQvHPE2S63I1FpyNu4GSpSN3qSkmai1XB696kAC",
+            "clientKey": "KcYBEtinysTKql47nMoOgUlchSAtatklPrF918Dv"
+        }
+    }
 }
