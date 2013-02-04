@@ -29,16 +29,20 @@ SouthRidge.Models.Albums = Backbone.Collection.extend({
       var that = this;
       var success = options.success;
       var error = options.error;
-      var limit = 10;
+      var limit = 100;
       
-      forge.request.get('http://graph.facebook.com/southridgecommunitychurch/albums/?limit=' + limit, 
-        function(content) {
-          that.add(content.data);
-          success();
-        }, 
-        function(err) {
-          error(err);
-      });
+      forge.prefs.get("album-limit", function(value) {
+        if (value === true) limit = 10;
+
+        forge.request.get('http://graph.facebook.com/southridgecommunitychurch/albums/?limit=' + limit, 
+          function(content) {
+            that.add(content.data);
+            success();
+          }, 
+          function(err) {
+            error(err);
+        });
+      }, function(err) {});
     }
 });
 
@@ -70,20 +74,24 @@ SouthRidge.Models.Podcasts = Backbone.Collection.extend({
     var that = this;
     var success = options.success;
     var error = options.error;
-    var limit = 10;
+    var limit = 100;
 
     var url = 'http://dragthor.github.com/southridge/SouthRidgePodcast.json';
 
-    if (limit === 10) url = 'http://dragthor.github.com/southridge/SouthRidgeTop10Podcast.json';
+    forge.prefs.get("podcast-limit", function(value) {
+      if (value === true) limit = 10;
 
-    forge.request.get(url, 
-      function(content) {
-        that.add(content);
-        success();
-      }, 
-      function(err) {
-        error(err);
-    });
+      if (limit === 10) url = 'http://dragthor.github.com/southridge/SouthRidgeTop10Podcast.json';
+
+      forge.request.get(url, 
+        function(content) {
+          that.add(content);
+          success();
+        }, 
+        function(err) {
+          error(err);
+      });
+    }, function(err) {});
   }
 });
 
@@ -95,30 +103,33 @@ SouthRidge.Models.Videos = Backbone.Collection.extend({
       var that = this;
       var success = options.success;
       var error = options.error;
-      var limit = 10;
+      var limit = 100;
 
       forge.request.get('http://vimeo.com/api/v2/benstapley/videos.json', 
         function(content) {
-          // that.add(content);
           var i = 0;
 
-          _.each(content, function(item) {
-            if (i < 10) {
-              var tags = item["tags"];
-              var specificTags = tags.split(",");
+          forge.prefs.get("video-limit", function(value) {
+            if (value === true) limit = 10;
 
-              for (var t = 0; t < specificTags.length; t++) {
-                // Only look for those videos with a specific tag.
-                if ($.trim(specificTags[t]).toLowerCase() === "south ridge community church") {
-                  that.push(item);
-                  i++;
-                  break;
-                }
-              } 
-            }
-          });
+            _.each(content, function(item) {
+              if (i < limit) {
+                var tags = item["tags"];
+                var specificTags = tags.split(",");
 
-          success();
+                for (var t = 0; t < specificTags.length; t++) {
+                  // Only look for those videos with a specific tag.
+                  if ($.trim(specificTags[t]).toLowerCase() === "south ridge community church") {
+                    that.push(item);
+                    i++;
+                    break;
+                  }
+                } 
+              }
+            });
+
+            success();
+          }, function(err) {});
         }, 
         function(err) {
           error(err);
