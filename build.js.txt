@@ -1,5 +1,5 @@
 java -jar build/compiler.jar --js src/js/about.js --js_output_file src/js/about.min.js
-java -jar build/compiler.jar --js src/js/chat.js --js_output_file src/js/chat.min.js
+java -jar build/compiler.jar --js src/js/news.js --js_output_file src/js/news.min.js
 java -jar build/compiler.jar --js src/js/connected.js --js_output_file src/js/connected.min.js
 java -jar build/compiler.jar --js src/js/error.js --js_output_file src/js/error.min.js
 java -jar build/compiler.jar --js src/js/main.js --js_output_file src/js/main.min.js

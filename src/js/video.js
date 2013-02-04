@@ -23,8 +23,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 SouthRidge.Views.VideoView = Backbone.View.extend({
   el: '#content',
+
   collection: null,
+
   icon: null,
+
   initialize: function(options){
     _.bindAll(this, 'render');
 
@@ -32,31 +35,17 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
     this.icon = options.icon;
     this.render();
   },
+  
   render: function(){
     SouthRidge.Utils.ScrollTop();
 
     for (var i = 0; i < this.collection.models.length; i++) {
       var m = this.collection.models[i];
 
-      var tags = m.get("tags");
-
       if (m.get("description") == undefined) m.set("description", "");
       
       m.set("icon", this.icon);
-      m.set("include", false);
       m.set("VideoId", parseInt(m.get("id")));
-
-      if (tags == undefined) tags = "";
-
-      var specificTags = tags.split(",");
-
-      for (var t = 0; t < specificTags.length; t++) {
-        // Only look for those videos with a specific tag.
-        if ($.trim(specificTags[t]).toLowerCase() === "south ridge community church") {
-          m.set("include", true);
-          break;
-        }
-      }
     }
 
     var params = { videos: this.collection.models };
@@ -81,7 +70,7 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
     if (video.length === 1) {
       forge.tabs.openWithOptions({
         url: video[0].get("mobile_url"),
-        tint: [59, 118, 38, 255]
+        tint: SouthRidge.Utils.MainColor
       }, function (data) {
         SouthRidge.Utils.Log(data.url);
       });

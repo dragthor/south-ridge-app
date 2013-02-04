@@ -21,29 +21,56 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-SouthRidge.Views.ErrorView = Backbone.View.extend({
+SouthRidge.Views.SettingsView = Backbone.View.extend({
   el: '#content',
-
-  message: null,
 
   initialize: function(options){
     _.bindAll(this, 'render');
 
-    this.message = options.message;
     this.render();
   },
-  
+
   render: function(){
-    SouthRidge.Utils.SetTopBar('South Ridge');
+    SouthRidge.Utils.SetTopBar('Settings');
     SouthRidge.Utils.ScrollTop();
-    SouthRidge.Utils.DeactivateTabs();
-
-    var params = { message: this.message };
-
-    var template = _.template($("#error").html(), params);
+    
+    var template = _.template($("#settings").html());
 
     SouthRidge.Utils.DoneLoading();
     
     $(this.el).unbind().html(template).show();
+
+    forge.prefs.get("podcast-limit", function(value) {
+      $("#chkPodcasts").prop("checked", value);
+
+    }, function(err) {});
+
+    forge.prefs.get("video-limit", function(value) {
+      $("#chkVideos").prop("checked", value);
+
+    }, function(err) {});
+
+    forge.prefs.get("album-limit", function(value) {
+      $("#chkAlbums").prop("checked", value);
+
+    }, function(err) {});
+  },
+
+  events: {
+    "change #chkPodcasts": "handlePodcastChange",
+    "change #chkVideos": "handleVideoChange",
+    "change #chkAlbums": "handleAlbumChange"
+  },
+
+  handlePodcastChange: function (e) {
+    forge.prefs.set("podcast-limit", $(e.target).prop("checked"), function() {}, function(err) {});
+  },
+
+  handleVideoChange: function (e) {
+    forge.prefs.set("video-limit", $(e.target).prop("checked"), function() {}, function(err) {});
+  },
+
+  handleAlbumChange: function (e) {
+    forge.prefs.set("album-limit", $(e.target).prop("checked"), function() {}, function(err) {});
   }
 });

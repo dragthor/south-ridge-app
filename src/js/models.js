@@ -29,8 +29,9 @@ SouthRidge.Models.Albums = Backbone.Collection.extend({
       var that = this;
       var success = options.success;
       var error = options.error;
-
-      forge.request.get('http://graph.facebook.com/southridgecommunitychurch/albums/', 
+      var limit = 10;
+      
+      forge.request.get('http://graph.facebook.com/southridgecommunitychurch/albums/?limit=' + limit, 
         function(content) {
           that.add(content.data);
           success();
@@ -69,8 +70,13 @@ SouthRidge.Models.Podcasts = Backbone.Collection.extend({
     var that = this;
     var success = options.success;
     var error = options.error;
+    var limit = 10;
 
-    forge.request.get('http://dragthor.github.com/southridge/SouthRidgePodcast.json', 
+    var url = 'http://dragthor.github.com/southridge/SouthRidgePodcast.json';
+
+    if (limit === 10) url = 'http://dragthor.github.com/southridge/SouthRidgeTop10Podcast.json';
+
+    forge.request.get(url, 
       function(content) {
         that.add(content);
         success();
@@ -89,10 +95,29 @@ SouthRidge.Models.Videos = Backbone.Collection.extend({
       var that = this;
       var success = options.success;
       var error = options.error;
+      var limit = 10;
 
       forge.request.get('http://vimeo.com/api/v2/benstapley/videos.json', 
         function(content) {
-          that.add(content);
+          // that.add(content);
+          var i = 0;
+
+          _.each(content, function(item) {
+            if (i < 10) {
+              var tags = item["tags"];
+              var specificTags = tags.split(",");
+
+              for (var t = 0; t < specificTags.length; t++) {
+                // Only look for those videos with a specific tag.
+                if ($.trim(specificTags[t]).toLowerCase() === "south ridge community church") {
+                  that.push(item);
+                  i++;
+                  break;
+                }
+              } 
+            }
+          });
+
           success();
         }, 
         function(err) {
@@ -101,10 +126,10 @@ SouthRidge.Models.Videos = Backbone.Collection.extend({
     }
 });
 
-SouthRidge.Models.Chat = Backbone.Model.extend();
+SouthRidge.Models.NewsItem = Backbone.Model.extend();
 
-SouthRidge.Models.Chats = Backbone.Collection.extend({
-    model: SouthRidge.Models.Chat,
+SouthRidge.Models.News = Backbone.Collection.extend({
+    model: SouthRidge.Models.NewsItem,
     initialize: function(models, options) {
       var that = this;
       var success = options.success;

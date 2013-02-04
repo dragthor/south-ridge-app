@@ -140,31 +140,31 @@ SouthRidge.ViewManager.Podcasts = function () {
     });
 };
 
-SouthRidge.ViewManager.Chat = function () {
-    var chats = SouthRidge.Cache.Chats;
+SouthRidge.ViewManager.News = function () {
+    var news = SouthRidge.Cache.News;
     var view = null;
 
     SouthRidge.Utils.Loading();
 
-    if (chats == undefined) {
-      chats = new SouthRidge.Models.Chats([], {
+    if (news == undefined) {
+      news = new SouthRidge.Models.News([], {
         success: function() {
-          SouthRidge.Cache.Chats = chats;
+          SouthRidge.Cache.News = news;
 
-          if (chats.length === 0) {
-            SouthRidge.Cache.Chats = undefined;
+          if (news.length === 0) {
+            SouthRidge.Cache.News = undefined;
             view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve chat feed." } )
           } else {
-            view = new SouthRidge.Views.ChatView( { collection: chats } );
+            view = new SouthRidge.Views.NewsView( { collection: news } );
           }
         },
         error: function(err) {
-          SouthRidge.Cache.Chats = undefined;
+          SouthRidge.Cache.News = undefined;
           view = new SouthRidge.Views.ErrorView( { message: err.message } );
         }
       });
     } else {
-      view = new SouthRidge.Views.ChatView( { collection: chats } );
+      view = new SouthRidge.Views.NewsView( { collection: news } );
     }
 };
 
@@ -180,4 +180,8 @@ SouthRidge.ViewManager.NoConnection = function () {
 
 SouthRidge.ViewManager.Error = function (msg) {
   var view = new SouthRidge.Views.ErrorView( { message: msg } );
+};
+
+SouthRidge.ViewManager.Settings = function () {
+  var view = new SouthRidge.Views.SettingsView();
 };

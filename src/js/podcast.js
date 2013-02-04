@@ -23,8 +23,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 SouthRidge.Views.PodcastView = Backbone.View.extend({
   el: '#content',
+
   collection: null,
+
   icon: null,
+
   initialize: function(options){
     _.bindAll(this, 'render');
 
@@ -32,6 +35,7 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
     this.icon = options.icon;
     this.render();
   },
+
   render: function(){   
     SouthRidge.Utils.ScrollTop();
 
@@ -69,34 +73,33 @@ SouthRidge.Views.PodcastView = Backbone.View.extend({
 
   events: {
     "tap div.podcast": "handleTap",
-    "click a.passage": "handlePassageClick",
-    "tap a.passage": "handlePassageTap"
+    "click a.passage": "handlePassageClick"
   },
 
-  handleTap: function(e) {
+  handleTap: function (e) {
     e.preventDefault();
 
     var podcast = this.collection.where({ PodcastId: $(e.target).attr("id") });
 
     if (podcast.length === 1) {
        forge.media.videoPlay(podcast[0].get("Mp3"), function() {}, function() {});
-    }
+    } 
   },
 
-  handlePassageClick: function (e) {
-    e.preventDefault;
-  
-    return false;
-  },
-
-  handlePassageTap: function (e) {    
+  handlePassageClick: function (e) {    
     e.preventDefault();
 
     var url = $(e.target).attr("href");
 
-    forge.tabs.openWithOptions({ 
-      url: url, 
-      tint: [59, 118, 38, 255]
-      }, function(obj) {}, function(err) {});
+    forge.tabs.openWithOptions(
+      { 
+        url: url, 
+        tint: SouthRidge.Utils.MainColor
+      }, 
+      function(obj) {}, 
+      function(err) {}
+    );
+
+    return false;
   }
 });

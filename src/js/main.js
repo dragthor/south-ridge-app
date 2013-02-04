@@ -50,7 +50,8 @@ var SouthRidge = {
         'podcasts': 'getPodcasts',
         'photos/:id': 'getPhotos',
         'about': 'getAbout',
-        'chat': 'getChat',
+        'settings': 'getSettings',
+        'news': 'getNews',
         'noconnection': 'getNoConnection',
         'error': 'getError',
         '*actions' : 'getAlbums'
@@ -67,8 +68,11 @@ var SouthRidge = {
       getPodcasts: function() {
         SouthRidge.ViewManager.Podcasts();
       },
-      getChat: function() {
-        SouthRidge.ViewManager.Chat();
+      getSettings: function() {
+        SouthRidge.ViewManager.Settings();
+      },
+      getNews: function() {
+        SouthRidge.ViewManager.News();
       },
       getAbout: function() {
         SouthRidge.ViewManager.About();
@@ -83,8 +87,8 @@ var SouthRidge = {
 
     SouthRidge.Router = new AppRouter;
 
-    forge.topbar.setTint([59, 118, 38, 255]);
-    forge.tabbar.setActiveTint([59, 118, 38, 255]);
+    forge.topbar.setTint(SouthRidge.Utils.MainColor);
+    forge.tabbar.setActiveTint(SouthRidge.Utils.MainColor);
 
     forge.event.connectionStateChange.addListener(function() {
       // Success we have an active connection.
@@ -96,7 +100,10 @@ var SouthRidge = {
 
     // Basic push notification message.
     forge.event.messagePushed.addListener(function (msg) {
-        SouthRidge.Utils.Alert(msg.alert);
+        // First reset the old news update to force a fresh of latest.
+        SouthRidge.Cache.News = undefined;
+        
+        SouthRidge.Router.navigate('news', { trigger: true });
     });
 
     var photoButton = forge.tabbar.addButton({
@@ -132,23 +139,23 @@ var SouthRidge = {
       });
     });
 
-    var chatButton = forge.tabbar.addButton({
+    var newsButton = forge.tabbar.addButton({
       text: "eNews",
       icon: "img/08-chat.png",
       index: 3
     }, function (button) {
       button.onPressed.addListener(function () {
-        SouthRidge.Router.navigate('chat', { trigger: true });
+        SouthRidge.Router.navigate('news', { trigger: true });
       });
     });
 
     var aboutButton = forge.tabbar.addButton({
       text: "Settings",
-      icon: "img/112-group.png",
+      icon: "img/20-gear-2@2x.png",
       index: 4
     }, function (button) {
       button.onPressed.addListener(function () {
-        SouthRidge.Router.navigate('about', { trigger: true });
+        SouthRidge.Router.navigate('settings', { trigger: true });
       });
     });
   

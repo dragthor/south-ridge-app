@@ -23,8 +23,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 SouthRidge.Views.AlbumView = Backbone.View.extend({
   el: '#content',
+
   collection: null,
+  
   icon: null,
+  
   initialize: function(options){
     _.bindAll(this, 'render');
 
@@ -32,6 +35,7 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
     this.icon = options.icon;
     this.render();
   },
+  
   render: function(){
     SouthRidge.Utils.ScrollTop();
 
@@ -50,7 +54,12 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
 
     SouthRidge.Utils.SetTopBar('Photos');
 
-    forge.topbar.addButton({ icon: "img/167-upload-photo@2x.png", position: "left", tint: [86, 148, 198, 255] }, function () {
+    forge.topbar.addButton(
+      { 
+        icon: "img/167-upload-photo@2x.png", 
+        position: "left", 
+        tint: SouthRidge.Utils.ActiveTint 
+      }, function () {
       try {
         var params = { width: 500, height: 500 };
         
@@ -139,7 +148,12 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
 
     SouthRidge.Utils.SetTopBar('');
 
-    forge.topbar.addButton({ text: "Back", position: "left", tint: [59, 118, 38, 255] }, function () { 
+    forge.topbar.addButton(
+      { 
+        text: "Back", 
+        position: "left", 
+        tint: SouthRidge.Utils.MainColor 
+      }, function () { 
       SouthRidge.Router.navigate('albums', { trigger: true });
     });
 
@@ -162,7 +176,7 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
     
       forge.tabs.openWithOptions({
         url: photoUrl,
-        tint: [59, 118, 38, 255]
+        tint: SouthRidge.Utils.MainColor
       }, function (data) {
         SouthRidge.Utils.Log(data.url);
       });

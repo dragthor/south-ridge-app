@@ -34,9 +34,11 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
   },
 
   render: function(){
-    SouthRidge.Utils.SetTopBar('Settings');
+    SouthRidge.Utils.SetTopBar('About');
     SouthRidge.Utils.ScrollTop();
     
+    forge.tabbar.setInactive(function() {}, function(err) {});
+
     var params = { logo: this.logo, version: SouthRidge.Utils.Version };
 
     var template = _.template($("#about").html(), params);
@@ -44,49 +46,5 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
     SouthRidge.Utils.DoneLoading();
     
     $(this.el).unbind().html(template).show();
-
-    forge.prefs.get("notify", function(value) {
-      $("#chkNotify").prop("checked", value);
-
-    }, function(err) {});
-
-    forge.prefs.get("podcast-limit", function(value) {
-      $("#chkPodcasts").prop("checked", value);
-
-    }, function(err) {});
-
-    forge.prefs.get("video-limit", function(value) {
-      $("#chkVideos").prop("checked", value);
-
-    }, function(err) {});
-
-    forge.prefs.get("album-limit", function(value) {
-      $("#chkAlbums").prop("checked", value);
-
-    }, function(err) {});
-  },
-
-  events: {
-    "change #chkNotify": "handleNotifyChange",
-    "change #chkPodcasts": "handlePodcastChange",
-    "change #chkVideos": "handleVideoChange",
-    "change #chkAlbums": "handleAlbumChange"
-  },
-
-  handleNotifyChange: function (e) {
-    forge.prefs.set("notify", $(e.target).prop("checked"), function() {}, function(err) {});
-  },
-
-  handlePodcastChange: function (e) {
-    forge.prefs.set("podcast-limit", $(e.target).prop("checked"), function() {}, function(err) {});
-  },
-
-  handleVideoChange: function (e) {
-    forge.prefs.set("video-limit", $(e.target).prop("checked"), function() {}, function(err) {});
-  },
-
-  handleAlbumChange: function (e) {
-    forge.prefs.set("album-limit", $(e.target).prop("checked"), function() {}, function(err) {});
   }
-
 });

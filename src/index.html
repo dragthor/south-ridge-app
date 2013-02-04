@@ -21,23 +21,40 @@
 		<div class="error"><h1>Oops! Error</h1><p>Unfortunately an error has occurred.  Sometimes this indicates a poor network connection.  Please try again later. If the error persists, email the developer listed under <a href="#about">About</a>.</p><p>Error Details:</p><p>{{= message }}</p></div>
 	</script>
 
-	<script type="text/template" id="chat">
+	<script type="text/template" id="news">
 		<p>{{= author }}</p>
 		<p>{{= message }}</p>
 
 		{{ if (passage != undefined && passage != null) { }}
-			<a href="{{= SouthRidge.Utils.BibleGatewayUrl }}{{= encodeURIComponent(passage) }}" class="passage">{{= passage }}</a>
+			<p>View passage referenced - <a href="{{= SouthRidge.Utils.BibleGatewayUrl }}{{= encodeURIComponent(passage) }}" class="passage">{{= passage }}</a></p>
 		{{ } }}
+	</script>
+
+	<script type="text/template" id="settings">
+		<p>
+			<fieldset>
+		    	Limit to 10 most recent podcasts: <input type="checkbox" id="chkPodcasts" />
+		  	</fieldset>
+	  	</p>
+
+		<p>
+			<fieldset>
+		    	Limit to 10 most recent videos: <input type="checkbox" id="chkVideos" />
+		  	</fieldset>
+	  	</p>
+
+		<p>
+			<fieldset>
+		    	Limit to 10 most recent albums: <input type="checkbox" id="chkAlbums" />
+		  	</fieldset>
+	  	</p>
 	</script>
 
 	<script type="text/template" id="videos">
 		<ul id="mainList" class="list">
 			{{ _(videos).each(function(video) { }}
-
-				{{ if (video.get("include")) { }}
-					<li><div><div id="{{= video.get("VideoId") }}" class="video" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfo"><b>{{= video.get("title") }}</b><div class="desc">{{= video.get("description") }}</div></div></div></li>
-				{{ } }}
-
+				<li><div><div id="{{= video.get("VideoId") }}" class="video" style="background-image: url({{= video.get("thumbnail_small") }})"><img class="videoItem" src="{{= video.get("icon") }}" /></div><div class="videoInfo"><b>{{= video.get("title") }}</b><div class="desc">{{= video.get("description") }}</div></div></div>
+				</li>
 			{{ }); }}
 		</ul>
 	</script>
@@ -83,34 +100,7 @@
     	{{ }); }}
 	</script>
 
-	<script type="text/template" id="about">
-		
-		<p>
-			<fieldset>
-		    	Notifications Enabled: <input type="checkbox" id="chkNotify" />
-		  	</fieldset>
-	  	</p>
-
-		<p>
-			<fieldset>
-		    	Limit to 10 most recent podcasts: <input type="checkbox" id="chkPodcasts" />
-		  	</fieldset>
-	  	</p>
-
-		<p>
-			<fieldset>
-		    	Limit to 10 most recent videos: <input type="checkbox" id="chkVideos" />
-		  	</fieldset>
-	  	</p>
-
-		<p>
-			<fieldset>
-		    	Limit to 10 most recent albums: <input type="checkbox" id="chkAlbums" />
-		  	</fieldset>
-	  	</p>
-
-		<hr/>
-
+	<script type="text/template" id="about">		
 		<img class="logo" src="{{= logo }}" />
 		<p>The mission of South Ridge is to embrace God's grace and extend His love.</p>
 
@@ -128,22 +118,21 @@
     <script src="js/lib/underscore-min.js"></script>
     <script src="js/lib/backbone-min.js"></script>
 
-    <script src="js/main.min.js" type="text/javascript"></script>
-    <script src="js/connected.min.js" type="text/javascript"></script>
-    <script src="js/utils.min.js" type="text/javascript"></script>
-	<script src="js/photoupload.min.js" type="text/javascript"></script>
-	<script src="js/viewmanager.min.js" type="text/javascript"></script>
-  	<script src="js/error.min.js" type="text/javascript"></script>
-    <script src="js/models.min.js" type="text/javascript"></script>
-    <script src="js/about.min.js" type="text/javascript"></script>
-    <script src="js/video.min.js" type="text/javascript"></script>
-    <script src="js/podcast.min.js" type="text/javascript"></script>
-    <script src="js/photos.min.js" type="text/javascript"></script>
-	<script src="js/chat.min.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/connected.js" type="text/javascript"></script>
+    <script src="js/utils.js" type="text/javascript"></script>
+	<script src="js/photoupload.js" type="text/javascript"></script>
+	<script src="js/viewmanager.js" type="text/javascript"></script>
+  	<script src="js/error.js" type="text/javascript"></script>
+    <script src="js/models.js" type="text/javascript"></script>
+    <script src="js/about.js" type="text/javascript"></script>
+    <script src="js/video.js" type="text/javascript"></script>
+    <script src="js/podcast.js" type="text/javascript"></script>
+    <script src="js/photos.js" type="text/javascript"></script>
+	<script src="js/news.js" type="text/javascript"></script>
+	<script src="js/settings.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
-  		if (forge.is.web()) $ = Zepto;
-
   		$(SouthRidge.init);
 	</script>
 </html>

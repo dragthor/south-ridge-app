@@ -25,6 +25,8 @@ SouthRidge.Utils.Version = "1.8.2";
 SouthRidge.Utils.ParseAppId = "RVQvHPE2S63I1FpyNu4GSpSN3qSkmai1XB696kAC";
 SouthRidge.Utils.ParseRestKey = "uUL10oLmwnI6c9LbojMRTOJn65gIeP6jEitMjWDq";
 SouthRidge.Utils.BibleGatewayUrl = "http://mobile.biblegateway.com/passage/?version=NIV&search=";
+SouthRidge.Utils.ActiveTint = [86, 148, 198, 255]; // Blue
+SouthRidge.Utils.MainColor = [59, 118, 38, 255]; // Green
 
 SouthRidge.Utils.CheckConnection = function() {
 	if(forge.is.connection.connected()) {
@@ -50,12 +52,26 @@ SouthRidge.Utils.SetTopBar = function(title) {
 	forge.topbar.setTitle(title);
     forge.topbar.removeButtons();
 
-    if (title != "" && title != "Settings") {
-	    forge.topbar.addButton({ icon: "img/01-refresh@2x.png", position: "right", tint: [86, 148, 198, 255] }, function () { 
+    if (title != "" && title != "Settings" && title != "About") {
+	    forge.topbar.addButton(
+	    	{ 
+	    		icon: "img/01-refresh@2x.png", 
+	    		position: "right", 
+	    		tint: SouthRidge.Utils.ActiveTint 
+	    	}, function () { 
 	      SouthRidge.Utils.ResetCache(Backbone.history.fragment);
 	      
 	      Backbone.history.loadUrl(Backbone.history.fragment);
 
+	    });
+	} else if (title == "Settings") {
+		forge.topbar.addButton(
+			{ 
+				icon: "img/112-group@2x.png", 
+				position: "right", 
+				tint: SouthRidge.Utils.ActiveTint 
+			}, function () { 
+	 		SouthRidge.Router.navigate("about", { trigger: true });
 	    });
 	}
 };
@@ -90,7 +106,7 @@ SouthRidge.Utils.ResetCache = function (fragment) {
 	} else {
 		if (fragment == "videos") SouthRidge.Cache.Videos = undefined;
 		if (fragment == "podcasts") SouthRidge.Cache.Podcasts = undefined;
-		if (fragment == "chat") SouthRidge.Cache.Chats = undefined;
+		if (fragment == "news") SouthRidge.Cache.News = undefined;
 		if (fragment == "albums" || fragment == "") {
 			SouthRidge.Cache.Albums = undefined; 
 			SouthRidge.Cache.Photos = {};

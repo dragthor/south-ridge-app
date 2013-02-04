@@ -23,11 +23,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 SouthRidge.Views.NotConnectedView = Backbone.View.extend({
   el: '#content',
+
   initialize: function(options){
     _.bindAll(this, 'render');
 
     this.render();
   },
+  
   render: function(){
     SouthRidge.Utils.SetTopBar('South Ridge');
     SouthRidge.Utils.ScrollTop();
