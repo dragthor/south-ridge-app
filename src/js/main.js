@@ -43,6 +43,25 @@ var SouthRidge = {
         evaluate: /\{\{(.+?)\}\}/g
     };
 
+    // Default preference values.
+    forge.prefs.get("podcast-limit", function(value) {
+      if (value == undefined) {
+        forge.prefs.set("podcast-limit", true, function() {}, function(defaultErr) {});
+      }
+    }, function(err) {});
+
+    forge.prefs.get("video-limit", function(value) {
+      if (value == undefined) {
+        forge.prefs.set("video-limit", true, function() {}, function(defaultErr) {});
+      }
+    }, function(err) {});
+
+    forge.prefs.get("album-limit", function(value) {
+      if (value == undefined) {
+        forge.prefs.set("album-limit", true, function() {}, function(defaultErr) {});
+      }
+    }, function(err) {});
+
     var AppRouter = Backbone.Router.extend({
       routes: {
         'videos': 'getVideos',

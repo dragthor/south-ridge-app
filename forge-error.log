@@ -82,3 +82,31 @@ ConnectionError: [Errno 11004] getaddrinfo failed
 
 2013-01-28 19:31:21,688 [  ERROR] See C:\Users\Krause\Documents\GitHub\south-ridge-app\forge-error.log for more details
 2013-01-28 19:31:21,688 [  ERROR] Please contact support@trigger.io
+2013-02-04 19:07:42,134 [   INFO] Forge tools running at version 3.3.34
+2013-02-04 19:07:42,135 [  DEBUG] Forge build tools version: 3.3.34
+2013-02-04 19:07:42,135 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2013-02-04 19:07:42,135 [  DEBUG] port: 38394
+2013-02-04 19:07:42,138 [  DEBUG] GET https://trigger.io/api/version_check/3/3/34/
+2013-02-04 19:07:56,401 [  ERROR] Something went wrong that we didn't expect:
+2013-02-04 19:07:56,401 [  ERROR] [Errno 11004] getaddrinfo failed
+2013-02-04 19:07:56,401 [  DEBUG] Traceback (most recent call last):
+  File "C:\Users\Krause\AppData\Local\Trigger Toolkit\build-tools\forge\async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "C:\Users\Krause\AppData\Local\Trigger Toolkit\build-tools\forge\main.py", line 295, in development_build
+    remote.check_version()
+  File "C:\Users\Krause\AppData\Local\Trigger Toolkit\build-tools\forge\remote.py", line 341, in check_version
+    'version_check/{version}/'.format(version=forge.get_version().replace('.','/'))
+  File "C:\Users\Krause\AppData\Local\Trigger Toolkit\build-tools\forge\remote.py", line 265, in _api_get
+    resp = self.__get_or_post(absolute_url, *args, **kw)
+  File "C:\Users\Krause\AppData\Local\Trigger Toolkit\build-tools\forge\remote.py", line 221, in __get_or_post
+    resp = getattr(self.session, method.lower())(url, *args, **kw)
+  File "C:\Users\Krause\AppData\Local\Trigger Toolkit\build-tools\forge-dependencies\requests\sessions.py", line 254, in get
+    return self.request('get', url, **kwargs)
+  File "C:\Users\Krause\AppData\Local\Trigger Toolkit\build-tools\forge-dependencies\requests\sessions.py", line 241, in request
+    r.send(prefetch=prefetch)
+  File "C:\Users\Krause\AppData\Local\Trigger Toolkit\build-tools\forge-dependencies\requests\models.py", line 634, in send
+    raise ConnectionError(sockerr)
+ConnectionError: [Errno 11004] getaddrinfo failed
+
+2013-02-04 19:07:56,401 [  ERROR] See C:\Users\Krause\Documents\GitHub\south-ridge-app\forge-error.log for more details
+2013-02-04 19:07:56,401 [  ERROR] Please contact support@trigger.io

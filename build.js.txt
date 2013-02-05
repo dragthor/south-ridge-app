@@ -10,3 +10,4 @@ java -jar build/compiler.jar --js src/js/podcast.js --js_output_file src/js/podc
 java -jar build/compiler.jar --js src/js/utils.js --js_output_file src/js/utils.min.js
 java -jar build/compiler.jar --js src/js/video.js --js_output_file src/js/video.min.js
 java -jar build/compiler.jar --js src/js/viewmanager.js --js_output_file src/js/viewmanager.min.js
+java -jar build/compiler.jar --js src/js/settings.js --js_output_file src/js/settings.min.js
