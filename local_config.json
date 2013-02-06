@@ -4,7 +4,7 @@
 	"ios": {
 		"profiles": {
 			"DEFAULT": {
-				"provisioning_profile": "/users/kristoferkrause/Documents/DevMobileProvision.mobileprovision"
+				"provisioning_profile": "/users/kristoferkrause/Documents/DevMobileProfilePush.mobileprovision"
 			},
 			"release": {
 		        "provisioning_profile": "/users/kristoferkrause/Documents/ProdMobileProvision.mobileprovision",

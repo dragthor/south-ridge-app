@@ -29,12 +29,12 @@ SouthRidge.Models.Albums = Backbone.Collection.extend({
       var that = this;
       var success = options.success;
       var error = options.error;
-      var limit = 100;
+      var limit = SouthRidge.Utils.MaxResults;
       
       forge.prefs.get("album-limit", function(value) {
         if (value === true) limit = 10;
 
-        forge.request.get('http://graph.facebook.com/southridgecommunitychurch/albums/?limit=' + limit, 
+        forge.request.get('http://graph.facebook.com/southridgecommunitychurch/albums/?fields=name,cover_photo,description&limit=' + limit, 
           function(content) {
             that.add(content.data);
             success();
@@ -55,7 +55,7 @@ SouthRidge.Models.Photos = Backbone.Collection.extend({
       var success = options.success;
       var error = options.error;
  
-      forge.request.get('http://graph.facebook.com/' + options.albumId + '/photos', 
+      forge.request.get('http://graph.facebook.com/' + options.albumId + '/photos?fields=picture,source', 
         function(content) {
           that.add(content.data);
           success();
@@ -74,7 +74,7 @@ SouthRidge.Models.Podcasts = Backbone.Collection.extend({
     var that = this;
     var success = options.success;
     var error = options.error;
-    var limit = 100;
+    var limit = SouthRidge.Utils.MaxResults;
 
     var url = 'http://dragthor.github.com/southridge/SouthRidgePodcast.json';
 
@@ -103,7 +103,7 @@ SouthRidge.Models.Videos = Backbone.Collection.extend({
       var that = this;
       var success = options.success;
       var error = options.error;
-      var limit = 100;
+      var limit = SouthRidge.Utils.MaxResults;
 
       forge.request.get('http://vimeo.com/api/v2/benstapley/videos.json', 
         function(content) {

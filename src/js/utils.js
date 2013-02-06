@@ -27,6 +27,7 @@ SouthRidge.Utils.ParseRestKey = "uUL10oLmwnI6c9LbojMRTOJn65gIeP6jEitMjWDq";
 SouthRidge.Utils.BibleGatewayUrl = "http://mobile.biblegateway.com/passage/?version=NIV&search=";
 SouthRidge.Utils.ActiveTint = [86, 148, 198, 255]; // Blue
 SouthRidge.Utils.MainColor = [59, 118, 38, 255]; // Green
+SouthRidge.Utils.MaxResults = 50;
 
 SouthRidge.Utils.CheckConnection = function() {
 	if(forge.is.connection.connected()) {
