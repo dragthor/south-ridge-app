@@ -21,6 +21,18 @@
 		<div class="error"><h1>Oops! Error</h1><p>Unfortunately an error has occurred.  Sometimes this indicates a poor network connection.  Please try again later. If the error persists, email the developer listed under <a href="#about">About</a>.</p><p>Error Details:</p><p>{{= message }}</p></div>
 	</script>
 
+	<script type="text/template" id ="albums">
+		<ul id="mainList" class="list">
+			{{ _(albums).each(function(album) { }}
+				{{ if (album.get("name") != "Untitled Album") { }}
+
+					<li id="{{= album.get("id") }}"><div><div class="album" id="{{= album.get("cover_photo") }}" ><img class="albumItem" src="{{= album.get("icon") }}" /></div><div class="albumInfo"><b>{{= album.get("name") }}</b><div class="desc">{{= album.get("description") }}</div></div></div></li>
+					
+				{{ } }}
+			{{ }); }}
+		</ul>
+	</script>
+	
 	<script type="text/template" id="news">
 		<p>{{= author }}</p>
 		<p>{{= message }}</p>
@@ -77,18 +89,6 @@
 		</ul>
 	</script>
 
-	<script type="text/template" id ="albums">
-		<ul id="mainList" class="list">
-			{{ _(albums).each(function(album) { }}
-				{{ if (album.get("name") != "Untitled Album") { }}
-
-					<li id="{{= album.get("id") }}"><div><div class="album" id="{{= album.get("cover_photo") }}" ><img class="albumItem" src="{{= album.get("icon") }}" /></div><div class="albumInfo"><b>{{= album.get("name") }}</b><div class="desc">{{= album.get("description") }}</div></div></div></li>
-					
-				{{ } }}
-			{{ }); }}
-		</ul>
-	</script>
-
 	<script type="text/template" id ="photos">
 		<h1>{{= albumName }}</h1>
 		<p>{{= albumDesc }}</p>
@@ -134,5 +134,15 @@
 
 	<script type="text/javascript">
   		$(SouthRidge.init);
+
+  		$(document).ready(function() {
+  			setTimeout(function() {
+	  			forge.launchimage.hide(function() {
+			      // success
+			    }, function(err) {
+			      SouthRidge.ViewManager.Error("Initialization error. " + err.message);
+			    });
+  			}, 6000);
+  		});
 	</script>
 </html>
