@@ -64,6 +64,7 @@ var SouthRidge = {
 
     var AppRouter = Backbone.Router.extend({
       routes: {
+        '': 'getAlbums',
         'videos': 'getVideos',
         'albums': 'getAlbums',
         'podcasts': 'getPodcasts',
