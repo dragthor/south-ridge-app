@@ -32,11 +32,24 @@ SouthRidge.Models.Albums = Backbone.Collection.extend({
       var limit = SouthRidge.Utils.MaxResults;
       
       forge.prefs.get("album-limit", function(value) {
-        if (value === true) limit = 10;
+        if (value === true) limit = 12;  // Grab a couple extra in case of a "bad album".
 
-        forge.request.get('http://graph.facebook.com/southridgecommunitychurch/albums/?fields=name,cover_photo,description&limit=' + limit, 
+        forge.request.get('http://graph.facebook.com/southridgecommunitychurch/albums/?fields=name,cover_photo,description,count&limit=' + limit, 
           function(content) {
-            that.add(content.data);
+            var i = 0;
+
+            // Only show albums with at leat one photo.
+            _.each(content.data, function(item) {
+              if (i < limit) {
+                var count = item["count"];
+
+                if (count != undefined && parseInt(count) > 0) {
+                    that.push(item);
+                    i++;
+                }
+              }
+            });
+
             success();
           }, 
           function(err) {
