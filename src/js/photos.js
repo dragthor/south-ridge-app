@@ -126,7 +126,9 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
   },
   render: function(){
     SouthRidge.Utils.ScrollTop();
-  
+    
+    forge.tabbar.setInactive(function() {}, function(err) {});
+
     var albums = SouthRidge.Cache.Albums;
     var name = "";
     var desc = "";
