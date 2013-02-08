@@ -17,7 +17,7 @@
             "ipad-landscape": "img/1024x748.png",
             "ipad-retina": "img/1536x2008.png",
 			"ipad-landscape-retina": "img/2048x1496.png",
-            "hide-manually": true,
+            "hide-manually": false,
             "background-color": "#ffffff"
         }, 
         "logging": {

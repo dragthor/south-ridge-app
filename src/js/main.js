@@ -182,12 +182,6 @@ var SouthRidge = {
       });
     });
   
-    forge.launchimage.hide(function() {
-      // success
-    }, function(err) {
-      SouthRidge.ViewManager.Error("Initialization error. " + err.message);
-    });
-  
     Backbone.history.start();
   }
 };
