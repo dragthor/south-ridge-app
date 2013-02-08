@@ -34,7 +34,7 @@ SouthRidge.Models.Albums = Backbone.Collection.extend({
       forge.prefs.get("album-limit", function(value) {
         if (value === true) limit = 12;  // Grab a couple extra in case of a "bad album".
 
-        forge.request.get('http://graph.facebook.com/southridgecommunitychurch/albums/?fields=name,cover_photo,description,count&limit=' + limit, 
+        forge.request.get('http://graph.facebook.com/southridgecommunitychurch/albums/?fields=name,cover_photo,description,count,likes&limit=' + limit, 
           function(content) {
             var i = 0;
 

@@ -98,6 +98,28 @@
 			<div id="{{= photo.get("id") }}" class="photo" style="background-image: url({{= photo.get("picture") }})"></div>
 			
     	{{ }); }}
+
+		<div style="display:block;clear:both;padding-top:10px;">
+			<hr/>
+			<h1>Facebook Likes</h1>
+
+			{{ var i = 0; }}
+			
+			{{ if (likes.length === 0) { }}
+				None at this time.
+			{{ } }}
+
+	    	{{ _(likes).each(function(like) { }}
+
+	    		{{ if (i > 0) { }}
+	    			,
+	    		{{ } }}
+	    		
+	    		{{= like["name"] }}
+
+	    		{{ i++; }}
+	    	{{ }); }}
+    	</div>
 	</script>
 
 	<script type="text/template" id="about">		

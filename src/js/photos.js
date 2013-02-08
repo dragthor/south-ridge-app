@@ -130,6 +130,7 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
     var albums = SouthRidge.Cache.Albums;
     var name = "";
     var desc = "";
+    var likes = new Array();
 
     for (var i = 0; i < albums.models.length; i++) {
       var m = albums.models[i];
@@ -138,11 +139,16 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
         name = (m.get("name") == undefined) ? "Untitled Album" : m.get("name");
         desc = (m.get("description") == undefined) ? "" : m.get("description");
 
+        if (m.get("likes") != undefined) {
+          if (m.get("likes")["data"] != undefined) {
+            likes = m.get("likes")["data"];
+          }
+        }
         break;
       }
     }
 
-    var params = { albumName: name, albumDesc: desc, photos: this.collection.models };
+    var params = { albumName: name, albumDesc: desc, photos: this.collection.models, likes: likes };
 
     var template = _.template($("#photos").html(), params);
 
