@@ -123,7 +123,10 @@ var SouthRidge = {
         // First reset the old news update to force a fresh of latest.
         SouthRidge.Cache.News = undefined;
         
-        SouthRidge.Router.navigate('news', { trigger: true });
+        // Need for iOS.
+        if (msg != undefined) {
+          SouthRidge.Router.navigate('news', { trigger: true });
+        }
     });
 
     var photoButton = forge.tabbar.addButton({
