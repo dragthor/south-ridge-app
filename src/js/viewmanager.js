@@ -153,7 +153,7 @@ SouthRidge.ViewManager.News = function () {
 
           if (news.length === 0) {
             SouthRidge.Cache.News = undefined;
-            view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve chat feed." } )
+            view = new SouthRidge.Views.ErrorView( { message: "Unable to retrieve news feed." } )
           } else {
             view = new SouthRidge.Views.NewsView( { collection: news } );
           }

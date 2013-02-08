@@ -21,7 +21,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-SouthRidge.Utils.Version = "1.8.2";
+SouthRidge.Utils.Version = "1.8.3";
 SouthRidge.Utils.ParseAppId = "RVQvHPE2S63I1FpyNu4GSpSN3qSkmai1XB696kAC";
 SouthRidge.Utils.ParseRestKey = "uUL10oLmwnI6c9LbojMRTOJn65gIeP6jEitMjWDq";
 SouthRidge.Utils.BibleGatewayUrl = "http://mobile.biblegateway.com/passage/?version=NIV&search=";
@@ -53,7 +53,10 @@ SouthRidge.Utils.SetTopBar = function(title) {
 	forge.topbar.setTitle(title);
     forge.topbar.removeButtons(function() {
 
-	    if (title != "" && title != "Settings" && title != "About") {
+    	var currentRouter = SouthRidge.Router.routes[Backbone.history.fragment].toLowerCase();
+    	var refreshRoutes = [ "getvideos", "getalbums", "getpodcasts", "getphotos", "getnews" ];
+
+	    if ($.inArray(currentRouter, refreshRoutes) > -1) {
 		    forge.topbar.addButton(
 		    	{ 
 		    		icon: "img/01-refresh@2x.png", 
@@ -66,7 +69,7 @@ SouthRidge.Utils.SetTopBar = function(title) {
 		      Backbone.history.loadUrl(Backbone.history.fragment);
 
 		    });
-		} else if (title == "Settings") {
+		} else if (currentRouter === "getsettings") {
 			forge.topbar.addButton(
 				{ 
 					icon: "img/112-group@2x.png", 
