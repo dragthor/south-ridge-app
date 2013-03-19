@@ -82,30 +82,36 @@ SouthRidge.Models.Photos = Backbone.Collection.extend({
 SouthRidge.Models.Podcast = Backbone.Model.extend();
 
 SouthRidge.Models.Podcasts = Backbone.Collection.extend({
-  model: SouthRidge.Models.Podcast,
-  initialize: function(models, options) {
-    var that = this;
-    var success = options.success;
-    var error = options.error;
-    var limit = SouthRidge.Utils.MaxResults;
+    model: SouthRidge.Models.Podcast,
+    initialize: function (models, options) {
+        var that = this;
+        var success = options.success;
+        var error = options.error;
+        var limit = SouthRidge.Utils.MaxResults;
 
-    var url = 'http://dragthor.github.com/southridge/SouthRidgePodcast.json';
+        forge.prefs.get("podcast-limit", function (value) {
+            if (value === true) limit = 10;
 
-    forge.prefs.get("podcast-limit", function(value) {
-      if (value === true) limit = 10;
-
-      if (limit === 10) url = 'http://dragthor.github.com/southridge/SouthRidgeTop10Podcast.json';
-
-      forge.request.get(url, 
-        function(content) {
-          that.add(content);
-          success();
-        }, 
-        function(err) {
-          error(err);
-      });
-    }, function(err) {});
-  }
+            forge.request.ajax({
+                url: 'https://api.parse.com/1/classes/Podcast?limit=' + limit + '&order=-Order',
+                headers: {
+                    'X-Parse-Application-Id': SouthRidge.Utils.ParseAppId,
+                    'X-Parse-REST-API-Key': SouthRidge.Utils.ParseRestKey
+                },
+                contentType: 'application/json',
+                /* data: JSON.stringify({ "order": "-Order", "limit": limit }), */
+                type: 'GET',
+                dataType: 'json',
+                success: function (content) {
+                    that.add(content.results);
+                    success();
+                },
+                error: function (err) {
+                    error(err);
+                }
+            });
+        }, function (err) { });
+    }
 });
 
 SouthRidge.Models.Video = Backbone.Model.extend();
@@ -155,18 +161,26 @@ SouthRidge.Models.NewsItem = Backbone.Model.extend();
 SouthRidge.Models.News = Backbone.Collection.extend({
     model: SouthRidge.Models.NewsItem,
     initialize: function(models, options) {
-      var that = this;
-      var success = options.success;
-      var error = options.error;
+        var that = this;
+        var success = options.success;
+        var error = options.error;
 
-      forge.request.get('http://dragthor.github.com/southridge/eNews.json', 
-        function(content) {
-          that.add(content);
-
-          success();
-        }, 
-        function(err) {
-          error(err);
-      });
+        forge.request.ajax({
+            url: 'https://api.parse.com/1/classes/News?where=' + JSON.stringify({ "Active":true }),
+            headers: {
+                'X-Parse-Application-Id': SouthRidge.Utils.ParseAppId,
+                'X-Parse-REST-API-Key': SouthRidge.Utils.ParseRestKey
+            },
+            contentType: 'application/json',
+            type: 'GET',
+            dataType: 'json',
+            success: function (content) {
+                that.add(content.results);
+                success();
+            },
+            error: function (err) {
+                error(err);
+            }
+        });
     }
 });
