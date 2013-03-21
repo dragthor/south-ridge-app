@@ -65,15 +65,18 @@ SouthRidge.Views.VideoView = Backbone.View.extend({
   handleTap: function(e) {
     e.preventDefault();
 
-    var video = this.collection.where({ VideoId: parseInt($(e.target).attr("id")) });
-
-    if (video.length === 1) {
-      forge.tabs.openWithOptions({
-        url: video[0].get("mobile_url"),
-        tint: SouthRidge.Utils.MainColor
-      }, function (data) {
-        SouthRidge.Utils.Log(data.url);
-      });
-    }
+    var videoId = parseInt($(e.target).attr("id"));
+    var url = "video.html";
+    
+    forge.tools.getURL(url, function(path) {
+        forge.tabs.openWithOptions({
+          url: path + "?" + videoId,
+          tint: SouthRidge.Utils.MainColor
+        }, function (data) {
+          SouthRidge.Utils.Log(data.url);
+        });
+    }, function(err) {
+      // Handler error.
+    }); 
   }
 });

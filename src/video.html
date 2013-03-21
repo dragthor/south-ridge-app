@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=yes">
+	</head>
+
+	<body style="background-color: #000">
+
+		<script type="text/javascript">
+			var pos = window.location.toString().indexOf("?");
+
+			if (pos > -1) {
+				var videoId = window.location.toString().substring(pos + 1);
+
+				document.write('<iframe src="http://player.vimeo.com/video/' + videoId + '" width="100%" height="100%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');			
+			}
+		</script>
+	</body>
+</html>
