@@ -166,7 +166,7 @@ SouthRidge.Models.News = Backbone.Collection.extend({
         var error = options.error;
 
         forge.request.ajax({
-            url: 'https://api.parse.com/1/classes/News?where=' + JSON.stringify({ "Active":true }),
+            url: 'https://api.parse.com/1/classes/News?where=' + encodeURIComponent(JSON.stringify({ "Active":true })),
             headers: {
                 'X-Parse-Application-Id': SouthRidge.Utils.ParseAppId,
                 'X-Parse-REST-API-Key': SouthRidge.Utils.ParseRestKey

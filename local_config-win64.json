@@ -13,10 +13,10 @@
 		}
 	},
 	"android": {
-		"sdk": "/Users/kristoferkrause/Documents/adt-bundle-mac-x86_64/sdk",
+		"sdk": "C:\\Users\\Krause\\android-sdks",
 		"profiles": {
 			"DEFAULT": {
-				"keystore": "/users/kristoferkrause/Documents/camomedia.keystore",
+				"keystore": "C:\\Users\\Krause\\Documents\\camomedia.keystore",
 				"keyalias": "camomedia"
 			}
 		}
