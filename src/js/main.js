@@ -125,7 +125,8 @@ var SouthRidge = {
         
         // Need for iOS.
         if (msg != undefined) {
-          SouthRidge.Router.navigate('news', { trigger: true });
+          // KAK->03/24/2013 - removing this due to a little quirk.
+          // SouthRidge.Router.navigate('news', { trigger: true });
         }
     });
 
