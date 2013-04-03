@@ -6,9 +6,9 @@ South Ridge Community Church (Clinton, NJ) mobile iOS and Android application.  
 http://www.southridgecc.org
 
 
-Current Production Android Version: 1.8.4
+Current Production Android Version: 1.8.5
 
-Current Production iOS Version: 1.8.3
+Current Production iOS Version: 1.8.5
 
 Google Play:  https://play.google.com/store/apps/details?id=com.camomedia.southridge
 
@@ -23,4 +23,4 @@ MIT License - http://en.wikipedia.org/wiki/MIT_License
 
 Icons by Glyphish (non-free icons require that you purchase a license) - http://glyphish.com
 
-Built with trigger.io - http://trigger.io
+Built with trigger.io - http://trigger.io and parse http://parse.com
