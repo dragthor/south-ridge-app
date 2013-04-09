@@ -110,6 +110,9 @@ var SouthRidge = {
     forge.topbar.setTint(SouthRidge.Utils.MainColor);
     forge.tabbar.setActiveTint(SouthRidge.Utils.MainColor);
 
+    // Reset older badge notifications back to zero.
+    forge.notification.setBadgeNumber(0, function() {}, function() {});
+
     forge.event.connectionStateChange.addListener(function() {
       // Success we have an active connection.
     }, function(err) {

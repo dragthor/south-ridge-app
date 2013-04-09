@@ -20,6 +20,9 @@
             "hide-manually": false,
             "background-color": "#ffffff"
         }, 
+        "media" : {
+            "enable_background_audio": true
+        },
         "logging": {
             "level": "CRITICAL"
         }, 
@@ -59,17 +62,24 @@
         "tabbar": true, 
         "tools": true, 
         "topbar": true,
-        "prefs": true
+        "prefs": true,
+        "notification": true
     }, 
     "name": "South Ridge", 
     "platform_version": "v1.4", 
-    "version": "1.8.5", 
+    "version": "1.8.6", 
     "description": "South Ridge Community Church",
 
     "partners": {
         "parse": {
             "applicationId": "RVQvHPE2S63I1FpyNu4GSpSN3qSkmai1XB696kAC",
             "clientKey": "KcYBEtinysTKql47nMoOgUlchSAtatklPrF918Dv"
+        }
+    },
+
+    "requirements": {
+        "android": {
+            "disable_ics_acceleration": true
         }
     }
 }

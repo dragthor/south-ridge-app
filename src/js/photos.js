@@ -67,7 +67,7 @@ SouthRidge.Views.AlbumView = Backbone.View.extend({
           SouthRidge.Utils.Uploader.ImageFile(file);
         });
       } catch (err) {
-        SouthRidge.Utils.Alert("Unable to access camera or photo gallery at this time.");
+        SouthRidge.Utils.Alert("Error", "Unable to access camera or photo gallery at this time.");
       }
     });
 

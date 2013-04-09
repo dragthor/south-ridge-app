@@ -44,7 +44,7 @@ SouthRidge.Views.AboutView = Backbone.View.extend({
     var template = _.template($("#about").html(), params);
 
     SouthRidge.Utils.DoneLoading();
-    
+
     $(this.el).unbind().html(template).show();
   }
 });

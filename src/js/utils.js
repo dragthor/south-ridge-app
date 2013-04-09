@@ -21,7 +21,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-SouthRidge.Utils.Version = "1.8.5";
+SouthRidge.Utils.Version = "1.8.6";
 SouthRidge.Utils.ParseAppId = "RVQvHPE2S63I1FpyNu4GSpSN3qSkmai1XB696kAC";
 SouthRidge.Utils.ParseRestKey = "uUL10oLmwnI6c9LbojMRTOJn65gIeP6jEitMjWDq";
 SouthRidge.Utils.BibleGatewayUrl = "http://mobile.biblegateway.com/passage/?version=NIV&search=";
@@ -44,9 +44,12 @@ SouthRidge.Utils.Log = function(msg) {
 	}
 };
 
-SouthRidge.Utils.Alert = function(msg) {
-	// TODO: Change this to a pretty modal.
-	alert(msg);
+SouthRidge.Utils.Alert = function(title, msg) {
+	forge.notification.alert(title, msg, function () {
+		
+	}, function(err) {
+		SouthRidge.Utils.Log(err);
+	});
 };
 
 SouthRidge.Utils.SetTopBar = function(title) {
