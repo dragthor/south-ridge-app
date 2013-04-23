@@ -74,7 +74,7 @@ var SouthRidge = {
         'news': 'getNews',
         'noconnection': 'getNoConnection',
         'error': 'getError',
-        '*actions' : 'getAlbums'
+        '*path' : 'getAlbums' // Default view.
       },
       getAlbums: function() {
         SouthRidge.ViewManager.Albums();
@@ -146,7 +146,7 @@ var SouthRidge = {
       button.setActive();
     });
 
-    var podccastButton = forge.tabbar.addButton({
+    var podcastButton = forge.tabbar.addButton({
       text: "Podcast",
       icon: "img/31-ipod.png",
       index: 1

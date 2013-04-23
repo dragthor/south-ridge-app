@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="HandheldFriendly" content="True" />
+    	<meta name="MobileOptimized" content="320" />
+		<meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 
 		<link rel="stylesheet" href="css/reset.min.css" type="text/css" />
 		<link rel="stylesheet" href="css/default.min.css" type="text/css" />
@@ -124,7 +126,7 @@
 
 	<script type="text/template" id="about">		
 		<img class="logo" src="{{= logo }}" />
-		<p>The mission of South Ridge is to embrace God's grace and extend His love.</p>
+		<p>The mission of South Ridge is to embrace God&#39;s grace and extend His love.</p>
 
 		<p>South Ridge Community Church<br/>7 Pittstown Road<br/>Clinton, NJ 08809<br/><a href="tel:9087355252">(908) 735-5252</a></p>
 		<p><a href="mailto:info@southridgecc.org">info@southridgecc.org</a></p>
@@ -155,6 +157,8 @@
 	<script src="js/settings.min.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
-  		$(SouthRidge.init);
+	    var initialize = _.once(SouthRidge.init);
+        
+        initialize();
 	</script>
 </html>

@@ -41,6 +41,8 @@ SouthRidge.Utils.Uploader.ImageFile = function (file) {
         	SouthRidge.Utils.Alert("Error", "Problem uploading photo to South Ridge.  Or location permission required.");
         }
     });
+
+    forge.notification.toast("Uploading...", function() { }, function(err) {});
 };
 
 SouthRidge.Utils.Uploader.ImageMetaData = function(data) {
