@@ -187,7 +187,7 @@ SouthRidge.Views.PhotosView = Backbone.View.extend({
         tint: SouthRidge.Utils.MainColor
       }, function (data) {
         SouthRidge.Utils.Log(data.url);
-      });
+      });      
     }
   }
 });

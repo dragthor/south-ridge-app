@@ -138,15 +138,6 @@ h1 {
 	
 }
 
-#loading {
-	text-align: center;
-	width: 100%;
-	top: 40%;
-	height: 320px;
-	display: none;
-	position: absolute;
-}
-
 @media only screen and (min-width:600px) {
 
 .desc {

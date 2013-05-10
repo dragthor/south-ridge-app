@@ -21,7 +21,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-SouthRidge.Utils.Version = "1.8.6";
+SouthRidge.Utils.Version = "1.8.7";
 SouthRidge.Utils.ParseAppId = "RVQvHPE2S63I1FpyNu4GSpSN3qSkmai1XB696kAC";
 SouthRidge.Utils.ParseRestKey = "uUL10oLmwnI6c9LbojMRTOJn65gIeP6jEitMjWDq";
 SouthRidge.Utils.BibleGatewayUrl = "http://mobile.biblegateway.com/passage/?version=NIV&search=";
@@ -56,32 +56,34 @@ SouthRidge.Utils.SetTopBar = function(title) {
 	forge.topbar.setTitle(title);
     forge.topbar.removeButtons(function() {
 
-    	var currentRouter = SouthRidge.Router.routes[Backbone.history.fragment].toLowerCase();
-    	var refreshRoutes = [ "getvideos", "getalbums", "getpodcasts", "getphotos", "getnews" ];
-
-	    if ($.inArray(currentRouter, refreshRoutes) > -1) {
-		    forge.topbar.addButton(
-		    	{ 
-		    		icon: "img/01-refresh@2x.png", 
-		    		position: "right", 
-		    		tint: SouthRidge.Utils.ActiveTint 
-		    	}, function () { 
-
-		      SouthRidge.Utils.ResetCache(Backbone.history.fragment);
-		      
-		      Backbone.history.loadUrl(Backbone.history.fragment);
-
-		    });
-		} else if (currentRouter === "getsettings") {
-			forge.topbar.addButton(
-				{ 
-					icon: "img/112-group@2x.png", 
-					position: "right", 
-					tint: SouthRidge.Utils.ActiveTint 
-				}, function () { 
-		 		SouthRidge.Router.navigate("about", { trigger: true });
-		    });
-		}
+    	if (SouthRidge.Router.routes[Backbone.history.fragment] != undefined) {
+	    	var currentRouter = SouthRidge.Router.routes[Backbone.history.fragment].toLowerCase();
+	    	var refreshRoutes = [ "getvideos", "getalbums", "getpodcasts", "getphotos", "getnews" ];
+	
+		    if ($.inArray(currentRouter, refreshRoutes) > -1) {
+			    forge.topbar.addButton(
+			    	{ 
+			    		icon: "img/01-refresh@2x.png", 
+			    		position: "right", 
+			    		tint: SouthRidge.Utils.ActiveTint 
+			    	}, function () { 
+	
+			      SouthRidge.Utils.ResetCache(Backbone.history.fragment);
+			      
+			      Backbone.history.loadUrl(Backbone.history.fragment);
+	
+			    });
+			} else if (currentRouter === "getsettings") {
+				forge.topbar.addButton(
+					{ 
+						icon: "img/112-group@2x.png", 
+						position: "right", 
+						tint: SouthRidge.Utils.ActiveTint 
+					}, function () { 
+			 		SouthRidge.Router.navigate("about", { trigger: true });
+			    });
+			}
+    	}
 
     }, function() {});
 };
@@ -96,13 +98,16 @@ SouthRidge.Utils.DeactivateTabs = function() {
 	forge.tabbar.setInactive();
 };
 
-SouthRidge.Utils.Loading = function() {
-	$("#content").empty();
-	$("#loading").show()
+SouthRidge.Utils.Loading = function(childWindow) {
+	if (childWindow == undefined || childWindow == false) {
+		$("#content").empty();
+	}
+	
+	forge.notification.showLoading("South Ridge", "Loading", function() {}, function(err) {});
 };
 
 SouthRidge.Utils.DoneLoading = function() {
-	$("#loading").hide();
+	forge.notification.hideLoading(function() {}, function(err) {});
 };
 
 SouthRidge.Utils.ResetCache = function (fragment) {

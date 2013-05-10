@@ -47,7 +47,8 @@
             "permissions": [
                 "*://graph.facebook.com/*", 
                 "*://*.vimeo.com/*", 
-                "*://*.parse.com/*"
+                "*://*.parse.com/*",
+                "*://dragthor.github.io/*"
             ]
         }, 
         "event": true, 
@@ -67,7 +68,7 @@
     }, 
     "name": "South Ridge", 
     "platform_version": "v1.4", 
-    "version": "1.8.6", 
+    "version": "1.8.7", 
     "description": "South Ridge Community Church",
 
     "partners": {

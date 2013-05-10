@@ -64,13 +64,16 @@ SouthRidge.Views.SettingsView = Backbone.View.extend({
 
   handlePodcastChange: function (e) {
     forge.prefs.set("podcast-limit", $(e.target).prop("checked"), function() {}, function(err) {});
+    forge.notification.toast("Saving...", function() { }, function(err) {});
   },
 
   handleVideoChange: function (e) {
     forge.prefs.set("video-limit", $(e.target).prop("checked"), function() {}, function(err) {});
+    forge.notification.toast("Saving...", function() { }, function(err) {});
   },
 
   handleAlbumChange: function (e) {
     forge.prefs.set("album-limit", $(e.target).prop("checked"), function() {}, function(err) {});
+    forge.notification.toast("Saving...", function() { }, function(err) {});
   }
 });

@@ -133,7 +133,7 @@ var SouthRidge = {
         }
     });
 
-    var photoButton = forge.tabbar.addButton({
+    forge.tabbar.addButton({
       text: "Photos",
       icon: "img/86-camera.png",
       index: 0
@@ -146,7 +146,7 @@ var SouthRidge = {
       button.setActive();
     });
 
-    var podcastButton = forge.tabbar.addButton({
+    forge.tabbar.addButton({
       text: "Podcast",
       icon: "img/31-ipod.png",
       index: 1
@@ -156,7 +156,7 @@ var SouthRidge = {
       });
     });
 
-    var videoButton = forge.tabbar.addButton({
+    forge.tabbar.addButton({
       text: "Video",
       icon: "img/70-tv.png",
       index: 2
@@ -166,7 +166,7 @@ var SouthRidge = {
       });
     });
 
-    var newsButton = forge.tabbar.addButton({
+    forge.tabbar.addButton({
       text: "eNews",
       icon: "img/08-chat.png",
       index: 3
@@ -176,7 +176,7 @@ var SouthRidge = {
       });
     });
 
-    var aboutButton = forge.tabbar.addButton({
+    forge.tabbar.addButton({
       text: "Settings",
       icon: "img/20-gear-2@2x.png",
       index: 4
